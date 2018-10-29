@@ -1,0 +1,11 @@
+.sideNav {
+  height: 100vh;
+  width: 10vw;
+  background-color: rgb(34, 34, 34);
+  margin-left: 130px;
+  display: flex;
+  flex-direction: column;
+}
+.sideContainer {
+  position: fixed;
+}

@@ -1,0 +1,107 @@
+.titleOuter {
+  height: 100vh;
+  width: 100vw;
+  /* background-image: linear-gradient(70deg, #779cab, #26a96c); */
+  background-color: black;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+.overlayContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.whiteOverlay {
+  height: 100%;
+  width: 100%;
+  box-shadow: -11px -6px 83px -17px rgba(0, 0, 0, 0.75);
+  overflow-x: hidden;
+  filter: invert(1%);
+  position: absolute;
+  z-index: 2;
+}
+.middlePicture {
+  height: 100%;
+  width: 98%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.gopherIcon {
+  height: 10%;
+  width: auto;
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  filter: invert(10%);
+  right: 10px;
+}
+.learnMoreContainer {
+  height: 100%;
+  width: 2px;
+  /* border: 1px rgb(255, 255, 255) solid; */
+  z-index: 3;
+  background-color: rgba(80, 80, 80, 0.6);
+  position: absolute;
+  top: 0;
+  right: 24%;
+  transition: 1s;
+}
+.learnMoreContainer:hover {
+  background-color: #26a96c;
+  cursor: pointer;
+}
+.lowerLearnMoreContainer {
+  height: 8%;
+  width: 5px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+}
+.lowerLearnMoreContainer:hover {
+  height: 9%;
+}
+.exploreText {
+  transform: rotate(90deg);
+  color: white;
+  position: absolute;
+  bottom: 31px;
+  right: 21.7%;
+  z-index: 4;
+  letter-spacing: 1px;
+  font-family: "Scada", sans-serif;
+  font-weight: 900;
+}
+.greenBlock {
+  height: 3px;
+  width: 50%;
+  background-color: rgb(38, 169, 108);
+  margin: 20px 0px 20px 45px;
+}
+.dashboardLinkContainer {
+  position: absolute;
+  top: 41%;
+  right: 6%;
+  height: 14%;
+  width: 11%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px white solid; */
+}
+.dashLink {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+#send {
+  text-align: left;
+}
+#deliver {
+  text-align: right;
+}

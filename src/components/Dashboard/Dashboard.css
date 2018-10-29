@@ -1,0 +1,6 @@
+.dashboardOuter {
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid black;
+  background-color: rgb(24, 24, 24);
+}
