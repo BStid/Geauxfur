@@ -1,12 +1,7 @@
 require("dotenv").config();
 const express = require("express"),
   app = express(),
-  {
-    SESSION_SECRET: secret,
-    CONNECTION_STRING,
-    PORT,
-    MAPBOX_ACCESS_TOKEN
-  } = process.env,
+  { SESSION_SECRET: secret, CONNECTION_STRING, PORT } = process.env,
   port = PORT || 3006,
   session = require("express-session"),
   massive = require("massive"),

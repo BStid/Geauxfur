@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3006",
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.4.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
@@ -22,6 +23,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "react-tilt": "^0.1.4",
+    "react-virtualized": "^9.21.0",
     "redux": "^4.0.1",
     "redux-promise-middleware": "^5.1.1"
   },

@@ -4,3 +4,17 @@
   border: 1px solid black;
   background-color: rgb(24, 24, 24);
 }
+.mainContentContainer {
+  height: 100vh;
+  width: 85vw;
+  margin-left: 130px;
+  overflow: hidden;
+  border: 1px black solid;
+}
+.mainContent {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Title.css";
 import CoverImg from "../../pictures/Z.png";
-import GIcon from "../../pictures/gophersillo.png";
+import logo from "../../pictures/gophersillo.png";
 import Sunset from "../../pictures/drivergreen.png";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export default function Overlay() {
     <div className="overlayContainer">
       <img src={Sunset} alt="" className="middlePicture" />
       <img src={CoverImg} alt="" className="whiteOverlay" />
-      <img src={GIcon} alt="" className="gopherIcon" />
+      <img src={logo} alt="" className="gopherIcon" />
       <Link to="/explore">
         <div className="learnMoreContainer">
           <div className="lowerLearnMoreContainer" />
