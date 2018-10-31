@@ -23,7 +23,7 @@ class TopNav extends Component {
           <img src={searchIcon} alt="search" className="searchIcon" />
           <input
             type="text"
-            placeholder="What would you like to send?"
+            placeholder="Where would you like to ship?"
             className="searchBar"
             name="search"
             // onChange={e => this.props.updateInput(e)}

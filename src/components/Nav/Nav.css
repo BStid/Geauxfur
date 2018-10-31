@@ -123,3 +123,101 @@
   filter: invert(100%);
   opacity: 0.5;
 }
+
+/* SIDENAV */
+
+.sideNav {
+  height: 36vh;
+  width: 10vw;
+  background-color: rgb(34, 34, 34);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.sideNav a:active,
+.sideNav a:hover,
+.sideNav a:visited,
+.sideNav a:link {
+  text-decoration: none;
+  color: #aaaaaa;
+  /* margin: 5px 40px; */
+  padding: 5px 0px;
+}
+
+.homeButton,
+.profileButton,
+.messagesButton,
+.paymentButton,
+.historyButton,
+.safetyButton {
+  height: 27px;
+  font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+  letter-spacing: 2px;
+  font-size: 14.5px;
+  font-weight: bolder;
+  padding: 10px 5px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.homeIcon,
+.profileIcon,
+.messagesIcon,
+.paymentIcon,
+.historyIcon,
+.safetyIcon {
+  height: 26px;
+  width: auto;
+  filter: invert(100%);
+  opacity: 0.5;
+  margin: 0px 15px;
+  position: relative;
+  top: 4px;
+  color: #aaaaaa;
+}
+#noInvert {
+  filter: invert(100%);
+}
+.homeButton:hover,
+.profileButton:hover,
+.messagesButton:hover,
+.paymentButton:hover,
+.historyButton:hover,
+.safetyButton:hover,
+.homeIcon:hover,
+.profileIcon:hover,
+.messagesIcon:hover,
+.paymentIcon:hover,
+.historyIcon:hover,
+.safetyIcon:hover {
+  color: white;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#sideProfileCard {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+  display: none;
+}
+
+#sideDefaultUser {
+  height: 30%;
+  width: auto;
+}
+#sideUserName {
+  color: rgb(245, 245, 245);
+  font-size: 30px;
+  margin-top: 20px;
+  font-weight: 800;
+}
+#sideEmail {
+  font-size: 14px;
+  color: #888888;
+  font-weight: 500;
+}
