@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import connect form react-redux to connec the store to your component
+//import connect from react-redux to connect the store to your component
 import { connect } from "react-redux";
 import TopNav from "../Nav/TopNav";
 import SideNav from "../Nav/SideNav";

@@ -19,7 +19,7 @@ class SideNav extends Component {
     return (
       <div className="sideContainer">
         <div className="sideNav">
-          <Link to="/" render>
+          <Link to="/dashboard">
             <div className="homeButton">
               <img src={homeIcon} alt="home icon" className="homeIcon" />
               Home

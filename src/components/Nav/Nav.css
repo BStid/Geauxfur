@@ -69,7 +69,7 @@
   width: 25%;
   margin: 15px;
   border: 1px solid #212222;
-  color: #181818;
+  color: white;
   font-size: 14px;
   letter-spacing: 0.21px;
   text-align: start;
@@ -165,7 +165,7 @@
 .paymentIcon,
 .historyIcon,
 .safetyIcon {
-  height: 26px;
+  height: 100%;
   width: auto;
   filter: invert(100%);
   opacity: 0.5;

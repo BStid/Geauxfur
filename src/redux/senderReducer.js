@@ -1,9 +1,5 @@
 import axios from "axios";
 require("dotenv").config();
-const mbxDirections = require("@mapbox/mapbox-sdk/services/directions");
-const directionsClient = mbxDirections({
-  accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
-});
 
 //Actiontypes
 const GET_DRIVER_ROUTE = "GET_DRIVER_ROUTE";
@@ -64,8 +60,7 @@ export function getDriverCoordinates() {
 }
 
 //Reducer
-export default function reducer(state = initialState, action) {
-  console.log(action.payload);
+export default function senderReducer(state = initialState, action) {
   switch (action.type) {
     case `${GET_DRIVER_ROUTE}_PENDING`:
       return {
@@ -116,5 +111,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         isLoading: false
       };
+    default:
+      return state;
   }
 }

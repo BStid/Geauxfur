@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-// import { updateInput } from "../../ducks/reducer";
-import SideNav from "../Nav/SideNav";
+import { updateInput } from "../../redux/mainReducer";
 import searchIcon from "./pictures/search.svg";
 import moreIcon from "./pictures/moreIcon.svg";
 import userDefaultIcon from "./pictures/userDefault.png";
@@ -26,7 +25,7 @@ class TopNav extends Component {
             placeholder="Where would you like to ship?"
             className="searchBar"
             name="search"
-            // onChange={e => this.props.updateInput(e)}
+            onChange={e => this.props.updateInput(e)}
           />
           <div className="filler" />
           {this.props.input && this.props.input}
@@ -52,13 +51,12 @@ class TopNav extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     input: state.input
-//   };
-// };
-// export default connect(
-//   mapStateToProps,
-//   { updateInput }
-// )(TopNav);
-export default TopNav;
+const mapStateToProps = state => {
+  return {
+    input: state.input
+  };
+};
+export default connect(
+  mapStateToProps,
+  { updateInput }
+)(TopNav);

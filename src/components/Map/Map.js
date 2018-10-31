@@ -33,11 +33,12 @@ class Map extends Component {
     await this.props.getDriverRoute(
       this.state.viewport.longitude,
       this.state.viewport.latitude,
-      this.props.driverCurrentLong,
-      this.props.driverCurrentLat
+      this.props.sender.driverCurrentLong,
+      this.props.sender.driverCurrentLat
     );
-    console.log("got these directions...", this.props.routeCoordinates);
+    console.log("got these directions...", this.props.sender.routeCoordinates);
     console.log("drawing route...");
+
     await this.setState({ nothing: "" });
     const map = this.reactMap.getMap();
     map.on("render", () => {
@@ -51,7 +52,7 @@ class Map extends Component {
             properties: {},
             geometry: {
               type: "LineString",
-              coordinates: this.props.routeCoordinates
+              coordinates: this.props.sender.routeCoordinates
             }
           }
         },
@@ -137,7 +138,7 @@ class Map extends Component {
 }
 
 const mapStateToProps = state => {
-  return state;
+  return { sender: state.sender };
 };
 
 export default connect(

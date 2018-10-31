@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  border: 1px black solid;
+  border-right: 1px solid rgb(38, 169, 108);
   overflow: hidden;
 }
 .mapMarker {
