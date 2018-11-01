@@ -26,7 +26,7 @@ class Cards extends Component {
       <div className="cardsContainer">
         <div className="upperInfo">
           <div className="headerTitle" />
-          <div className="categoryContainer">{iconRow}</div>
+          <div className="categoryContainer">{/* {iconRow} */}</div>
         </div>
         <div className="mainInfo" />
       </div>

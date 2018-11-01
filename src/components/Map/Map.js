@@ -6,6 +6,7 @@ import {
   getDriverCoordinates,
   getDriverRoute
 } from "../../redux/senderReducer";
+import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
 import mapMarker from "./pictures/green_pin.png";
 import gps from "./pictures/gps.png";
@@ -75,6 +76,10 @@ class Map extends Component {
       newObj.longitude = position.coords.longitude;
       newObj.latitude = position.coords.latitude;
       newObj.zoom = 16;
+      this.props.addLocation(
+        position.coords.longitude,
+        position.coords.latitude
+      );
       this.setState({
         viewport: newObj
       });
@@ -138,10 +143,10 @@ class Map extends Component {
 }
 
 const mapStateToProps = state => {
-  return { sender: state.sender };
+  return { sender: state.sender, main: state.main };
 };
 
 export default connect(
   mapStateToProps,
-  { getDriverCoordinates, getDriverRoute }
+  { getDriverCoordinates, getDriverRoute, addLocation }
 )(Map);

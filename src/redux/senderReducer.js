@@ -46,7 +46,9 @@ export function getDriverDestination(
   return {
     type: GET_DRIVER_DESTINATION,
     payload: axios.get(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${senderCurrentLong},${senderCurrentLat};${driverDestinationLong},${driverDestinationLat}`
+      `https://api.mapbox.com/directions/v5/mapbox/driving/${senderCurrentLong},${senderCurrentLat};${driverDestinationLong},${driverDestinationLat}.json?access_token=${
+        process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
+      }&geometries=geojson`
     )
   };
 }

@@ -16,7 +16,7 @@ class Dashboard extends Component {
           <div className="mainContent">
             <SideNav />
             <Cards />
-            {/* <Map /> */}
+            <Map />
           </div>
         </div>
       </div>

@@ -25,6 +25,7 @@ class TopNav extends Component {
             placeholder="Where would you like to ship?"
             className="searchBar"
             name="search"
+            value={this.props.search}
             onChange={e => this.props.updateInput(e)}
           />
           <div className="filler" />

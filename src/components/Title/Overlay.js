@@ -6,11 +6,19 @@ import Sunset from "../../pictures/drivergreen.png";
 import { Link } from "react-router-dom";
 
 export default function Overlay() {
+  const redirect = () => {
+    window.location.href = `${process.env.REACT_APP_SERVER}/login`;
+  };
   return (
     <div className="overlayContainer">
       <img src={Sunset} alt="" className="middlePicture" />
       <img src={CoverImg} alt="" className="whiteOverlay" />
-      <img src={logo} alt="" className="gopherIcon" />
+      <img
+        src={logo}
+        alt=""
+        className="gopherIcon"
+        onClick={() => redirect()}
+      />
       <Link to="/explore">
         <div className="learnMoreContainer">
           <div className="lowerLearnMoreContainer" />
@@ -18,13 +26,13 @@ export default function Overlay() {
         <p className="exploreText">Explore</p>
       </Link>
       <div className="dashboardLinkContainer">
-        <Link to="/dashboard" className="dashLink" id="send">
+        <div onClick={() => redirect()} className="dashLink" id="send">
           Send
-        </Link>
+        </div>
         <div className="greenBlock" />
-        <Link to="/dashboard" className="dashLink" id="deliver">
+        <div onClick={() => redirect()} className="dashLink" id="deliver">
           Deliver
-        </Link>
+        </div>
       </div>
     </div>
   );

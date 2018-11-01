@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+// import { CookiesProvider, withCookies } from "react-cookie";
 
 import store from "./redux/store";
 import routes from "./routes";

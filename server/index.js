@@ -1,14 +1,14 @@
 require("dotenv").config();
-const express = require("express"),
-  app = express(),
-  { SESSION_SECRET: secret, CONNECTION_STRING, PORT } = process.env,
-  port = PORT || 3006,
-  session = require("express-session"),
-  massive = require("massive"),
-  { json } = require("body-parser"),
-  cors = require("cors"),
-  authCtrl = require("./controllers/authCtrl"),
-  masterRoutes = require("./masterRoutes");
+const express = require("express");
+const app = express();
+const { SESSION_SECRET: secret, CONNECTION_STRING, PORT } = process.env;
+const port = PORT || 3006;
+const session = require("express-session");
+const massive = require("massive");
+const { json } = require("body-parser");
+const cors = require("cors");
+const authCtrl = require("./controllers/authCtrl");
+const masterRoutes = require("./masterRoutes");
 
 app.use(json());
 app.use(cors());

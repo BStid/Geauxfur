@@ -70,7 +70,7 @@ class SideNav extends Component {
           <Link to="/safety">
             <div className="safetyButton">
               <img src={safetyIcon} alt="safety icon" className="safetyIcon" />
-              Saftey
+              Safety
             </div>
           </Link>
         </div>
