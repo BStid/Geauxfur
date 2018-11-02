@@ -15,7 +15,7 @@ class TopNav extends Component {
         <Link to="/" className="">
           <div className="iconContainer">
             <img src={logo} alt="logo" className="logo" />
-            <p className="logoText">PROJECT-Z</p>
+            <p className="logoText">GEAUXFUR</p>
           </div>
         </Link>
         <div className="header">

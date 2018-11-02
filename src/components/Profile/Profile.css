@@ -1,0 +1,87 @@
+.profileOuter {
+  height: 100vh;
+  width: 75vw;
+  background-color: rgb(24, 24, 24);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.profileCard {
+  height: 100%;
+  width: 20%;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileImageContainer {
+  height: 23vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImage {
+  width: 70%;
+  overflow: hidden;
+}
+.profileName {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: bolder;
+  letter-spacing: 6px;
+}
+#imageUploader {
+  position: absolute !important;
+  top: 87px !important;
+  width: 200px !important;
+  height: 200px !important;
+  border: 2px none rgb(153, 153, 153) !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+.profileCardText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5%;
+}
+#helpUploadText {
+  color: #8b8b8b;
+  font-size: 12px;
+  position: relative;
+  top: 0;
+}
+
+.editProfileLink {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #259e66;
+  font-weight: 700;
+}
+.profileInfo {
+  height: 100%;
+  width: 80%;
+  border: 1px red solid;
+  display: flex;
+  flex-direction: column;
+}
+.shortHistory {
+  height: 40%;
+  width: 100%;
+  border: 1px blue solid;
+}
+.reviewContainer {
+  height: 40%;
+  width: 100%;
+  border: 1px yellow solid;
+}
+.badgeContainer {
+  height: 20%;
+  width: 100%;
+  border: 1px orange solid;
+}

@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import TopNav from "../Nav/TopNav";
 import SideNav from "../Nav/SideNav";
-import Cards from "../Cards/Cards";
-import Map from "../Map/Map";
+import routes from "../../routes";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -15,8 +14,7 @@ class Dashboard extends Component {
           <TopNav />
           <div className="mainContent">
             <SideNav />
-            <Cards />
-            <Map />
+            {routes}
           </div>
         </div>
       </div>

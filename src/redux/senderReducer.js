@@ -37,6 +37,7 @@ export function getDriverRoute(
   };
 }
 //Get Route Driver is Taking to Deliver Item at the Destination
+//TODO: ADD THE OTHER THREE DIRECTION FUNCTION (one for sender, two for driver)
 export function getDriverDestination(
   senderCurrentLong,
   senderCurrentLat,

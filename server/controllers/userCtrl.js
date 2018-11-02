@@ -5,7 +5,14 @@ const addLocation = (req, res) => {
     res.status(200).json(response);
   });
 };
+const getUser = (req, res) => {
+  let db = req.app.get("db");
+  db.get_user(req.user.auth_id).then(response => {
+    res.status(200).json(response);
+  });
+};
 
 module.exports = {
-  addLocation
+  addLocation,
+  getUser
 };

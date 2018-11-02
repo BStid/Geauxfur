@@ -19,13 +19,13 @@ class SideNav extends Component {
     return (
       <div className="sideContainer">
         <div className="sideNav">
-          <Link to="/dashboard">
+          <Link to="/dashboard/content">
             <div className="homeButton">
               <img src={homeIcon} alt="home icon" className="homeIcon" />
-              Home
+              Dashboard
             </div>
           </Link>
-          <Link to="/profile">
+          <Link to="/dashboard/profile">
             <div className="profileButton">
               <img
                 src={profileButton}
@@ -36,7 +36,7 @@ class SideNav extends Component {
               Profile
             </div>
           </Link>
-          <Link to="/messages">
+          <Link to="/dashboard/messages">
             <div className="messagesButton">
               <img
                 src={messagesIcon}
@@ -47,7 +47,7 @@ class SideNav extends Component {
               Messages
             </div>
           </Link>
-          <Link to="/payment">
+          <Link to="/dashboard/payment">
             <div className="paymentButton">
               <img
                 src={paymentIcon}
@@ -57,7 +57,7 @@ class SideNav extends Component {
               Payment
             </div>
           </Link>
-          <Link to="/history">
+          <Link to="/dashboard/history">
             <div className="historyButton">
               <img
                 src={historyIcon}
@@ -67,7 +67,7 @@ class SideNav extends Component {
               History
             </div>
           </Link>
-          <Link to="/safety">
+          <Link to="/dashboard/safety">
             <div className="safetyButton">
               <img src={safetyIcon} alt="safety icon" className="safetyIcon" />
               Safety
