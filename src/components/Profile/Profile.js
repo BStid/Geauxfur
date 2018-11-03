@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import userDefaultPicture from "../Nav/pictures/userDefault.png";
 import S3Uploader from "./S3Uploader";
 import { Link } from "react-router-dom";
 import { getUser } from "../../redux/mainReducer";
@@ -22,21 +21,7 @@ class Profile extends Component {
       <div className="profileOuter">
         <div className="profileCard">
           <div className="profileImageContainer">
-            {!userInfo.image_url ? (
-              <img
-                src={userDefaultPicture}
-                alt="default image"
-                className="profileImage"
-              />
-            ) : (
-              <img
-                src={userInfo.image_url}
-                className="profileImage"
-                alt="user profile image"
-              />
-            )}
-
-            <S3Uploader />
+            <S3Uploader image_url={userInfo.image_url} />
           </div>
           <div className="profileCardText">
             {console.log(userInfo.first_name)}

@@ -7,5 +7,6 @@ module.exports = app => {
 
   /** USER */
   app.post("/api/location", userCtrl.addLocation);
+  app.post("/api/image", userCtrl.addImage);
   app.get("/api/user", userCtrl.getUser);
 };

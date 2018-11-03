@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  border-bottom: 1px solid rgb(38, 169, 108);
+  border-bottom: 1px solid rgb(38, 169, 108, 0.4);
 }
 .searchIcon {
   filter: invert(100%);
