@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import AnimalIcon from "./pictures/heart.svg";
 import ApplianceIcon from "./pictures/house.svg";
 import ToolsIcon from "./pictures/lift.svg";
 import MiscIcon from "./pictures/man-walking.svg";
@@ -11,17 +10,10 @@ import "./Cards.css";
 class Cards extends Component {
   constructor() {
     super();
-    this.state = {
-      icons: [ApplianceIcon, FoodIcon, AnimalIcon, MiscIcon, ToolsIcon]
-    };
+    this.state = {};
   }
 
   render() {
-    const { icons } = this.state;
-    let iconRow = icons.map((value, index) => {
-      return <img src={value} alt="category" className="categoryIcons" />;
-    });
-
     return (
       <div className="cardsContainer">
         <div className="upperInfo">

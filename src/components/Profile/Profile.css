@@ -29,11 +29,11 @@
   width: 90%;
   border-radius: 20%;
   border: 1px solid rgba(97, 97, 97, 0.2);
-  box-shadow: 10px 6px 35px -15px rgba(97, 97, 97, 1);
+  box-shadow: 10px 6px 35px -22px rgba(97, 97, 97, 1);
   overflow: hidden;
 }
 .profileImageDefault {
-  width: 70%;
+  width: 55%;
   overflow: hidden;
 }
 .profileName {
@@ -44,10 +44,10 @@
   letter-spacing: 6px;
 }
 #imageUploader {
-  position: relative !important;
-  /* top: 87px !important; */
-  width: 95% !important;
-  height: 225px !important;
+  position: absolute !important;
+  top: 62px !important;
+  width: 2% !important;
+  height: 1px !important;
   border: 2px none rgb(153, 153, 153) !important;
   border-radius: 5px !important;
   cursor: pointer !important;
@@ -55,7 +55,23 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 8% !important;
+  padding: 7.5% !important;
+}
+.rdsu-image {
+  position: absolute;
+  top: 24px;
+  left: -4px;
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  border-radius: 20%;
+  border: 1px solid rgba(97, 97, 97, 0.2);
+  box-shadow: 10px 6px 35px -22px rgba(97, 97, 97, 1);
+  background-size: contain;
+}
+.rdsu-image img {
+  background-size: contain;
 }
 .profileCardText {
   display: flex;
@@ -76,6 +92,14 @@
   letter-spacing: 2px;
   color: #259e66;
   font-weight: 700;
+}
+.profileUserData {
+  border: 1px rgba(139, 139, 139, 0.4) solid;
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7%;
 }
 .profileInfo {
   height: 100%;

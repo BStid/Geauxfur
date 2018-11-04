@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DropzoneS3Uploader from "react-dropzone-s3-uploader";
-import userDefaultPicture from "../Nav/pictures/userDefault.png";
 import { connect } from "react-redux";
 import { addImage } from "../../redux/mainReducer";
 require("dotenv").config();
@@ -15,9 +14,9 @@ class S3Uploader extends Component {
   handleFinishedUpload = info => {
     console.log("File uploaded with filename", info.filename);
     console.log("Access it on s3 at", info.fileUrl);
-    this.props.addImage(info.fileUrl);
-    console.log(this.props.main.image);
-    this.setState({ image: this.props.main.image });
+    this.props.updateImage(info.fileUrl);
+    // await console.log(this.props.main.image);
+    // await this.setState({ image: this.props.main.image });
   };
 
   render() {
@@ -35,7 +34,7 @@ class S3Uploader extends Component {
         upload={uploadOptions}
         id="imageUploader"
       >
-        {!this.props.image_url ? (
+        {/* {!this.props.image_url ? (
           <img
             src={userDefaultPicture}
             alt="default image"
@@ -47,7 +46,7 @@ class S3Uploader extends Component {
             className="profileImage"
             alt="user profile image"
           />
-        )}
+        )} */}
       </DropzoneS3Uploader>
     );
   }
