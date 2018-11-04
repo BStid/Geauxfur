@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { getUser, addImage } from "../../redux/mainReducer";
 import S3Uploader from "./S3Uploader";
 import StarRatings from "react-star-ratings";
 import userDefaultPicture from "../Nav/pictures/userDefault.png";
-import { Link } from "react-router-dom";
-import { getUser, addImage } from "../../redux/mainReducer";
+import EditInfo from "./EditInfo/EditInfo";
 import "./Profile.css";
 
 class Profile extends Component {
   constructor() {
     super();
-    this.state = { image: null };
+    this.state = { image: null, editProfileClass: "noDisplay" };
+    this.toggleClass = this.toggleClass.bind(this);
   }
   componentDidMount() {
     this.props.getUser();
@@ -20,6 +21,13 @@ class Profile extends Component {
       .addImage(imageUrl)
       .then(this.setState({ image: this.props.main.image }));
   };
+  toggleClass() {
+    if (this.state.editProfileClass === "noDisplay") {
+      this.setState({ editProfileClass: "editOuter" });
+    } else {
+      this.setState({ editProfileClass: "noDisplay" });
+    }
+  }
   render() {
     const { userInfo } = this.props.main;
 
@@ -73,11 +81,15 @@ class Profile extends Component {
             ) : (
               <h1 className="profileName">{userInfo.last_name}</h1>
             )}
-            <Link to="/dashboard/editinfo" className="editProfileLink">
+            <h1 className="editProfileLink" onClick={() => this.toggleClass()}>
               Edit Profile Information
-            </Link>
+            </h1>
           </div>
           <div className="profileUserData">{console.log(userInfo)}</div>
+          <EditInfo
+            userInfo={userInfo}
+            editClass={this.state.editProfileClass}
+          />
         </div>
 
         <div className="profileInfo">

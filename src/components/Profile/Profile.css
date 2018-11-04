@@ -92,6 +92,7 @@
   letter-spacing: 2px;
   color: #259e66;
   font-weight: 700;
+  cursor: pointer;
 }
 .profileUserData {
   border: 1px rgba(139, 139, 139, 0.4) solid;

@@ -2,13 +2,18 @@ import axios from "axios";
 
 //Actiontypes
 const GET_USER = "GET_USER";
-const UPDATE_INPUT = "UPDATE_INPUT";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
+const UPDATE_INPUT = "UPDATE_INPUT";
+const UPDATE_PROFILE = "UPDATE_PROFILE";
 
 //InitialState
 const initialState = {
   search: "",
+  dobInput: "",
+  phoneInput: "",
+  genderInput: "",
+  emailInput: "",
   userCurrentLat: 0,
   userCurrentLong: 0,
   userInfo: [],
@@ -47,12 +52,35 @@ export const addImage = imageUrl => {
     payload: axios.post("/api/image", { imageUrl })
   };
 };
+
+//PUT
+export const updateProfile = (
+  dobInput,
+  emailInput,
+  phoneInput,
+  genderInput
+) => {
+  console.log(dobInput, emailInput, phoneInput, genderInput);
+  return {
+    type: UPDATE_PROFILE,
+    payload: axios.put("/api/profile", {
+      dobInput,
+      emailInput,
+      phoneInput,
+      genderInput
+    })
+  };
+};
 //Reducer
 export default function mainReducer(state = initialState, action) {
   console.log(action.payload);
   switch (action.type) {
     case UPDATE_INPUT:
-      console.log(action.payload.target.name, action.payload.target.value);
+      console.log(
+        "passing reducer...",
+        action.payload.target.name,
+        action.payload.target.value
+      );
       return {
         ...state,
         [action.payload.target.name]: action.payload.target.value
@@ -89,6 +117,15 @@ export default function mainReducer(state = initialState, action) {
         userInfo: action.payload.data[0]
       };
     case `${GET_USER}_REJECTED`:
+      return {
+        ...state
+      };
+    case `${UPDATE_PROFILE}_FULFILLED`:
+      return {
+        ...state,
+        updatedInfo: action.payload.data
+      };
+    case `${UPDATE_PROFILE}_REJECTED`:
       return {
         ...state
       };

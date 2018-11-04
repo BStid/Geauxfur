@@ -9,4 +9,5 @@ module.exports = app => {
   app.post("/api/location", userCtrl.addLocation);
   app.post("/api/image", userCtrl.addImage);
   app.get("/api/user", userCtrl.getUser);
+  app.put("/api/profile", userCtrl.updateProfile);
 };

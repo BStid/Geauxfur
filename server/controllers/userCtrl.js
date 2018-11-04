@@ -25,8 +25,25 @@ const addImage = (req, res) => {
     })
     .catch(err => res.status(500).send(err => console.log("Error", err)));
 };
+
+const updateProfile = (req, res) => {
+  let db = req.app.get("db");
+  const { dobInput, emailInput, phoneInput, genderInput } = req.body;
+  db.update_user([
+    dobInput,
+    emailInput,
+    phoneInput,
+    genderInput,
+    req.user.auth_id
+  ])
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => res.status(500).send(err => console.log("Error", err)));
+};
 module.exports = {
   addLocation,
   addImage,
-  getUser
+  getUser,
+  updateProfile
 };

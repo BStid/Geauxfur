@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 // import Explore from "./components/Explore/Explore";
 import Profile from "./components/Profile/Profile";
 import DashboardContent from "./components/Dashboard/DashboardContent/DashboardContent";
-import EditInfo from "./components/Profile/EditInfo";
+import EditInfo from "./components/Profile/EditInfo/EditInfo";
 
 export default (
   <Switch>

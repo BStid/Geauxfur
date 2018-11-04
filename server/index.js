@@ -43,11 +43,6 @@ app.use(
   })
 );
 
-// AWS.config.region = "us-east-2";
-// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-//   IdentityPoolId: process.env.IDENTITYPOOLID
-// });
-
 massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
   //     dbInstance
