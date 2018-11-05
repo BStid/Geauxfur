@@ -5,6 +5,7 @@ require("dotenv").config();
 const GET_DRIVER_ROUTE = "GET_DRIVER_ROUTE";
 const GET_DRIVER_DESTINATION = "GET_DRIVER_DESTINATION";
 const GET_DRIVER_COORDINATES = "GET_DRIVER_COORDINATES";
+const GET_DRIVER_NAME = "GET_DRIVER_NAME";
 
 //InitialState
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   driverDestinationLat: 0,
   driverCurrentLong: 0,
   driverCurrentLat: 0,
+  driverName: "",
   isLoading: false
 };
 
@@ -36,8 +38,15 @@ export function getDriverRoute(
     )
   };
 }
+//GET Driver's Name
+export function getDriverName(driverId) {
+  return {
+    type: GET_DRIVER_NAME,
+    payload: axios.get(`/api/name/${driverId}`)
+  };
+}
 //Get Route Driver is Taking to Deliver Item at the Destination
-//TODO: ADD THE OTHER THREE DIRECTION FUNCTION (one for sender, two for driver)
+//TODO: ADD THE OTHER THREE DIRECTION FUNCTIONS (one for sender, two for driver)
 export function getDriverDestination(
   senderCurrentLong,
   senderCurrentLat,
@@ -110,6 +119,23 @@ export default function senderReducer(state = initialState, action) {
         driverCurrentLong: action.payload.data[0].current_longitude
       };
     case `${GET_DRIVER_COORDINATES}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
+      };
+    case `${GET_DRIVER_NAME}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_DRIVER_NAME}_FULFILLED`:
+      console.log(action.payload.data[0].first_name);
+      return {
+        ...state,
+        isLoading: false,
+        driverName: action.payload.data[0].first_name
+      };
+    case `${GET_DRIVER_NAME}_REJECTED`:
       return {
         ...state,
         isLoading: false

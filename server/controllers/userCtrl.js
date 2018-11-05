@@ -6,6 +6,13 @@ const getUser = (req, res) => {
   });
 };
 
+const getOrderHistory = (req, res) => {
+  let db = req.app.get("db");
+  db.get_order_history(req.user.id).then(response => {
+    res.status(200).json(response);
+  });
+};
+
 //POST
 const addLocation = (req, res) => {
   const { userLong, userLat } = req.body;
@@ -45,5 +52,6 @@ module.exports = {
   addLocation,
   addImage,
   getUser,
-  updateProfile
+  updateProfile,
+  getOrderHistory
 };

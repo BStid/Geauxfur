@@ -6,6 +6,14 @@ const getDriverCoordinates = (req, res) => {
   });
 };
 
+const getDriverName = (req, res) => {
+  console.log(req.params.driverId);
+  let db = req.app.get("db");
+  db.get_driver_name(req.params.driverId).then(response => {
+    res.status(200).json(response);
+  });
+};
 module.exports = {
-  getDriverCoordinates
+  getDriverCoordinates,
+  getDriverName
 };

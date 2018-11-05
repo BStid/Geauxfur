@@ -1,16 +1,14 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-// import Title from "./components/Title/Title";
-// import Explore from "./components/Explore/Explore";
 import Profile from "./components/Profile/Profile";
 import DashboardContent from "./components/Dashboard/DashboardContent/DashboardContent";
-import EditInfo from "./components/Profile/EditInfo/EditInfo";
+import History from "./components/History/History";
 
 export default (
   <Switch>
     <Route path="/dashboard/content" exact component={DashboardContent} />
     <Route path="/dashboard/profile" component={Profile} />
-    <Route path="/dashboard/editinfo" component={EditInfo} />
+    <Route path="/dashboard/history" component={History} />
     {/* <Route path="/explore" component={Explore} /> */}
     {/* <Route path="/item/:id" component={ListItem} /> */}
     <Route

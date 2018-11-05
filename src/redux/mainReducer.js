@@ -2,6 +2,7 @@ import axios from "axios";
 
 //Actiontypes
 const GET_USER = "GET_USER";
+const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
 const UPDATE_INPUT = "UPDATE_INPUT";
@@ -18,7 +19,9 @@ const initialState = {
   userCurrentLong: 0,
   userInfo: [],
   image: "",
-  imageError: ""
+  imageError: "",
+  orderHistory: [],
+  isLoading: false
 };
 
 //Action Creators
@@ -32,10 +35,18 @@ export const updateInput = input => {
   };
 };
 
+//GET
 export const getUser = () => {
   return {
     type: GET_USER,
     payload: axios.get("/api/user")
+  };
+};
+
+export const getOrderHistory = () => {
+  return {
+    type: GET_ORDER_HISTORY,
+    payload: axios.get("/api/history")
   };
 };
 
@@ -128,6 +139,23 @@ export default function mainReducer(state = initialState, action) {
     case `${UPDATE_PROFILE}_REJECTED`:
       return {
         ...state
+      };
+    case `${GET_ORDER_HISTORY}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_ORDER_HISTORY}_FULFILLED`:
+      console.log(action.payload.data);
+      return {
+        ...state,
+        orderHistory: action.payload.data,
+        isLoading: false
+      };
+    case `${GET_ORDER_HISTORY}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
       };
     default:
       return state;

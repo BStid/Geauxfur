@@ -5,12 +5,17 @@ import S3Uploader from "./S3Uploader";
 import StarRatings from "react-star-ratings";
 import userDefaultPicture from "../Nav/pictures/userDefault.png";
 import EditInfo from "./EditInfo/EditInfo";
+// import ProfileInfo from "./ProfileInfo";
 import "./Profile.css";
 
 class Profile extends Component {
   constructor() {
     super();
-    this.state = { image: null, editProfileClass: "noDisplay" };
+    this.state = {
+      image: null,
+      editProfileClass: "noDisplay",
+      infoClass: "infoClass"
+    };
     this.toggleClass = this.toggleClass.bind(this);
   }
   componentDidMount() {
@@ -23,14 +28,14 @@ class Profile extends Component {
   };
   toggleClass() {
     if (this.state.editProfileClass === "noDisplay") {
-      this.setState({ editProfileClass: "editOuter" });
+      this.setState({ editProfileClass: "editOuter", infoClass: "noDisplay" });
     } else {
-      this.setState({ editProfileClass: "noDisplay" });
+      this.setState({ editProfileClass: "noDisplay", infoClass: "infoClass" });
     }
   }
   render() {
     const { userInfo } = this.props.main;
-
+    //TODO: Fix "Profile.js" so that it will not push everything up when rendered
     return (
       <div className="profileOuter">
         <div className="profileCard">
@@ -87,9 +92,10 @@ class Profile extends Component {
           </div>
           <div className="profileUserData">{console.log(userInfo)}</div>
           <EditInfo
-            userInfo={userInfo}
             editClass={this.state.editProfileClass}
+            userInfo={userInfo}
           />
+          {/* <ProfileInfo infoClass={this.state.infoClass} userInfo={userInfo} /> */}
         </div>
 
         <div className="profileInfo">
