@@ -33,11 +33,11 @@
 }
 .sectionContainer {
   height: 20%;
-  width: 100%;
+  width: 92%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .categorySelector {
   color: #ffffff;
@@ -48,7 +48,8 @@
 .dobInput,
 .emailInput,
 .phoneInput,
-.genderInput {
+.genderInput,
+.nameInput {
   background-color: rgb(54, 54, 54);
   height: 41%;
   width: 60%;

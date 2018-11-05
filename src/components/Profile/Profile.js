@@ -94,6 +94,7 @@ class Profile extends Component {
           <EditInfo
             editClass={this.state.editProfileClass}
             userInfo={userInfo}
+            toggleClass={this.toggleClass}
           />
           {/* <ProfileInfo infoClass={this.state.infoClass} userInfo={userInfo} /> */}
         </div>

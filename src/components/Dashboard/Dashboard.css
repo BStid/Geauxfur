@@ -23,4 +23,5 @@
   width: 75vw;
   display: flex;
   flex-direction: row;
+  border-top: 1px solid rgb(38, 169, 108, 0.4);
 }

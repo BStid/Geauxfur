@@ -69,16 +69,27 @@ export const updateProfile = (
   dobInput,
   emailInput,
   phoneInput,
-  genderInput
+  genderInput,
+  firstNameInput,
+  lastNameInput
 ) => {
-  console.log(dobInput, emailInput, phoneInput, genderInput);
+  console.log(
+    dobInput,
+    emailInput,
+    phoneInput,
+    genderInput,
+    firstNameInput,
+    lastNameInput
+  );
   return {
     type: UPDATE_PROFILE,
     payload: axios.put("/api/profile", {
       dobInput,
       emailInput,
       phoneInput,
-      genderInput
+      genderInput,
+      firstNameInput,
+      lastNameInput
     })
   };
 };

@@ -8,19 +8,21 @@ class DisplayHistory extends Component {
     super();
     this.state = {};
   }
-  componentDidMount() {
-    this.props.getDriverName(this.props.value.user_id_driver);
-  }
+  componentDidMount() {}
   render() {
-    console.log(this.props.sender.driverName);
     const { value } = this.props;
+
     return (
       <div className="historyCard">
-        <h1>{value.name}</h1>
-        <h2>To: {value.address}</h2>
-        <h2>Time Sent: {value.time_sent}</h2>
-        <h2>Time Recieved: {value.time_recieved}</h2>
-        <h2>Driver: {this.props.sender.driverName}</h2>
+        <h1 className="historyTitle">{value.name}</h1>
+        <div className="historyInfoContainer">
+          <div className="historyInfo">To: {value.address}</div>
+          <div className="historyInfo">Time Sent: {value.time_sent}</div>
+          <div className="historyInfo">
+            Time Recieved: {value.time_recieved}
+          </div>
+          <div className="historyInfo">Driver: {value.driver_name}</div>
+        </div>
       </div>
     );
   }

@@ -15,15 +15,39 @@ class EditInfo extends Component {
       dobInput,
       genderInput,
       emailInput,
-      phoneInput
+      phoneInput,
+      firstNameInput,
+      lastNameInput
     } = this.props.main;
     const { updateInput, updateProfile } = this.props;
     return (
       <div className={this.props.editClass}>
         <div className="sectionContainer">
+          <h3 className="categorySelector">First Name: </h3>{" "}
+          <input
+            defaultValue={userInfo.first_name}
+            className="nameInput"
+            name="firstNameInput"
+            type="text"
+            placeholder="Enter First Name Here"
+            onChange={e => updateInput(e)}
+          />
+        </div>
+        <div className="sectionContainer">
+          <h3 className="categorySelector">Last Name: </h3>{" "}
+          <input
+            defaultValue={userInfo.last_name}
+            className="nameInput"
+            name="lastNameInput"
+            type="text"
+            placeholder="Enter Last Name Here"
+            onChange={e => updateInput(e)}
+          />
+        </div>
+        <div className="sectionContainer">
           <h3 className="categorySelector">DOB: </h3>{" "}
           <input
-            value={userInfo.dob}
+            defaultValue={userInfo.dob}
             className="dobInput"
             name="dobInput"
             type="date"
@@ -35,7 +59,7 @@ class EditInfo extends Component {
         <div className="sectionContainer">
           <h3 className="categorySelector">Email: </h3>{" "}
           <input
-            value={userInfo.email}
+            defaultValue={userInfo.email}
             className="emailInput"
             name="emailInput"
             type="email"
@@ -46,7 +70,7 @@ class EditInfo extends Component {
         <div className="sectionContainer">
           <h3 className="categorySelector">Phone: </h3>{" "}
           <input
-            value={userInfo.phone}
+            defaultValue={userInfo.phone}
             className="phoneInput"
             name="phoneInput"
             type="text"
@@ -68,7 +92,14 @@ class EditInfo extends Component {
         <button
           className="submitButton"
           onClick={() =>
-            updateProfile(dobInput, emailInput, phoneInput, genderInput)
+            updateProfile(
+              dobInput,
+              emailInput,
+              phoneInput,
+              genderInput,
+              firstNameInput,
+              lastNameInput
+            ).then(this.props.toggleClass())
           }
         >
           {" "}
