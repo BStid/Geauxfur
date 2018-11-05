@@ -20,6 +20,7 @@
   transition: 0.7s;
   position: relative;
   left: 0%;
+  overflow: hidden;
 }
 .noDisplay {
   display: flex;
@@ -30,6 +31,7 @@
   height: 40vh;
   width: 100%;
   transition: 0.7s;
+  overflow: hidden;
 }
 .sectionContainer {
   height: 20%;
@@ -74,4 +76,11 @@
   border-radius: 8px;
   cursor: pointer;
   margin-top: 2%;
+}
+.submitButton:focus {
+  outline: none;
+  border: 1px solid rgba(38, 169, 108, 0.8);
+  background-color: rgba(0, 128, 0, 0.9);
+  font-weight: 400;
+  color: rgb(0, 0, 0);
 }

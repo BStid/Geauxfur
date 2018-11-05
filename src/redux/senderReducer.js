@@ -6,6 +6,7 @@ const GET_DRIVER_ROUTE = "GET_DRIVER_ROUTE";
 const GET_DRIVER_DESTINATION = "GET_DRIVER_DESTINATION";
 const GET_DRIVER_COORDINATES = "GET_DRIVER_COORDINATES";
 const GET_DRIVER_NAME = "GET_DRIVER_NAME";
+const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
 
 //InitialState
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   driverCurrentLong: 0,
   driverCurrentLat: 0,
   driverName: "",
+  driverPicture: "",
   isLoading: false
 };
 
@@ -43,6 +45,14 @@ export function getDriverName(driverId) {
   return {
     type: GET_DRIVER_NAME,
     payload: axios.get(`/api/name/${driverId}`)
+  };
+}
+
+//GET Driver's Picture
+export function getDriverPicture(driverId) {
+  return {
+    type: GET_DRIVER_PICTURE,
+    payload: axios.get(`/api/picture/${driverId}`)
   };
 }
 //Get Route Driver is Taking to Deliver Item at the Destination
@@ -136,6 +146,23 @@ export default function senderReducer(state = initialState, action) {
         driverName: action.payload.data[0].first_name
       };
     case `${GET_DRIVER_NAME}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
+      };
+    case `${GET_DRIVER_PICTURE}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_DRIVER_PICTURE}_FULFILLED`:
+      console.log(action.payload.data[0].image_url);
+      return {
+        ...state,
+        isLoading: false,
+        driverPicture: action.payload.data[0].image_url
+      };
+    case `${GET_DRIVER_PICTURE}_REJECTED`:
       return {
         ...state,
         isLoading: false

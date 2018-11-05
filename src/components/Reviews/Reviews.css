@@ -1,0 +1,45 @@
+.addReviewOuter {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addReviewContainer {
+  font-family: "Open Sans Condensed", sans-serif;
+  height: 50vh;
+  width: 35vw;
+  margin: 2px 25px;
+  font-size: 35px;
+  font-weight: 700;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+  color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
+  box-shadow: 6px -2px 35px -16px rgba(0, 128, 128, 1);
+  border-top: 2px solid rgba(0, 128, 128, 0.6);
+  transition: 0.6s;
+}
+.reviewInput {
+  height: 8vh;
+  width: 73%;
+  background-color: rgb(54, 54, 54);
+  border: 2px solid rgba(128, 128, 128, 0.1);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  letter-spacing: 0.21px;
+  text-align: start;
+  outline: none;
+  padding-left: 3%;
+  font-weight: 600;
+}
+.userIconReview {
+  width: 25%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+}

@@ -5,6 +5,7 @@ module.exports = app => {
   /** SENDER */
   app.get("/api/userlocation", senderCtrl.getDriverCoordinates);
   app.get("/api/name/:driverId", senderCtrl.getDriverName);
+  app.get("/api/picture/:driverId", senderCtrl.getDriverPicture);
 
   /** USER */
   app.get("/api/user", userCtrl.getUser);

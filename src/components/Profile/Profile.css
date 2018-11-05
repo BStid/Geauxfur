@@ -10,8 +10,8 @@
   height: 100%;
   width: 25%;
   border-left: 1px solid rgb(97, 97, 97, 0.2);
-  border-right: 1px solid rgba(97, 97, 97, 0.4);
-  box-shadow: 6px -2px 35px -13px rgba(0, 128, 0, 1);
+  /* border-right: 1px solid rgba(97, 97, 97, 0.4);
+  box-shadow: 6px -2px 35px -13px rgba(0, 128, 0, 1); */
   display: flex;
   flex-direction: column;
   align-items: center;
