@@ -45,6 +45,8 @@ const addReview = (req, res) => {
 };
 //PUT
 const updateProfile = (req, res) => {
+  console.log("req.user", req.user);
+  console.log("body", req.body);
   let db = req.app.get("db");
   const {
     dobInput,

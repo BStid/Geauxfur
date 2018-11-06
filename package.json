@@ -29,11 +29,14 @@
     "react-s3-uploader": "^4.8.0",
     "react-scripts": "2.0.5",
     "react-star-ratings": "^2.3.0",
+    "react-stripe-checkout": "^2.6.3",
+    "react-stripe-elements": "^2.0.1",
     "react-tilt": "^0.1.4",
     "react-virtualized": "^9.21.0",
     "redux": "^4.0.1",
     "redux-promise-middleware": "^5.1.1",
-    "s3-uploader": "^2.0.3"
+    "s3-uploader": "^2.0.3",
+    "stripe": "^6.13.0"
   },
   "scripts": {
     "start": "react-scripts start",

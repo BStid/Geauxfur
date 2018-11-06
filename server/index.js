@@ -16,6 +16,7 @@ const cors = require("cors");
 const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
 const AWS = require("aws-sdk");
+const configureRoutes = require("./services/stripe/stripe");
 
 app.use(json());
 app.use(cors());
@@ -29,6 +30,9 @@ app.use(
     }
   })
 );
+
+configureRoutes(app);
+
 AWS.config.update({
   accessKeyId: AWS_ACCESS_KEY_ID,
   secretAccessKey: AWS_SECRET_ACCESS_KEY

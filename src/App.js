@@ -3,9 +3,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Title from "./components/Title/Title";
 import Dashboard from "./components/Dashboard/Dashboard";
-
-// import { CookiesProvider, withCookies } from "react-cookie";
-
 import store from "./redux/store";
 import "./App.css";
 

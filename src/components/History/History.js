@@ -7,15 +7,32 @@ import { getOrderHistory } from "../../redux/mainReducer";
 class History extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      card: "historyCard",
+      title: "historyTitle",
+      infoContainer: "historyInfoContainer",
+      info: "historyInfo",
+      addButton: "addReviewButton"
+    };
   }
   componentDidMount() {
     this.props.getOrderHistory();
   }
   render() {
     const { orderHistory } = this.props.main;
+    const { card, title, infoContainer, info, addButton } = this.state;
     const displayHistory = orderHistory.map((value, index) => {
-      return <DisplayHistory value={value} key={index} />;
+      return (
+        <DisplayHistory
+          value={value}
+          key={index}
+          card={card}
+          title={title}
+          infoContainer={infoContainer}
+          info={info}
+          addButton={addButton}
+        />
+      );
     });
     return <div className="historyOuter">{displayHistory}</div>;
   }

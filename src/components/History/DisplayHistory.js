@@ -12,26 +12,23 @@ class DisplayHistory extends Component {
   }
 
   render() {
-    const { value } = this.props;
-
+    const { value, card, title, infoContainer, info, addButton } = this.props;
     return (
-      <div className="historyCard">
+      <div className={card}>
         <div className="iconType">
           <Icons category={value.category} />
         </div>
-        <h1 className="historyTitle">{value.name}</h1>
-        <div className="historyInfoContainer">
-          <div className="historyInfo">To: {value.address}</div>
-          <div className="historyInfo">Time Sent: {value.time_sent}</div>
-          <div className="historyInfo">
-            Time Recieved: {value.time_recieved}
-          </div>
-          <div className="historyInfo">Driver: {value.driver_name}</div>
+        <h1 className={title}>{value.name}</h1>
+        <div className={infoContainer}>
+          <div className={info}>To: {value.address}</div>
+          <div className={info}>Time Sent: {value.time_sent}</div>
+          <div className={info}>Time Recieved: {value.time_recieved}</div>
+          <div className={info}>Driver: {value.driver_name}</div>
         </div>
         <Link
           to={`/dashboard/review/${value.user_id_driver}/${value.id}`}
           key={value.id}
-          className="addReviewButton"
+          className={addButton}
         >
           Add Review
         </Link>

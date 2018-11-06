@@ -112,7 +112,23 @@
 .shortHistory {
   height: 40%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: 6px -2px 35px -13px rgba(0, 0, 128, 1);
   /* border: 1px blue solid; */
+}
+.shTitle {
+  font-size: 17px;
+  margin: 25px;
+  letter-spacing: 1px;
+}
+.displaySH {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .reviewContainer {
   height: 40%;

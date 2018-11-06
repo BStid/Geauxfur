@@ -25,7 +25,7 @@ const initialState = {
   review: "",
   reviewError: "",
   orderHistory: [],
-  isLoading: false
+  isLoading: true
 };
 
 //Action Creators
@@ -156,16 +156,19 @@ export default function mainReducer(state = initialState, action) {
       };
     case `${GET_USER}_PENDING`:
       return {
-        ...state
+        ...state,
+        isLoading: true
       };
     case `${GET_USER}_FULFILLED`:
       return {
         ...state,
-        userInfo: action.payload.data[0]
+        userInfo: action.payload.data[0],
+        isLoading: false
       };
     case `${GET_USER}_REJECTED`:
       return {
-        ...state
+        ...state,
+        isLoading: false
       };
     case `${UPDATE_PROFILE}_FULFILLED`:
       return {

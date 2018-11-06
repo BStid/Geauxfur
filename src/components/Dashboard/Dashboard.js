@@ -7,6 +7,8 @@ import routes from "../../routes";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
+  componentDidMount() {}
+
   render() {
     return (
       <div className="dashboardOuter">

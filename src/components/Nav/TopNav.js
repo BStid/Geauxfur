@@ -2,14 +2,26 @@ import React, { Component } from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateInput } from "../../redux/mainReducer";
+import { updateInput, getUser } from "../../redux/mainReducer";
 import searchIcon from "./pictures/search.svg";
 import moreIcon from "./pictures/moreIcon.svg";
 import userDefaultIcon from "./pictures/userDefault.png";
 import logo from "../../pictures/gopherHeadSillo.png";
 
 class TopNav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userInfo: []
+    };
+  }
+  componentDidMount() {
+    this.props.getUser();
+    console.log(this.props.main);
+  }
   render() {
+    const { userInfo } = this.props.main;
+
     return (
       <div className="topNavContainer">
         <Link to="/" className="">
@@ -33,15 +45,33 @@ class TopNav extends Component {
 
           <div className="userProfileCard">
             <div className="userInfo">
-              <p className="userName">User</p>
+              {console.log(this.props.main)}
+              {!userInfo.first_name ? (
+                <p className="userName">User</p>
+              ) : (
+                <p className="userName">{userInfo.first_name}</p>
+              )}
               <br />
-              <p className="userEmail">thisismyemail@email.com</p>
+              {!userInfo.email ? (
+                <p className="userEmail">useremail@geauxfur.com</p>
+              ) : (
+                <p className="userEmail">{userInfo.email}</p>
+              )}
             </div>
-            <img
-              src={userDefaultIcon}
-              alt="user picture"
-              className="userImage"
-            />
+
+            {!userInfo.image_url ? (
+              <img
+                src={userDefaultIcon}
+                alt="user picture"
+                className="userImage"
+              />
+            ) : (
+              <img
+                src={userInfo.image_url}
+                alt="user picture"
+                className="userImage"
+              />
+            )}
           </div>
           <div className="moreContainer">
             <img src={moreIcon} alt="more" className="moreIcon" />
@@ -52,12 +82,9 @@ class TopNav extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    input: state.input
-  };
-};
+const mapStateToProps = state => state;
+
 export default connect(
   mapStateToProps,
-  { updateInput }
+  { updateInput, getUser }
 )(TopNav);
