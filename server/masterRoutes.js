@@ -12,5 +12,6 @@ module.exports = app => {
   app.get("/api/history", userCtrl.getOrderHistory);
   app.post("/api/location", userCtrl.addLocation);
   app.post("/api/image", userCtrl.addImage);
+  app.post("/api/review", userCtrl.addReview);
   app.put("/api/profile", userCtrl.updateProfile);
 };

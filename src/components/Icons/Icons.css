@@ -2,23 +2,3 @@
   width: 50%;
   filter: invert(50%);
 }
-.addReviewButton {
-  width: 50%;
-  height: 10%;
-  border: 1px solid rgb(0, 128, 128);
-  background-color: rgb(38, 38, 38);
-  color: rgb(0, 128, 128);
-  font-size: 16px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.6s;
-}
-.addReviewButton:focus {
-  outline: none;
-}

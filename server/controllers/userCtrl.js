@@ -33,6 +33,17 @@ const addImage = (req, res) => {
     .catch(err => res.status(500).send(err => console.log("Error", err)));
 };
 
+const addReview = (req, res) => {
+  let db = req.app.get("db");
+  console.log(req);
+  const { review, rating, driverId } = req.body;
+  db.add_review([review, rating, driverId, req.user.id])
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => res.status(500).send(err => console.log("Error", err)));
+};
+//PUT
 const updateProfile = (req, res) => {
   let db = req.app.get("db");
   const {
@@ -62,5 +73,6 @@ module.exports = {
   addImage,
   getUser,
   updateProfile,
-  getOrderHistory
+  getOrderHistory,
+  addReview
 };

@@ -5,6 +5,7 @@ const GET_USER = "GET_USER";
 const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
+const ADD_REVIEW = "ADD_REVIEW";
 const UPDATE_INPUT = "UPDATE_INPUT";
 const UPDATE_PROFILE = "UPDATE_PROFILE";
 
@@ -15,11 +16,14 @@ const initialState = {
   phoneInput: "",
   genderInput: "",
   emailInput: "",
+  reviewInput: "",
   userCurrentLat: 0,
   userCurrentLong: 0,
   userInfo: [],
   image: "",
   imageError: "",
+  review: "",
+  reviewError: "",
   orderHistory: [],
   isLoading: false
 };
@@ -63,7 +67,12 @@ export const addImage = imageUrl => {
     payload: axios.post("/api/image", { imageUrl })
   };
 };
-
+export const addReview = (review, rating, driverId) => {
+  return {
+    type: ADD_REVIEW,
+    payload: axios.post("/api/review", { review, rating, driverId })
+  };
+};
 //PUT
 export const updateProfile = (
   dobInput,
@@ -127,6 +136,22 @@ export default function mainReducer(state = initialState, action) {
       return {
         ...state,
         imageError: "Image Upload Unsuccessful",
+        isLoading: false
+      };
+    case `${ADD_REVIEW}_FULFILLED`:
+      return {
+        ...state,
+        review: action.payload.data
+      };
+    case `${ADD_REVIEW}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${ADD_REVIEW}_REJECTED`:
+      return {
+        ...state,
+        reviewError: "Image Upload Unsuccessful",
         isLoading: false
       };
     case `${GET_USER}_PENDING`:
