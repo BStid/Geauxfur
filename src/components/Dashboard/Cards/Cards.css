@@ -1,39 +1,137 @@
 .cardsContainer {
-  height: 100%;
+  height: 40%;
   width: 50%;
-  /* border: 1px white solid; */
-  border-left: 1px solid rgba(38, 169, 108, 0.4);
+  top: 20%;
+  left: 31%;
+  border-left: 3px solid rgba(38, 169, 108, 0.9);
   display: flex;
   flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
 }
-
+/* .cardsContainer {
+  height: 39%;
+  width: 65%;
+  top: 13%;
+  left: 19%;
+  border-left: 3px solid rgba(38, 169, 108, 0.9);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
+} */
 .upperInfo {
   /* border: 1px white solid; */
   height: 30vh;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  padding-top: 3%;
 }
 .headerTitle {
   height: 75%;
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
 }
+.headerTitle2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.geauxfurText {
+  width: 20%;
+  height: 15%;
+  margin: 0px 11px;
+}
+.subHeaderDash {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.searchBarDash {
+  background-color: rgba(242, 242, 242, 0.9);
+  height: 25%;
+  width: 50%;
+  margin: 15px;
+  border: 1px solid rgb(33, 34, 34);
+  color: rgb(38, 38, 38);
+  font-size: 14px;
+  letter-spacing: 0.21px;
+  text-align: start;
+  outline: none;
+  padding-left: 3%;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.questionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  justify-content: center;
+}
+.questionDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+.heavyQuestion {
+  height: 25%;
+  width: 50%;
+  margin: 15px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  letter-spacing: 0.21px;
+  text-align: center;
+  outline: none;
+  padding-left: 3%;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.questionButton {
+  width: 20%;
+  height: 20%;
+  border: 1px solid rgba(38, 169, 108, 0.8);
+  background-color: rgba(38, 38, 38, 0.8);
+  color: rgba(38, 169, 108, 0.8);
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
 .categoryContainer {
   height: 25%;
   width: 100%;
   display: flex;
   flex-direction: row;
-}
-
-.categoryIcons {
-  height: 100%;
-  width: auto;
-  margin: 0px 48px;
-  cursor: pointer;
-  opacity: 0.5;
-}
-.categoryIcons:nth-child(even) {
-  filter: invert(100%);
 }

@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ApplianceIcon from "./pictures/house.svg";
-import ToolsIcon from "./pictures/lift.svg";
-import MiscIcon from "./pictures/man-walking.svg";
-import FoodIcon from "./pictures/food.svg";
-
+import { updateInput } from "../../../redux/mainReducer";
+import GeauxfurText from "./pictures/GeauxfurText.png";
 import "./Cards.css";
+import "../../Map/MapBoxOverWrite.css";
+import Questions from "./Questions";
 
 class Cards extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
@@ -17,8 +16,22 @@ class Cards extends Component {
     return (
       <div className="cardsContainer">
         <div className="upperInfo">
-          <div className="headerTitle" />
-          <div className="categoryContainer">{/* {iconRow} */}</div>
+          <div className="headerTitle">
+            Take your delivery to the next level.
+            <div className="headerTitle2">
+              {" "}
+              Just
+              <img src={GeauxfurText} alt="Geauxfur" className="geauxfurText" />
+              it!
+            </div>
+            <div className="subHeaderDash">
+              Search an address and send an item
+            </div>
+          </div>
+          <Questions
+            displayGeoCoder={this.props.displayGeoCoder}
+            addGeoCoder={this.props.addGeoCoder}
+          />
         </div>
         <div className="mainInfo" />
       </div>
@@ -30,4 +43,7 @@ const mapStateToProps = state => {
   return state;
 };
 
-export default connect(mapStateToProps)(Cards);
+export default connect(
+  mapStateToProps,
+  { updateInput }
+)(Cards);

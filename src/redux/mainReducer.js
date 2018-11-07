@@ -13,6 +13,8 @@ const UPDATE_PROFILE = "UPDATE_PROFILE";
 //InitialState
 const initialState = {
   search: "",
+  itemType: "",
+  weightInput: 0,
   dobInput: "",
   phoneInput: "",
   genderInput: "",

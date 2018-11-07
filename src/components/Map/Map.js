@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./Map.css";
 import ReactMapGL, { Marker, FlyToInterpolator } from "react-map-gl";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import {
   getDriverCoordinates,
   getDriverRoute
 } from "../../redux/senderReducer";
 import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
+import Cards from "../Dashboard/Cards/Cards";
 import mapMarker from "./pictures/green_pin.png";
 import gps from "./pictures/gps.png";
 import "mapbox-gl/dist/mapbox-gl.css";
+import "./Map.css";
 require("dotenv").config();
 
 class Map extends Component {
@@ -41,6 +43,7 @@ class Map extends Component {
     console.log("drawing route...");
 
     await this.setState({ nothing: "" });
+
     const map = this.reactMap.getMap();
     map.on("render", () => {
       map.addLayer({
@@ -85,8 +88,18 @@ class Map extends Component {
       });
     });
   }
+  addGeoCoder() {
+    const map = this.reactMap.getMap();
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
+      })
+    );
+  }
+
   componentDidMount() {
     this.locateUser();
+    this.addGeoCoder();
   }
   render() {
     let latitude = this.state.viewport.latitude;
@@ -108,12 +121,12 @@ class Map extends Component {
               {...this.state.viewport}
               onViewportChange={viewport => this.setState({ viewport })}
             >
-              <Marker
+              {/* <Marker
                 latitude={latitude}
                 longitude={longitude}
                 captureScroll={true}
                 dynamicPosition={true}
-              />
+              /> */}
               <Marker
                 latitude={32.7776}
                 longitude={-96.7954}

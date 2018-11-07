@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3006",
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^2.3.0",
     "@mapbox/mapbox-sdk": "^0.4.1",
     "aws-sdk": "^2.347.0",
     "axios": "^0.18.0",
