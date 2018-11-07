@@ -24,6 +24,31 @@
   border-top: 2px solid rgba(0, 128, 128, 0.6);
   transition: 0.6s;
 }
+.reviewsOuter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 90%;
+}
+.reviewsTopContainer {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Scada";
+  letter-spacing: 5px;
+}
+.reviewsMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 .reviewInput {
   height: 8vh;
   width: 73%;
@@ -66,4 +91,63 @@
 }
 .addReviewButton:focus {
   outline: none;
+}
+
+.reviewsContainer {
+  font-family: "Scada", sans-serif;
+  font-weight: 300;
+  height: 30vh;
+  margin: 10px 0px;
+  width: 15vw;
+  margin: 15px 25px;
+  border-radius: 0% 0% 5% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
+  box-shadow: 6px -2px 35px -16px rgba(240, 90, 40, 0.6);
+  border-top: 1px solid rgba(240, 90, 40, 0.5);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  overflow: hidden;
+  padding-top: 2%;
+}
+.reviewsContainer:hover {
+  box-shadow: 6px -2px 35px -7px rgba(240, 90, 40, 1);
+  border-top: 1px solid rgba(240, 90, 40, 1);
+}
+.reviewsTitle {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.reviewText {
+  font-size: 15px;
+  overflow: hidden;
+  padding: 0% 8%;
+  margin-top: 15px;
+}
+.viewAllReviews {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.linkToMore,
+.linkToMore:active,
+.linkToMore:visited {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+.viewAllButton {
+  width: 13%;
+  height: auto;
+  filter: invert(100%);
+  position: relative;
+  top: 0%;
 }

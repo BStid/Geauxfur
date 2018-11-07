@@ -124,19 +124,42 @@
   font-size: 17px;
   margin: 25px;
   letter-spacing: 1px;
+  overflow: hidden;
+  font-weight: 600;
 }
-.displaySH {
+.displaySH,
+.displayR {
   display: flex;
   flex-direction: row;
   width: 100%;
+  overflow: hidden;
 }
-.reviewContainer {
+.defaultMessage {
+  color: white;
+}
+.shortReviews {
   height: 40%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  overflow: hidden;
   /* border: 1px yellow solid; */
 }
 .badgeContainer {
-  height: 20%;
+  height: 10%;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Scada", sans-serif;
+  font-weight: 500;
+  margin-top: 20px;
   /* border: 1px orange solid; */
+}
+.profileBadge {
+  width: 8%;
+  margin: 0px 10%;
+  font-weight: 600;
 }

@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUser, addImage, getOrderHistory } from "../../redux/mainReducer";
+import { Link } from "react-router-dom";
+import {
+  getUser,
+  addImage,
+  getOrderHistory,
+  getReviews
+} from "../../redux/mainReducer";
 import S3Uploader from "./S3Uploader";
 import StarRatings from "react-star-ratings";
 import userDefaultPicture from "../Nav/pictures/userDefault.png";
+import Arrow from "./pictures/arrow.svg";
 import EditInfo from "./EditInfo/EditInfo";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import DisplayHistory from "../History/DisplayHistory";
+import DisplayReviews from "../Reviews/DisplayReviews";
+import FriendlyBadge from "./pictures/gopher_badge.png";
+import OrderBadge from "./pictures/order_badge.png";
+import ReviewBadge from "./pictures/reviews_badge.png";
 // import ProfileInfo from "./ProfileInfo";
 import "./Profile.css";
 import "./ProfileHistory.css";
@@ -22,13 +33,15 @@ class Profile extends Component {
       title: "phTitle",
       infoContainer: "phInfoContainer",
       info: "phInfo",
-      addButton: "phReviewButton"
+      addButton: "phReviewButton",
+      badges: [FriendlyBadge, OrderBadge, ReviewBadge]
     };
     this.toggleClass = this.toggleClass.bind(this);
   }
   componentDidMount() {
     this.props.getUser();
     this.props.getOrderHistory();
+    this.props.getReviews();
   }
   updateImage = imageUrl => {
     this.props
@@ -43,8 +56,8 @@ class Profile extends Component {
     }
   }
   render() {
-    const { userInfo, isLoading, orderHistory } = this.props.main;
-    const { card, title, infoContainer, info, addButton } = this.state;
+    const { userInfo, isLoading, orderHistory, reviews } = this.props.main;
+    const { card, title, infoContainer, info, addButton, badges } = this.state;
 
     let profilePicture;
     if (isLoading) {
@@ -86,6 +99,16 @@ class Profile extends Component {
           addButton={addButton}
         />
       );
+    });
+
+    const displayShortReviews = reviews.map((value, index) => {
+      if (index >= 4) {
+        return null;
+      }
+      return <DisplayReviews value={value} key={index} />;
+    });
+    const displayBadges = badges.map((value, index) => {
+      return <img src={value} alt="badge" className="profileBadge" />;
     });
     //TODO: Fix "Profile.js" so that it will not push everything up when rendered
     return (
@@ -134,12 +157,51 @@ class Profile extends Component {
         </div>
 
         <div className="profileInfo">
-          <div className="shortHistory">
-            <h3 className="shTitle">Recent History</h3>
-            <div className="displaySH">{displayShortHistory}</div>
+          <div className="badgeContainer">
+            Badges
+            {displayBadges}
           </div>
-          <div className="reviewContainer" />
-          <div className="badgeContainer" />
+          <div className="shortHistory">
+            <div className="shTitle">
+              Recent History{" "}
+              <div className="viewAllReviews">
+                <Link className="linkToMore" to="/dashboard/history">
+                  View All{" "}
+                  <img
+                    src={Arrow}
+                    alt="View All Button"
+                    className="viewAllButton"
+                  />
+                </Link>
+              </div>
+            </div>
+            <div className="displaySH">
+              {!reviews ? (
+                <div className="defaultMessage">
+                  You don't have any Reviews! Users are able to make reviews
+                  based off of orders placed. Geaux and try it!
+                </div>
+              ) : (
+                displayShortHistory
+              )}
+            </div>
+          </div>
+          <div className="shortReviews">
+            <h3 className="shTitle">
+              Recent Reviews
+              <div className="viewAllReviews">
+                <Link className="linkToMore" to="/dashboard/reviews">
+                  View All{" "}
+                  <img
+                    src={Arrow}
+                    alt="View All Button"
+                    className="viewAllButton"
+                  />
+                </Link>
+              </div>
+            </h3>
+            <div className="displayR">{displayShortReviews}</div>
+          </div>
         </div>
       </div>
     );
@@ -150,5 +212,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { getUser, addImage, getOrderHistory }
+  { getUser, addImage, getOrderHistory, getReviews }
 )(Profile);

@@ -3,6 +3,7 @@ import axios from "axios";
 //Actiontypes
 const GET_USER = "GET_USER";
 const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
+const GET_REVIEWS = "GET_REVIEWS";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
 const ADD_REVIEW = "ADD_REVIEW";
@@ -20,6 +21,7 @@ const initialState = {
   userCurrentLat: 0,
   userCurrentLong: 0,
   userInfo: [],
+  reviews: [],
   image: "",
   imageError: "",
   review: "",
@@ -53,7 +55,12 @@ export const getOrderHistory = () => {
     payload: axios.get("/api/history")
   };
 };
-
+export const getReviews = () => {
+  return {
+    type: GET_REVIEWS,
+    payload: axios.get("/api/reviews")
+  };
+};
 //POST
 export const addLocation = (userLong, userLat) => {
   return {
@@ -192,6 +199,23 @@ export default function mainReducer(state = initialState, action) {
         isLoading: false
       };
     case `${GET_ORDER_HISTORY}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
+      };
+    case `${GET_REVIEWS}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_REVIEWS}_FULFILLED`:
+      console.log(action.payload.data);
+      return {
+        ...state,
+        reviews: action.payload.data,
+        isLoading: false
+      };
+    case `${GET_REVIEWS}_REJECTED`:
       return {
         ...state,
         isLoading: false

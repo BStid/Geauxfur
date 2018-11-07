@@ -13,6 +13,12 @@ const getOrderHistory = (req, res) => {
   });
 };
 
+const getReviews = (req, res) => {
+  let db = req.app.get("db");
+  db.get_reviews(req.user.id).then(response => {
+    res.status(200).json(response);
+  });
+};
 //POST
 const addLocation = (req, res) => {
   const { userLong, userLat } = req.body;
@@ -76,5 +82,6 @@ module.exports = {
   getUser,
   updateProfile,
   getOrderHistory,
-  addReview
+  addReview,
+  getReviews
 };

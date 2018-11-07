@@ -10,6 +10,7 @@ module.exports = app => {
   /** USER */
   app.get("/api/user", userCtrl.getUser);
   app.get("/api/history", userCtrl.getOrderHistory);
+  app.get("/api/reviews", userCtrl.getReviews);
   app.post("/api/location", userCtrl.addLocation);
   app.post("/api/image", userCtrl.addImage);
   app.post("/api/review", userCtrl.addReview);
