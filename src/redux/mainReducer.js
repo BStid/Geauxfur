@@ -34,8 +34,9 @@ const initialState = {
 
 //Action Creators
 export const updateInput = input => {
-  console.log(input.target.name);
-  console.log(input.target.value);
+  // console.log(input.target.name);
+  // console.log(input.target.value);
+  console.log(input);
 
   return {
     type: UPDATE_INPUT,

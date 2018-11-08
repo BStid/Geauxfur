@@ -6,7 +6,7 @@ import "../Dashboard.css";
 export default function DashboardContent() {
   return (
     <div className="dashContentContainer">
-      <Cards />
+      {/* <Cards /> */}
       <Map />
     </div>
   );

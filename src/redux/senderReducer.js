@@ -7,6 +7,8 @@ const GET_DRIVER_DESTINATION = "GET_DRIVER_DESTINATION";
 const GET_DRIVER_COORDINATES = "GET_DRIVER_COORDINATES";
 const GET_DRIVER_NAME = "GET_DRIVER_NAME";
 const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
+const GET_ADDRESS_LATLONG = "GET_ADDRESS_LATLONG";
+const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
 
 //InitialState
 const initialState = {
@@ -19,6 +21,9 @@ const initialState = {
   driverCurrentLat: 0,
   driverName: "",
   driverPicture: "",
+  searchAddressInput: "",
+  addressLat: 0,
+  addressLong: 0,
   isLoading: false
 };
 
@@ -37,6 +42,25 @@ export function getDriverRoute(
       `https://api.mapbox.com/directions/v5/mapbox/driving/${senderCurrentLong}%2C${senderCurrentLat}%3B${driverCurrentLong}%2C${driverCurrentLat}.json?access_token=${
         process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
       }&geometries=geojson`
+    )
+  };
+}
+//Input Handler for Address Input
+export function updateAddressInput(input) {
+  return {
+    type: UPDATE_ADDRESS_INPUT,
+    payload: input
+  };
+}
+
+//GET Address Lat and Long
+export function getAddressLatLong(query) {
+  return {
+    type: GET_ADDRESS_LATLONG,
+    payload: axios.get(
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${
+        process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
+      }`
     )
   };
 }
@@ -84,6 +108,12 @@ export function getDriverCoordinates() {
 //Reducer
 export default function senderReducer(state = initialState, action) {
   switch (action.type) {
+    case UPDATE_ADDRESS_INPUT:
+      console.log("passing sender reducer...", action.payload);
+      return {
+        ...state,
+        searchAddressInput: action.payload
+      };
     case `${GET_DRIVER_ROUTE}_PENDING`:
       return {
         ...state,
@@ -125,7 +155,7 @@ export default function senderReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        driverCurrentLat: action.payload.data[0].current_latitude,
+        driverCurrentLat: action.payload.data[1].current_latitude,
         driverCurrentLong: action.payload.data[0].current_longitude
       };
     case `${GET_DRIVER_COORDINATES}_REJECTED`:
@@ -163,6 +193,24 @@ export default function senderReducer(state = initialState, action) {
         driverPicture: action.payload.data[0].image_url
       };
     case `${GET_DRIVER_PICTURE}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
+      };
+    case `${GET_ADDRESS_LATLONG}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_ADDRESS_LATLONG}_FULFILLED`:
+      console.log(action.payload.data);
+      return {
+        ...state,
+        isLoading: false,
+        addressLat: action.payload.data.features[0].geometry.coordinates[1],
+        addressLong: action.payload.data.features[0].geometry.coordinates[0]
+      };
+    case `${GET_ADDRESS_LATLONG}_REJECTED`:
       return {
         ...state,
         isLoading: false

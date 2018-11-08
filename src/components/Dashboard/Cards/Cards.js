@@ -29,8 +29,10 @@ class Cards extends Component {
             </div>
           </div>
           <Questions
-            displayGeoCoder={this.props.displayGeoCoder}
-            addGeoCoder={this.props.addGeoCoder}
+            parseAddress={this.props.parseAddress}
+            searchAddressInput={this.props.searchAddressInput}
+            latitude={this.props.latitude}
+            longitude={this.props.longitude}
           />
         </div>
         <div className="mainInfo" />

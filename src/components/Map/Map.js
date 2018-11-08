@@ -4,7 +4,9 @@ import ReactMapGL, { Marker, FlyToInterpolator } from "react-map-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import {
   getDriverCoordinates,
-  getDriverRoute
+  getDriverRoute,
+  getAddressLatLong,
+  updateAddressInput
 } from "../../redux/senderReducer";
 import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
@@ -19,6 +21,7 @@ class Map extends Component {
   constructor() {
     super();
     this.state = {
+      searchAddressInput: "",
       viewport: {
         // width: 700,
         // height: 970,
@@ -71,6 +74,7 @@ class Map extends Component {
       });
     });
   }
+
   locateUser() {
     navigator.geolocation.getCurrentPosition(position => {
       console.log("Longitude should change to", position.coords.longitude);
@@ -88,15 +92,22 @@ class Map extends Component {
       });
     });
   }
+
+  handleInput(input) {
+    console.log(input);
+    this.setState({ searchAddressInput: input });
+  }
+
   addGeoCoder() {
     const map = this.reactMap.getMap();
     map.addControl(
       new MapboxGeocoder({
-        accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
+        accessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN,
+        placeholder: "Input an Address",
+        localGeocoder: e => this.handleInput(e)
       })
     );
   }
-
   componentDidMount() {
     this.locateUser();
     this.addGeoCoder();
@@ -104,6 +115,7 @@ class Map extends Component {
   render() {
     let latitude = this.state.viewport.latitude;
     let longitude = this.state.viewport.longitude;
+
     return (
       <div className="mapBox">
         <AutoSizer defaultHeight={500} defaultWidth={700}>
@@ -121,15 +133,9 @@ class Map extends Component {
               {...this.state.viewport}
               onViewportChange={viewport => this.setState({ viewport })}
             >
-              {/* <Marker
+              <Marker
                 latitude={latitude}
                 longitude={longitude}
-                captureScroll={true}
-                dynamicPosition={true}
-              /> */}
-              <Marker
-                latitude={32.7776}
-                longitude={-96.7954}
                 offsetTop={-20}
                 captureScroll={true}
                 dynamicPosition={true}
@@ -146,10 +152,16 @@ class Map extends Component {
           className="gpsIcon"
           onClick={() => this.locateUser()}
         />
-        <button className="findRouteButton" onClick={() => this.drawRoute()}>
+        <button className="findRouteButton" onClick={() => this.parseAddress()}>
           {" "}
           Find Route{" "}
         </button>
+        <Cards
+          parseAddress={this.parseAddress}
+          searchAddressInput={this.state.searchAddressInput}
+          latitude={latitude}
+          longitude={longitude}
+        />
       </div>
     );
   }
@@ -161,5 +173,11 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getDriverCoordinates, getDriverRoute, addLocation }
+  {
+    getDriverCoordinates,
+    getDriverRoute,
+    addLocation,
+    getAddressLatLong,
+    updateAddressInput
+  }
 )(Map);

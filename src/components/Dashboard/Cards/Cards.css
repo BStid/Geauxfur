@@ -1,4 +1,4 @@
-.cardsContainer {
+/* .cardsContainer {
   height: 40%;
   width: 50%;
   top: 20%;
@@ -9,8 +9,8 @@
   position: absolute;
   z-index: 10;
   background-color: rgba(38, 38, 38, 0.9);
-}
-/* .cardsContainer {
+} */
+.cardsContainer {
   height: 39%;
   width: 65%;
   top: 13%;
@@ -21,7 +21,7 @@
   position: absolute;
   z-index: 10;
   background-color: rgba(38, 38, 38, 0.9);
-} */
+}
 .upperInfo {
   /* border: 1px white solid; */
   height: 30vh;
@@ -127,8 +127,26 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  z-index: 20;
 }
-
+#firstQuestion {
+  position: absolute;
+  right: 6%;
+  height: 12%;
+  width: 15%;
+}
+.totalCard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}
+.fillerDiv {
+  height: 60px;
+}
 .categoryContainer {
   height: 25%;
   width: 100%;
