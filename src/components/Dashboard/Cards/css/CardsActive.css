@@ -1,0 +1,38 @@
+.cardsExit {
+  height: 39%;
+  width: 0;
+  top: 13%;
+  left: 19%;
+  border-left: 3px none rgba(38, 169, 108, 0.9);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
+  -webkit-transition: 1s;
+  transition: 1.5s;
+  animation: toGreenBar 2s;
+}
+.cardsActive {
+  height: 39%;
+  width: 0;
+  top: 13%;
+  left: 19%;
+  border-left: 3px none rgba(38, 169, 108, 0.9);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
+  -webkit-transition: 1s;
+  transition: ease-in-out 1.5s;
+  animation: toGreenBar 2s;
+}
+@keyframes toGreenBar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

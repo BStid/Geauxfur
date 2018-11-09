@@ -9,6 +9,7 @@ const GET_DRIVER_NAME = "GET_DRIVER_NAME";
 const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
 const GET_ADDRESS_LATLONG = "GET_ADDRESS_LATLONG";
 const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
+const UPDATE_CARDS_CLASS = "UPDATE_CARDS_CLASS";
 
 //InitialState
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
   searchAddressInput: "",
   addressLat: 0,
   addressLong: 0,
+  cardsClass: "cardsContainer",
   isLoading: false
 };
 
@@ -47,12 +49,20 @@ export function getDriverRoute(
 }
 //Input Handler for Address Input
 export function updateAddressInput(input) {
+  console.log(input);
   return {
     type: UPDATE_ADDRESS_INPUT,
     payload: input
   };
 }
 
+//Update Cards Class
+export function updateCardsClass(input) {
+  return {
+    type: UPDATE_CARDS_CLASS,
+    payload: input
+  };
+}
 //GET Address Lat and Long
 export function getAddressLatLong(query) {
   return {
@@ -108,8 +118,12 @@ export function getDriverCoordinates() {
 //Reducer
 export default function senderReducer(state = initialState, action) {
   switch (action.type) {
+    case UPDATE_CARDS_CLASS:
+      return {
+        ...state,
+        cardsClass: action.payload
+      };
     case UPDATE_ADDRESS_INPUT:
-      console.log("passing sender reducer...", action.payload);
       return {
         ...state,
         searchAddressInput: action.payload
@@ -152,10 +166,11 @@ export default function senderReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_DRIVER_COORDINATES}_FULFILLED`:
+      console.log(action.payload);
       return {
         ...state,
         isLoading: false,
-        driverCurrentLat: action.payload.data[1].current_latitude,
+        driverCurrentLat: action.payload.data[0].current_latitude,
         driverCurrentLong: action.payload.data[0].current_longitude
       };
     case `${GET_DRIVER_COORDINATES}_REJECTED`:

@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateInput } from "../../../redux/mainReducer";
-import { getAddressLatLong } from "../../../redux/senderReducer";
+import {
+  getAddressLatLong,
+  updateCardsClass
+} from "../../../redux/senderReducer";
 import Icons from "../../Icons/Icons";
+import "../../Icons/Icons.css";
 import "./Cards.css";
 
 class Cards extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      displayTotal: "hidden",
+      iconId: "totalPage",
       count: 0,
       questions: [
         <div className="questionDiv">
           Where would you like to ship?
           <div className="fillerDiv">
             {
-              //Input is in the npm mapboxgl-geocode package. I am rendering their input for this question
+              //Input is in the npm mapboxgl-geocode package. I am rendering their input for this question.
             }
           </div>
           <button
@@ -35,47 +41,55 @@ class Cards extends Component {
             placeholder="What type of item will you be sending?"
             onChange={e => this.props.updateInput(e)}
           >
-            <option value="appliance">Appliance</option>
-            <option value="auto">Auto</option>
+            <option value="null">Choose an Option...</option>
             <option value="clothes">Clothes</option>
-            <option value="electronics">Electronics</option>
             <option value="food">Food</option>
-            <option value="service">Service</option>
+            <option value="auto">Auto</option>
             <option value="tools">Tools</option>
+            <option value="electronics">Electronics</option>
+            <option value="appliance">Appliance</option>
+            <option value="service">Service</option>
           </select>
-          <button className="questionButton" onClick={() => this.addInput()}>
-            Back
-          </button>
-          <button
-            className="questionButton"
-            onClick={() => this.nextQuestion()}
-          >
-            Final Question
-          </button>
+          <div className="buttonContainer">
+            <button className="questionButton" onClick={() => this.addInput()}>
+              Back
+            </button>
+            <button
+              className="questionButton"
+              onClick={() => this.nextQuestion()}
+            >
+              Final Question
+            </button>{" "}
+          </div>
         </div>,
         <div className="questionDiv">
           How heavy would you classify this item?
-          <form className="heavyQuestion">
+          <form
+            className="heavyQuestion"
+            onChange={e => this.props.updateInput(e)}
+          >
             <input type="radio" name="weightInput" value={2} />
             Light
             <br />
-            <input type="radio" name="weightInput" value={4} /> Medium
+            <input type="radio" name="weightInput" value={3.5} /> Medium
             <br />
-            <input type="radio" name="weightInput" value={6} /> Heavy
+            <input type="radio" name="weightInput" value={5} /> Heavy
           </form>
-          <button
-            className="questionButton"
-            onClick={() => this.previousQuestion()}
-          >
-            Back
-          </button>
-          <button
-            className="questionButton"
-            onClick={() => this.submitAnswers()}
-          >
-            {" "}
-            Submit{" "}
-          </button>
+          <div className="buttonContainer">
+            <button
+              className="questionButton"
+              onClick={() => this.previousQuestion()}
+            >
+              Back
+            </button>
+            <button
+              className="questionButton"
+              onClick={() => this.submitAnswers()}
+            >
+              {" "}
+              Submit{" "}
+            </button>
+          </div>
         </div>,
         <div className="hidden" />
       ]
@@ -126,46 +140,82 @@ class Cards extends Component {
       dist = Math.acos(dist);
       dist = (dist * 180) / Math.PI;
       dist = dist * 60 * 1.1515;
-      console.log("miles", dist);
-      return dist;
+
+      return Math.round(dist * 100) / 100;
     }
   }
   async submitAnswers() {
-    const { latitude, longitude } = this.props;
-    const { itemType, weightInput } = this.props.main;
     await this.parseAddress();
-    const distance = await this.findDistance(
-      this.props.sender.addressLat,
-      this.props.sender.addressLong,
-      latitude,
-      longitude
-    );
-    console.log("distance is ", distance);
-    const price = distance * weightInput;
-    console.log("price is ", price);
-    await this.displayTotal(price, distance, itemType);
+    this.setState({ count: this.state.count + 1, displayTotal: "totalCard" });
+  }
+  callGeauxfur() {
+    const { updateCardsClass, drawRoute } = this.props;
+    updateCardsClass("cardsActive");
+    drawRoute();
+    this.setState({ displayTotal: "hidden" });
   }
 
-  displayTotal(price, distance, itemType) {
-    console.log("displayTotal called...");
-    return (
-      <div className="totalCard">
-        <Icons category={itemType} />
-        <div className="distanceTotal">{distance}</div>
-        <div className="totalPrice">{price}</div>
-      </div>
-    );
+  reset() {
+    let inputBar = document.querySelector(".mapboxgl-ctrl-geocoder");
+    inputBar.classList.remove("mapboxgl-ctrl-geocoder-hide");
+    this.setState({
+      count: 0,
+      displayTotal: "hidden"
+    });
   }
 
   render() {
-    const { count, questions } = this.state;
+    const { count, questions, displayTotal, iconId } = this.state;
+    const { weightInput, itemType } = this.props.main;
+    const { cardsClass } = this.props.sender;
+    const { latitude, longitude } = this.props;
 
     const displayQuestions = questions.map((value, index) => {
       if (count === index) {
         return value;
       }
     });
-    return <div className="questionContainer">{displayQuestions}</div>;
+    const distance = this.findDistance(
+      this.props.sender.addressLat,
+      this.props.sender.addressLong,
+      latitude,
+      longitude
+    );
+
+    const price = Math.round((distance * weightInput * 100) / 100);
+
+    return (
+      <div
+        className={cardsClass === "cardsContainer" ? "questionContainer" : null}
+      >
+        {displayQuestions}
+        <div className={displayTotal}>
+          <Icons category={itemType} iconId={iconId} /> X
+          <div className="distanceTotal">
+            <p>Miles</p>
+            {distance}
+          </div>{" "}
+          =
+          <div className="totalPrice">
+            <p>Price</p>${price}
+          </div>
+          <button
+            className="questionButton"
+            id="finalButton"
+            onClick={() => this.reset()}
+          >
+            Restart
+          </button>
+          <button
+            id="finalButton"
+            className="questionButton"
+            onClick={() => this.callGeauxfur()}
+          >
+            Call a Geauxfur
+          </button>
+        </div>
+      </div>
+    );
   }
 }
 
@@ -175,5 +225,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { updateInput, getAddressLatLong }
+  { updateInput, getAddressLatLong, updateCardsClass }
 )(Cards);

@@ -12,6 +12,7 @@
   font-weight: 600 !important;
   overflow: hidden;
   border-radius: 10px !important;
+  cursor: default;
   z-index: 15;
 }
 .mapboxgl-ctrl-geocoder-hide {
@@ -19,7 +20,7 @@
 }
 .mapboxgl-ctrl-geocoder input {
   background-color: rgba(242, 242, 242, 0.9) !important;
-  height: 12% !important;
+  height: 13% !important;
   width: 89% !important;
   margin: 15px !important;
   border: 1px solid rgb(33, 34, 34) !important;
@@ -35,9 +36,9 @@
   z-index: 15;
 }
 .mapboxgl-ctrl-top-right {
-  top: 35% !important;
-  right: 28.2% !important;
-  width: 38% !important;
+  top: 35.6% !important;
+  right: 30.2% !important;
+  width: 37% !important;
   height: 28.5% !important;
   z-index: 15 !important;
   overflow: hidden !important;

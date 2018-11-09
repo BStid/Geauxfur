@@ -152,7 +152,7 @@ class Map extends Component {
           className="gpsIcon"
           onClick={() => this.locateUser()}
         />
-        <button className="findRouteButton" onClick={() => this.parseAddress()}>
+        <button className="findRouteButton" onClick={() => this.drawRoute()}>
           {" "}
           Find Route{" "}
         </button>
@@ -161,6 +161,7 @@ class Map extends Component {
           searchAddressInput={this.state.searchAddressInput}
           latitude={latitude}
           longitude={longitude}
+          drawRoute={this.drawRoute}
         />
       </div>
     );

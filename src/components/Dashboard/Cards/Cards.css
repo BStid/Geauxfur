@@ -21,10 +21,12 @@
   position: absolute;
   z-index: 10;
   background-color: rgba(38, 38, 38, 0.9);
+  animation: toGreenBar 2s;
+  transition: ease-in-out 1.5s;
 }
 .upperInfo {
   /* border: 1px white solid; */
-  height: 30vh;
+  height: 36vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -88,13 +90,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50%;
+  height: 100%;
   justify-content: center;
 }
 .questionDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -114,10 +115,21 @@
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
 }
 .questionButton {
   width: 20%;
-  height: 20%;
+  height: 50%;
   border: 1px solid rgba(38, 169, 108, 0.8);
   background-color: rgba(38, 38, 38, 0.8);
   color: rgba(38, 169, 108, 0.8);
@@ -128,22 +140,71 @@
   overflow: hidden;
   outline: none;
   z-index: 20;
+  margin: 3%;
 }
 #firstQuestion {
   position: absolute;
   right: 6%;
   height: 12%;
   width: 15%;
+  top: 57%;
+}
+#finalButton {
+  width: 20%;
+  height: 34%;
+  border: 1px solid rgba(38, 169, 108, 0.8);
+  background-color: rgba(38, 38, 38, 0.8);
+  color: rgba(38, 169, 108, 0.8);
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  z-index: 20;
+  margin: 0%;
+  transition: 0.4s;
+}
+#finalButton:hover {
+  box-shadow: 6px -2px 35px -10px rgba(38, 169, 108, 0.5);
+  border: 1px solid rgba(38, 169, 108);
+  color: rgba(38, 169, 108);
 }
 .totalCard {
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+  overflow: hidden;
+  font-size: 25px;
+}
+.totalCard div {
+  overflow: hidden;
+}
+.totalCard p {
+  font-size: 25px;
+}
+.distanceTotal {
+  font-size: 55px;
+  display: flex;
+  flex-direction: column;
+}
+.totalPrice {
+  font-size: 55px;
+  display: flex;
   flex-direction: column;
 }
 .hidden {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: 0;
   display: none;
 }
+
 .fillerDiv {
   height: 60px;
 }

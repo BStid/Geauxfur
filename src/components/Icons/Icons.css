@@ -2,3 +2,6 @@
   width: 50%;
   filter: invert(50%);
 }
+#totalPage {
+  width: 12%;
+}
