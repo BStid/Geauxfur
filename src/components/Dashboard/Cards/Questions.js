@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { updateInput } from "../../../redux/mainReducer";
 import {
   getAddressLatLong,
-  updateCardsClass
+  updateCardsClass,
+  updateActivePanel
 } from "../../../redux/senderReducer";
 import Icons from "../../Icons/Icons";
 import "../../Icons/Icons.css";
-import "./Cards.css";
+import "./css/Cards.css";
 
 class Cards extends Component {
   constructor(props) {
@@ -148,10 +149,11 @@ class Cards extends Component {
     await this.parseAddress();
     this.setState({ count: this.state.count + 1, displayTotal: "totalCard" });
   }
-  callGeauxfur() {
-    const { updateCardsClass, drawRoute } = this.props;
-    updateCardsClass("cardsActive");
-    drawRoute();
+  async callGeauxfur() {
+    const { updateCardsClass, drawRoute, updateActivePanel } = this.props;
+    await updateCardsClass("cardsActive");
+    await drawRoute();
+    await updateActivePanel("activeRoute");
     this.setState({ displayTotal: "hidden" });
   }
 
@@ -162,6 +164,18 @@ class Cards extends Component {
       count: 0,
       displayTotal: "hidden"
     });
+  }
+
+  componentDidMount() {
+    window.addEventListener(
+      "keydown",
+      event => {
+        if (event.keyCode === 13) {
+          this.removeInput();
+        }
+      },
+      true
+    );
   }
 
   render() {
@@ -225,5 +239,10 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { updateInput, getAddressLatLong, updateCardsClass }
+  {
+    updateInput,
+    getAddressLatLong,
+    updateCardsClass,
+    updateActivePanel
+  }
 )(Cards);

@@ -178,7 +178,7 @@ class Profile extends Component {
             <div className="displaySH">
               {!reviews ? (
                 <div className="defaultMessage">
-                  You don't have any Reviews! Users are able to make reviews
+                  You do not have any Reviews! Users are able to make reviews
                   based off of orders placed. Geaux and try it!
                 </div>
               ) : (

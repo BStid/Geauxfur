@@ -114,7 +114,6 @@ export const updateProfile = (
 };
 //Reducer
 export default function mainReducer(state = initialState, action) {
-  console.log(action.payload);
   switch (action.type) {
     case UPDATE_INPUT:
       console.log(

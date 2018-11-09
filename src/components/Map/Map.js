@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ReactMapGL, { Marker, FlyToInterpolator } from "react-map-gl";
+import ReactMapGL, {
+  Marker,
+  FlyToInterpolator,
+  LinearInterpolator
+} from "react-map-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import {
   getDriverCoordinates,
@@ -11,6 +15,7 @@ import {
 import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
 import Cards from "../Dashboard/Cards/Cards";
+import ActiveCard from "../Dashboard/Cards/ActiveCard/ActiveCard";
 import mapMarker from "./pictures/green_pin.png";
 import gps from "./pictures/gps.png";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -42,10 +47,16 @@ class Map extends Component {
       this.props.sender.driverCurrentLong,
       this.props.sender.driverCurrentLat
     );
-    console.log("got these directions...", this.props.sender.routeCoordinates);
-    console.log("drawing route...");
 
-    await this.setState({ nothing: "" });
+    const viewport = {
+      ...this.state.viewport,
+      longitude: this.state.viewport.longitude,
+      latitude: this.state.viewport.latitude,
+      zoom: 10,
+      transitionDuration: 7000,
+      transitionInterpolator: new FlyToInterpolator()
+    };
+    this.setState({ viewport });
 
     const map = this.reactMap.getMap();
     map.on("render", () => {
@@ -77,8 +88,6 @@ class Map extends Component {
 
   locateUser() {
     navigator.geolocation.getCurrentPosition(position => {
-      console.log("Longitude should change to", position.coords.longitude);
-      console.log("Latitude should change to", position.coords.latitude);
       let newObj = { ...this.state.viewport };
       newObj.longitude = position.coords.longitude;
       newObj.latitude = position.coords.latitude;
@@ -124,24 +133,25 @@ class Map extends Component {
               ref={reactMap => {
                 this.reactMap = reactMap;
               }}
+              onViewportChange={this.locateUser}
               width={width}
               height={height}
               transitionDuration={1000}
-              transitionInterpolator={new FlyToInterpolator()}
+              transitionInterpolator={new LinearInterpolator()}
               mapStyle="mapbox://styles/bstid/cjnuq80xg3p3a2spao7krspfp"
               mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
               {...this.state.viewport}
               onViewportChange={viewport => this.setState({ viewport })}
             >
-              <Marker
-                latitude={latitude}
-                longitude={longitude}
-                offsetTop={-20}
+              {/* <Marker
+                latitude="32.7777531"
+                longitude="-96.79547939"
+                offsetTop={-2}
                 captureScroll={true}
                 dynamicPosition={true}
               >
                 <img src={mapMarker} className="mapMarker" alt="marker" />
-              </Marker>
+              </Marker> */}
             </ReactMapGL>
           )}
         </AutoSizer>
@@ -152,10 +162,7 @@ class Map extends Component {
           className="gpsIcon"
           onClick={() => this.locateUser()}
         />
-        <button className="findRouteButton" onClick={() => this.drawRoute()}>
-          {" "}
-          Find Route{" "}
-        </button>
+        <ActiveCard />
         <Cards
           parseAddress={this.parseAddress}
           searchAddressInput={this.state.searchAddressInput}

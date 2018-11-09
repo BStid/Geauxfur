@@ -45,7 +45,6 @@ class TopNav extends Component {
 
           <div className="userProfileCard">
             <div className="userInfo">
-              {console.log(this.props.main)}
               {!userInfo.first_name ? (
                 <p className="userName">User</p>
               ) : (

@@ -15,7 +15,6 @@ class AddReview extends Component {
   }
 
   changeRating(newRating) {
-    console.log(newRating);
     this.setState({
       rating: newRating
     });
@@ -24,7 +23,6 @@ class AddReview extends Component {
     this.props.addReview(review, rating, driverId);
   }
   componentDidMount() {
-    console.log(this.props.match.params.driverId);
     this.props.getDriverPicture(this.props.match.params.driverId);
   }
   render() {

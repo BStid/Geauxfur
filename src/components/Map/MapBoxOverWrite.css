@@ -47,7 +47,6 @@
 .mapboxgl-ctrl-geocoder ul > li > a:hover {
   color: #259e66 !important;
   background-color: black !important;
-  text-decoration: none;
   cursor: pointer;
 }
 .mapboxgl-ctrl-geocoder ul > li.active > a {
@@ -57,9 +56,10 @@
 }
 .mapboxgl-ctrl-geocoder ul > li > a {
   color: #259e66 !important;
-  background-color: rgba(0, 0, 0, 0.527) !important;
-  letter-spacing: 1px !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  letter-spacing: 2px !important;
   margin-left: 15px;
+  overflow: hidden !important;
 }
 .geocoder-pin-right {
   display: none !important;

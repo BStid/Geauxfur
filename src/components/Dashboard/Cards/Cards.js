@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { updateInput } from "../../../redux/mainReducer";
 
 import GeauxfurText from "./pictures/GeauxfurText.png";
-import "./Cards.css";
+import "./css/Cards.css";
 import "./css/CardsActive.css";
 import "../../Map/MapBoxOverWrite.css";
 import Questions from "./Questions";

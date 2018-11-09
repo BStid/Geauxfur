@@ -10,6 +10,7 @@ const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
 const GET_ADDRESS_LATLONG = "GET_ADDRESS_LATLONG";
 const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
 const UPDATE_CARDS_CLASS = "UPDATE_CARDS_CLASS";
+const UPDATE_ACTIVE_PANEL = "UPDATE_ACTIVE_PANEL";
 
 //InitialState
 const initialState = {
@@ -26,6 +27,7 @@ const initialState = {
   addressLat: 0,
   addressLong: 0,
   cardsClass: "cardsContainer",
+  panelClass: "hiddenActive",
   isLoading: false
 };
 
@@ -49,20 +51,26 @@ export function getDriverRoute(
 }
 //Input Handler for Address Input
 export function updateAddressInput(input) {
-  console.log(input);
   return {
     type: UPDATE_ADDRESS_INPUT,
     payload: input
   };
 }
 
-//Update Cards Class
+//Update Classes
 export function updateCardsClass(input) {
   return {
     type: UPDATE_CARDS_CLASS,
     payload: input
   };
 }
+export function updateActivePanel(input) {
+  return {
+    type: UPDATE_ACTIVE_PANEL,
+    payload: input
+  };
+}
+
 //GET Address Lat and Long
 export function getAddressLatLong(query) {
   return {
@@ -90,7 +98,6 @@ export function getDriverPicture(driverId) {
   };
 }
 //Get Route Driver is Taking to Deliver Item at the Destination
-//TODO: ADD THE OTHER THREE DIRECTION FUNCTIONS (one for sender, two for driver)
 export function getDriverDestination(
   senderCurrentLong,
   senderCurrentLat,
@@ -122,6 +129,11 @@ export default function senderReducer(state = initialState, action) {
       return {
         ...state,
         cardsClass: action.payload
+      };
+    case UPDATE_ACTIVE_PANEL:
+      return {
+        ...state,
+        panelClass: action.payload
       };
     case UPDATE_ADDRESS_INPUT:
       return {
@@ -166,7 +178,6 @@ export default function senderReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_DRIVER_COORDINATES}_FULFILLED`:
-      console.log(action.payload);
       return {
         ...state,
         isLoading: false,
@@ -184,7 +195,6 @@ export default function senderReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_DRIVER_NAME}_FULFILLED`:
-      console.log(action.payload.data[0].first_name);
       return {
         ...state,
         isLoading: false,
@@ -201,7 +211,6 @@ export default function senderReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_DRIVER_PICTURE}_FULFILLED`:
-      console.log(action.payload.data[0].image_url);
       return {
         ...state,
         isLoading: false,
@@ -218,7 +227,6 @@ export default function senderReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_ADDRESS_LATLONG}_FULFILLED`:
-      console.log(action.payload.data);
       return {
         ...state,
         isLoading: false,

@@ -26,13 +26,32 @@
   background-color: rgba(38, 38, 38, 0.9);
   -webkit-transition: 1s;
   transition: ease-in-out 1.5s;
-  animation: toGreenBar 2s;
 }
-@keyframes toGreenBar {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.hiddenActive {
+  height: 25%;
+  width: 0%;
+  top: 68%;
+  left: 0;
+  border-left: 7px none rgba(38, 169, 108, 0.9);
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
+  transition: ease-in-out 1.5s;
+  transition-delay: 2s;
+}
+.activeRoute {
+  height: 25%;
+  width: 100%;
+  top: 68%;
+  left: 0;
+  border-left: 7px solid rgba(38, 169, 108, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(38, 38, 38, 0.9);
+  -webkit-transition: 1s;
+  -webkit-transition: ease-in-out 1.5s;
+  transition: ease-in-out 1.5s;
+  transition-delay: 2s;
 }
