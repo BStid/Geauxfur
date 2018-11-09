@@ -12,6 +12,7 @@ const GET_ACTIVE_DRIVER = "GET_ACTIVE_DRIVER";
 const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
 const UPDATE_CARDS_CLASS = "UPDATE_CARDS_CLASS";
 const UPDATE_ACTIVE_PANEL = "UPDATE_ACTIVE_PANEL";
+const CANCEL_GEAUXFUR = "CANCEL_GEAUXFUR";
 
 //InitialState
 const initialState = {
@@ -52,6 +53,13 @@ export function getDriverRoute(
     )
   };
 }
+//Cancel Active Geauxfur
+export const cancelGeauxfur = value => {
+  return {
+    type: CANCEL_GEAUXFUR,
+    payload: value
+  };
+};
 //Input Handler for Address Input
 export function updateAddressInput(input) {
   return {
@@ -139,8 +147,13 @@ export default function senderReducer(state = initialState, action) {
         ...state,
         cardsClass: action.payload
       };
+    case CANCEL_GEAUXFUR:
+      return {
+        ...state,
+        activeDriverCard: action.payload[0],
+        cardsClass: action.payload[1]
+      };
     case UPDATE_ACTIVE_PANEL:
-      console.log(action.payload);
       return {
         ...state,
         panelClass: action.payload[0],

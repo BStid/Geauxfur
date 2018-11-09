@@ -4,24 +4,43 @@ import { updateInput } from "../../../../redux/mainReducer";
 import {
   updateCardsClass,
   getDriverPicture,
-  getActiveDriver
+  getActiveDriver,
+  cancelGeauxfur
 } from "../../../../redux/senderReducer";
 import defaultPicture from "../../../Nav/pictures/userDefault.png";
 import Timer from "simple-react-timer";
 import Icons from "../../../Icons/Icons";
+import WarningCard from "./WarningCard/WarningCard";
 import "../../../Icons/Icons.css";
 import "../css/CardsActive.css";
 
 class ActiveCard extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      showWarning: false
+    };
+    this.promptCancel = this.promptCancel.bind(this);
+    this.cancelGeauxfur = this.cancelGeauxfur.bind(this);
   }
 
+  promptCancel() {
+    if (!this.state.showWarning) {
+      this.setState({ showWarning: true });
+    } else {
+      this.setState({ showWarning: false });
+    }
+  }
+  cancelGeauxfur() {
+    this.props.cancelGeauxfur(["cancelActiveDriver", "cardsContainer"]);
+    this.props.addGeoCoder();
+    this.setState({ showWarning: false });
+  }
   componentDidMount() {
     console.log(this.props.sender);
   }
   render() {
+    const { showWarning } = this.state;
     const { activeDriver, panelClass, activeDriverCard } = this.props.sender;
     const { itemType } = this.props.main;
     return (
@@ -45,8 +64,18 @@ class ActiveCard extends Component {
           )}
           <p>{activeDriver.first_name}</p>
           <Timer countdown />
-          <button className="cancelButton"> Cancel Geauxfur</button>
+          <button className="cancelButton" onClick={() => this.promptCancel()}>
+            {" "}
+            Cancel Geauxfur
+          </button>
         </div>
+
+        {showWarning ? (
+          <WarningCard
+            cancelGeauxfur={this.cancelGeauxfur}
+            closeWarning={this.promptCancel}
+          />
+        ) : null}
       </div>
     );
   }
@@ -58,5 +87,11 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { updateInput, updateCardsClass, getDriverPicture, getActiveDriver }
+  {
+    updateInput,
+    updateCardsClass,
+    getDriverPicture,
+    getActiveDriver,
+    cancelGeauxfur
+  }
 )(ActiveCard);

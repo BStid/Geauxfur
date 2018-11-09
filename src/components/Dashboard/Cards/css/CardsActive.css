@@ -73,6 +73,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   border-radius: 10%;
+  overflow: hidden;
   box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
   background-color: rgba(38, 38, 38, 0.9);
   transition: ease-in-out 1.5s;
@@ -89,6 +90,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   font-size: 25px;
   font-family: "Scada", sans-serif;
   font-weight: 400;
@@ -101,6 +103,10 @@
 }
 .activeDriverContainer-left p {
   font-size: 18px;
+  overflow: hidden;
+}
+.timer {
+  overflow: hidden !important;
 }
 .userIconActive {
   width: 30%;
@@ -118,14 +124,74 @@
   height: 18%;
   position: relative;
   top: 6%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(201, 0, 22, 0.9);
   width: 42%;
   letter-spacing: 1px;
-  background-color: rgba(201, 0, 22, 0.9);
+  background-color: rgba(38, 38, 38, 0.9);
   color: rgb(255, 255, 255);
   border-radius: 12%;
   font-size: 15px;
   font-weight: 500;
   outline: none;
   cursor: pointer;
+  transition: 0.5s;
+}
+.cancelButton:hover {
+  border: 1px rgba(201, 0, 22, 0.9) solid;
+  background-color: rgba(201, 0, 22, 0.6);
+}
+.cancelActiveDriver {
+  border: 2px rgba(37, 158, 102, 0.5) solid;
+  border-top: none;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  left: -25%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-size: 25px;
+  font-family: "Scada", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 10%;
+  box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
+  background-color: rgba(38, 38, 38, 0.9);
+  transition: 1s;
+}
+
+.warningCard {
+  height: 90%;
+  width: 47%;
+  position: absolute;
+  top: 7px;
+  left: 26%;
+  border: 2px rgba(201, 0, 22, 0.9) double;
+  border-radius: 3%;
+  background-color: rgba(38, 38, 38, 0.9);
+  box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.warningText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+}
+.warningText p {
+  font-size: 15px;
+}
+.areYouSureContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
 }

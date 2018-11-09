@@ -37,6 +37,7 @@ class Map extends Component {
       }
     };
     this.drawRoute = this.drawRoute.bind(this);
+    this.addGeoCoder = this.addGeoCoder.bind(this);
   }
 
   async drawRoute() {
@@ -168,7 +169,7 @@ class Map extends Component {
           className="gpsIcon"
           onClick={() => this.locateUser()}
         />
-        <ActiveCard />
+        <ActiveCard className="seconds" addGeoCoder={this.addGeoCoder} />
         <Cards
           parseAddress={this.parseAddress}
           searchAddressInput={this.state.searchAddressInput}

@@ -97,6 +97,7 @@
   position: relative;
   bottom: 9px;
   text-align: right;
+  overflow: hidden;
 }
 .userImage {
   height: 60%;

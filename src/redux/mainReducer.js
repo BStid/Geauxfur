@@ -34,10 +34,6 @@ const initialState = {
 
 //Action Creators
 export const updateInput = input => {
-  // console.log(input.target.name);
-  // console.log(input.target.value);
-  console.log(input);
-
   return {
     type: UPDATE_INPUT,
     payload: input
@@ -92,14 +88,6 @@ export const updateProfile = (
   firstNameInput,
   lastNameInput
 ) => {
-  console.log(
-    dobInput,
-    emailInput,
-    phoneInput,
-    genderInput,
-    firstNameInput,
-    lastNameInput
-  );
   return {
     type: UPDATE_PROFILE,
     payload: axios.put("/api/profile", {
@@ -194,7 +182,6 @@ export default function mainReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_ORDER_HISTORY}_FULFILLED`:
-      console.log(action.payload.data);
       return {
         ...state,
         orderHistory: action.payload.data,
@@ -211,7 +198,6 @@ export default function mainReducer(state = initialState, action) {
         isLoading: true
       };
     case `${GET_REVIEWS}_FULFILLED`:
-      console.log(action.payload.data);
       return {
         ...state,
         reviews: action.payload.data,
