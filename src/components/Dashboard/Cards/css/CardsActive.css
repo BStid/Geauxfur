@@ -32,10 +32,10 @@
   width: 0%;
   top: 68%;
   left: 0;
-  border-left: 7px none rgba(38, 169, 108, 0.9);
+  /* border-left: 7px none rgba(38, 169, 108, 0.9); */
   position: absolute;
   z-index: 10;
-  background-color: rgba(38, 38, 38, 0.9);
+  /* background-color: rgba(38, 38, 38, 0.9); */
   transition: ease-in-out 1.5s;
   transition-delay: 2s;
 }
@@ -44,14 +44,88 @@
   width: 100%;
   top: 68%;
   left: 0;
-  border-left: 7px solid rgba(38, 169, 108, 0.5);
+  overflow: hidden;
+  /* border-left: 7px solid rgba(38, 169, 108, 0.5); */
   display: flex;
   flex-direction: column;
   position: absolute;
   z-index: 10;
-  background-color: rgba(38, 38, 38, 0.9);
+  padding: 2px 0px;
+  /* background-color: rgba(38, 38, 38, 0.9); */
   -webkit-transition: 1s;
   -webkit-transition: ease-in-out 1.5s;
   transition: ease-in-out 1.5s;
   transition-delay: 2s;
+}
+
+.activeDriverContainer {
+  border: 2px rgba(37, 158, 102, 0.5) solid;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-family: "Scada", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 10%;
+  box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
+  background-color: rgba(38, 38, 38, 0.9);
+  transition: ease-in-out 1.5s;
+  transition-delay: 6s;
+}
+.activeDriverContainer-left {
+  border: 2px rgba(37, 158, 102, 0.5) solid;
+  border-top: none;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  left: 1%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-family: "Scada", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 10%;
+  box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
+  background-color: rgba(38, 38, 38, 0.9);
+  transition: ease-in-out 1.5s;
+  transition-delay: 6s;
+}
+.activeDriverContainer-left p {
+  font-size: 18px;
+}
+.userIconActive {
+  width: 30%;
+  border-radius: 50%;
+  border: 1px rgba(37, 158, 102, 0.2) solid;
+}
+
+#activeIcon {
+  width: 11%;
+  position: absolute;
+  top: 9%;
+  left: 8%;
+}
+.cancelButton {
+  height: 18%;
+  position: relative;
+  top: 6%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 42%;
+  letter-spacing: 1px;
+  background-color: rgba(201, 0, 22, 0.9);
+  color: rgb(255, 255, 255);
+  border-radius: 12%;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
 }

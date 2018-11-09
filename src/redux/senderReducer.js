@@ -8,12 +8,14 @@ const GET_DRIVER_COORDINATES = "GET_DRIVER_COORDINATES";
 const GET_DRIVER_NAME = "GET_DRIVER_NAME";
 const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
 const GET_ADDRESS_LATLONG = "GET_ADDRESS_LATLONG";
+const GET_ACTIVE_DRIVER = "GET_ACTIVE_DRIVER";
 const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
 const UPDATE_CARDS_CLASS = "UPDATE_CARDS_CLASS";
 const UPDATE_ACTIVE_PANEL = "UPDATE_ACTIVE_PANEL";
 
 //InitialState
 const initialState = {
+  activeDriver: [],
   routeCoordinates: [],
   senderCurrentLong: 0,
   senderCurrentLat: 0,
@@ -28,6 +30,7 @@ const initialState = {
   addressLong: 0,
   cardsClass: "cardsContainer",
   panelClass: "hiddenActive",
+  activeDriverCard: "activeDriverContainer",
   isLoading: false
 };
 
@@ -113,7 +116,13 @@ export function getDriverDestination(
     )
   };
 }
-
+//Get Active Driver Information
+export function getActiveDriver() {
+  return {
+    type: GET_ACTIVE_DRIVER,
+    payload: axios.get("/api/activedriver")
+  };
+}
 //Get Driver's Current Long/Lat
 export function getDriverCoordinates() {
   return {
@@ -131,9 +140,11 @@ export default function senderReducer(state = initialState, action) {
         cardsClass: action.payload
       };
     case UPDATE_ACTIVE_PANEL:
+      console.log(action.payload);
       return {
         ...state,
-        panelClass: action.payload
+        panelClass: action.payload[0],
+        activeDriverCard: action.payload[1]
       };
     case UPDATE_ADDRESS_INPUT:
       return {
@@ -160,6 +171,18 @@ export default function senderReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: true
+      };
+    case `${GET_ACTIVE_DRIVER}_FULFILLED`:
+      console.log(action.payload.data[0]);
+      return {
+        ...state,
+        isLoading: false,
+        activeDriver: action.payload.data[0]
+      };
+    case `${GET_ACTIVE_DRIVER}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
       };
     case `${GET_DRIVER_DESTINATION}_FULFILLED`:
       return {

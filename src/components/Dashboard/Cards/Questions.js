@@ -153,7 +153,7 @@ class Cards extends Component {
     const { updateCardsClass, drawRoute, updateActivePanel } = this.props;
     await updateCardsClass("cardsActive");
     await drawRoute();
-    await updateActivePanel("activeRoute");
+    await updateActivePanel(["activeRoute", "activeDriverContainer-left"]);
     this.setState({ displayTotal: "hidden" });
   }
 

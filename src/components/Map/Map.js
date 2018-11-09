@@ -10,7 +10,8 @@ import {
   getDriverCoordinates,
   getDriverRoute,
   getAddressLatLong,
-  updateAddressInput
+  updateAddressInput,
+  getActiveDriver
 } from "../../redux/senderReducer";
 import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
@@ -39,20 +40,23 @@ class Map extends Component {
   }
 
   async drawRoute() {
-    console.log("findingDriverCoord");
     await this.props.getDriverCoordinates();
+    console.log(
+      this.props.sender.activeDriver.current_longitude,
+      this.props.sender.activeDriver.current_latitude
+    );
     await this.props.getDriverRoute(
       this.state.viewport.longitude,
       this.state.viewport.latitude,
-      this.props.sender.driverCurrentLong,
-      this.props.sender.driverCurrentLat
+      this.props.sender.activeDriver.current_longitude,
+      this.props.sender.activeDriver.current_latitude
     );
 
     const viewport = {
       ...this.state.viewport,
       longitude: this.state.viewport.longitude,
       latitude: this.state.viewport.latitude,
-      zoom: 10,
+      zoom: 12,
       transitionDuration: 7000,
       transitionInterpolator: new FlyToInterpolator()
     };
@@ -118,8 +122,10 @@ class Map extends Component {
     );
   }
   componentDidMount() {
+    const { getActiveDriver } = this.props;
     this.locateUser();
     this.addGeoCoder();
+    getActiveDriver();
   }
   render() {
     let latitude = this.state.viewport.latitude;
@@ -186,6 +192,7 @@ export default connect(
     getDriverRoute,
     addLocation,
     getAddressLatLong,
-    updateAddressInput
+    updateAddressInput,
+    getActiveDriver
   }
 )(Map);

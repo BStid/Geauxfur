@@ -33,10 +33,12 @@
     "react-stripe-checkout": "^2.6.3",
     "react-stripe-elements": "^2.0.1",
     "react-tilt": "^0.1.4",
+    "react-timer": "^1.0.2",
     "react-virtualized": "^9.21.0",
     "redux": "^4.0.1",
     "redux-promise-middleware": "^5.1.1",
     "s3-uploader": "^2.0.3",
+    "simple-react-timer": "^1.1.0",
     "stripe": "^6.13.0"
   },
   "scripts": {
