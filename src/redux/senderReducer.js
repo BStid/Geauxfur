@@ -9,6 +9,7 @@ const GET_DRIVER_NAME = "GET_DRIVER_NAME";
 const GET_DRIVER_PICTURE = "GET_DRIVER_PICTURE";
 const GET_ADDRESS_LATLONG = "GET_ADDRESS_LATLONG";
 const GET_ACTIVE_DRIVER = "GET_ACTIVE_DRIVER";
+const GET_ACTIVE_ITEMS = "GET_ACTIVE_ITEMS";
 const UPDATE_ADDRESS_INPUT = "UPDATE_ADDRESS_INPUT";
 const UPDATE_CARDS_CLASS = "UPDATE_CARDS_CLASS";
 const UPDATE_ACTIVE_PANEL = "UPDATE_ACTIVE_PANEL";
@@ -16,7 +17,6 @@ const CANCEL_GEAUXFUR = "CANCEL_GEAUXFUR";
 
 //InitialState
 const initialState = {
-  activeDriver: [],
   routeCoordinates: [],
   senderCurrentLong: 0,
   senderCurrentLat: 0,
@@ -31,7 +31,11 @@ const initialState = {
   addressLong: 0,
   cardsClass: "cardsContainer",
   panelClass: "hiddenActive",
+  listingClass: "hiddenActiveListing",
+  activeItems: [],
+  activeDriver: [],
   activeDriverCard: "activeDriverContainer",
+  areListingsActive: false,
   isLoading: false
 };
 
@@ -93,6 +97,13 @@ export function getAddressLatLong(query) {
     )
   };
 }
+//GET Items that are currently "Active"
+export function getActiveItems() {
+  return {
+    type: GET_ACTIVE_ITEMS,
+    payload: axios.get("/api/items")
+  };
+}
 //GET Driver's Name
 export function getDriverName(driverId) {
   return {
@@ -151,18 +162,31 @@ export default function senderReducer(state = initialState, action) {
       return {
         ...state,
         activeDriverCard: action.payload[0],
-        cardsClass: action.payload[1]
+        cardsClass: action.payload[1],
+        areListingsActive: false
       };
     case UPDATE_ACTIVE_PANEL:
       return {
         ...state,
         panelClass: action.payload[0],
-        activeDriverCard: action.payload[1]
+        activeDriverCard: action.payload[1],
+        areListingsActive: true
       };
     case UPDATE_ADDRESS_INPUT:
       return {
         ...state,
         searchAddressInput: action.payload
+      };
+    case `${GET_ACTIVE_ITEMS}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_ACTIVE_ITEMS}_FULFILLED`:
+      return {
+        ...state,
+        isLoading: false,
+        activeItems: action.payload.data
       };
     case `${GET_DRIVER_ROUTE}_PENDING`:
       return {

@@ -11,7 +11,8 @@ import {
   getDriverRoute,
   getAddressLatLong,
   updateAddressInput,
-  getActiveDriver
+  getActiveDriver,
+  getActiveItems
 } from "../../redux/senderReducer";
 import { addLocation } from "../../redux/mainReducer";
 import { AutoSizer } from "react-virtualized";
@@ -123,9 +124,10 @@ class Map extends Component {
     );
   }
   componentDidMount() {
-    const { getActiveDriver } = this.props;
+    const { getActiveDriver, getActiveItems } = this.props;
     this.locateUser();
     this.addGeoCoder();
+    getActiveItems();
     getActiveDriver();
   }
   render() {
@@ -192,6 +194,7 @@ export default connect(
     addLocation,
     getAddressLatLong,
     updateAddressInput,
-    getActiveDriver
+    getActiveDriver,
+    getActiveItems
   }
 )(Map);

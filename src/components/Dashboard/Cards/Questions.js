@@ -125,7 +125,7 @@ class Cards extends Component {
   }
 
   findDistance(lat1, lon1, lat2, lon2) {
-    if (lat1 == lat2 && lon1 == lon2) {
+    if (lat1 === lat2 && lon1 === lon2) {
       return 0;
     } else {
       var radlat1 = (Math.PI * lat1) / 180;
@@ -188,6 +188,7 @@ class Cards extends Component {
       if (count === index) {
         return value;
       }
+      return null;
     });
     const distance = this.findDistance(
       this.props.sender.addressLat,

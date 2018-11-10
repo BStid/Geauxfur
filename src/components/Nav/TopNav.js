@@ -17,7 +17,6 @@ class TopNav extends Component {
   }
   componentDidMount() {
     this.props.getUser();
-    console.log(this.props.main);
   }
   render() {
     const { userInfo } = this.props.main;

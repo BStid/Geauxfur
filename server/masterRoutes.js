@@ -7,6 +7,7 @@ module.exports = app => {
   app.get("/api/name/:driverId", senderCtrl.getDriverName);
   app.get("/api/picture/:driverId", senderCtrl.getDriverPicture);
   app.get("/api/activedriver", senderCtrl.getActiveDriver);
+  app.get("/api/items", senderCtrl.getActiveItems);
 
   /** USER */
   app.get("/api/user", userCtrl.getUser);

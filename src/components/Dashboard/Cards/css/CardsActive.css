@@ -81,7 +81,7 @@
   box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
   background-color: rgba(38, 38, 38, 0.9);
   transition: ease-in-out 1.5s;
-  transition-delay: 6s;
+  transition-delay: 5s;
 }
 .activeDriverContainer-left {
   border: 2px rgba(37, 158, 102, 0.5) solid;
@@ -102,8 +102,9 @@
   border-radius: 10%;
   box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
   background-color: rgba(38, 38, 38, 0.9);
+  z-index:10;
   transition: ease-in-out 1.5s;
-  transition-delay: 6s;
+  transition-delay: 5s;
 }
 .activeDriverContainer-left p {
   font-size: 18px;
@@ -120,9 +121,9 @@
 
 #activeIcon {
   width: 11%;
-  position: absolute;
-  top: 9%;
-  left: 8%;
+  position: relative;
+  top: 2%;
+  left: -39%;
 }
 .cancelButton {
   height: 18%;

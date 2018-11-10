@@ -23,6 +23,7 @@
   background-color: rgba(38, 38, 38, 0.9);
   animation: toGreenBar 2s;
   transition: ease-in-out 1.5s;
+  overflow: hidden;
 }
 .upperInfo {
   /* border: 1px white solid; */
@@ -36,6 +37,7 @@
   color: #ffffff;
   font-weight: 500;
   padding-top: 3%;
+  overflow: hidden;
 }
 .headerTitle {
   height: 75%;
@@ -49,16 +51,19 @@
   align-items: center;
   justify-content: center;
   letter-spacing: 1px;
+  overflow: hidden;
 }
 .headerTitle2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .geauxfurText {
   width: 20%;
   height: 15%;
   margin: 0px 11px;
+  overflow: hidden;
 }
 .subHeaderDash {
   width: 100%;
@@ -67,6 +72,7 @@
   justify-content: center;
   font-size: 20px;
   font-weight: 300;
+  overflow: hidden;
 }
 
 .searchBarDash {

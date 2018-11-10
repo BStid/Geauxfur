@@ -4,13 +4,13 @@ import { updateInput } from "../../../../redux/mainReducer";
 import {
   updateCardsClass,
   getDriverPicture,
-  getActiveDriver,
   cancelGeauxfur
 } from "../../../../redux/senderReducer";
 import defaultPicture from "../../../Nav/pictures/userDefault.png";
 import Timer from "simple-react-timer";
 import Icons from "../../../Icons/Icons";
 import WarningCard from "./WarningCard/WarningCard";
+import ActiveListings from "./ActiveListings/ActiveListings";
 import "../../../Icons/Icons.css";
 import "../css/CardsActive.css";
 
@@ -36,12 +36,15 @@ class ActiveCard extends Component {
     this.props.addGeoCoder();
     this.setState({ showWarning: false });
   }
-  componentDidMount() {
-    console.log(this.props.sender);
-  }
+
   render() {
     const { showWarning } = this.state;
-    const { activeDriver, panelClass, activeDriverCard } = this.props.sender;
+    const {
+      activeDriver,
+      panelClass,
+      activeDriverCard,
+      areListingsActive
+    } = this.props.sender;
     const { itemType } = this.props.main;
     return (
       <div className={panelClass}>
@@ -53,7 +56,6 @@ class ActiveCard extends Component {
               src={defaultPicture}
               alt="User Profile"
               className="userIconActive"
-              onClick={() => console.log(activeDriver)}
             />
           ) : (
             <img
@@ -63,13 +65,13 @@ class ActiveCard extends Component {
             />
           )}
           <p>{activeDriver.first_name}</p>
-          <Timer countdown />
+          <Timer />
           <button className="cancelButton" onClick={() => this.promptCancel()}>
             {" "}
             Cancel Geauxfur
           </button>
         </div>
-
+        {areListingsActive ? <ActiveListings /> : null}
         {showWarning ? (
           <WarningCard
             cancelGeauxfur={this.cancelGeauxfur}
@@ -91,7 +93,6 @@ export default connect(
     updateInput,
     updateCardsClass,
     getDriverPicture,
-    getActiveDriver,
     cancelGeauxfur
   }
 )(ActiveCard);

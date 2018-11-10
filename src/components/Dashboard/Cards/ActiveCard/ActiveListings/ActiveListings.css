@@ -1,0 +1,63 @@
+.activeListingsContainer {
+  overflow: hidden;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  transition-delay: 4s;
+  transition: 20s ease-in-out;
+}
+.hiddenActiveListing {
+  overflow: hidden;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  position: absolute;
+  right: -80%;
+  transition: 2s ease-in-out;
+}
+.activeListing {
+  border: 1px solid rgba(245, 245, 245, 0.7);
+  border-top: 1px solid rgb(37, 158, 102);
+  height: 100%;
+  width: 22%;
+  margin: 0px 6%;
+  border-radius: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(245, 245, 245, 1);
+}
+.activeListing h3 {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 400;
+}
+.activeHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#activeListingIcon {
+  width: 11%;
+  position: relative;
+  top: 2%;
+  left: 1%;
+  margin-right: 35%;
+}

@@ -24,9 +24,18 @@ const getDriverPicture = (req, res) => {
     })
     .catch(err => res.status(500).send(err => console.log("Error", err)));
 };
+const getActiveItems = (req, res) => {
+  let db = req.app.get("db");
+  db.get_active_items()
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => res.status(500).send(err => console.log("Error", err)));
+};
 module.exports = {
   getDriverCoordinates,
   getDriverName,
   getDriverPicture,
-  getActiveDriver
+  getActiveDriver,
+  getActiveItems
 };

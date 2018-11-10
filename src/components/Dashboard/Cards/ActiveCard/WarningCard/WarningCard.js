@@ -10,14 +10,14 @@ export default function WarningCard(props) {
       </div>
       <div className="areYouSureContainer">
         <button className="questionButton" onClick={() => props.closeWarning()}>
-          Cancel
+          Go Back
         </button>
         <button
           className="questionButton"
           onClick={() => props.cancelGeauxfur()}
         >
           {" "}
-          Submit{" "}
+          Cancel Geauxfur{" "}
         </button>
       </div>
     </div>

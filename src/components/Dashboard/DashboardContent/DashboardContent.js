@@ -1,5 +1,4 @@
 import React from "react";
-import Cards from "../Cards/Cards";
 import Map from "../../Map/Map";
 import "../Dashboard.css";
 
