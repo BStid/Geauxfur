@@ -9,8 +9,8 @@ class Reviews extends Component {
     super();
     this.state = {};
   }
-  removeReview() {
-    this.props.removeReview();
+  removeReview(reviewId) {
+    this.props.removeReview(reviewId);
   }
   componentDidMount() {
     this.props.getReviews();
