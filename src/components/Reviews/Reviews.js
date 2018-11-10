@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getReviews } from "../../redux/mainReducer";
+import { getReviews, removeReview } from "../../redux/mainReducer";
 import DisplayReviews from "./DisplayReviews";
 import "./Reviews.css";
 
@@ -9,13 +9,22 @@ class Reviews extends Component {
     super();
     this.state = {};
   }
+  removeReview() {
+    this.props.removeReview();
+  }
   componentDidMount() {
     this.props.getReviews();
   }
   render() {
     const { reviews } = this.props.main;
     const displayReviews = reviews.map((value, index) => {
-      return <DisplayReviews key={index} value={value} />;
+      return (
+        <DisplayReviews
+          key={index}
+          value={value}
+          removeReview={this.removeReview}
+        />
+      );
     });
     return (
       <div className="reviewsOuter">
@@ -30,5 +39,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { getReviews }
+  { getReviews, removeReview }
 )(Reviews);

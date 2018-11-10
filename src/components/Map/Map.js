@@ -151,11 +151,9 @@ class Map extends Component {
               onViewportChange={viewport => this.setState({ viewport })}
             >
               {/* <Marker
-                latitude="32.7777531"
-                longitude="-96.79547939"
+                latitude={32.7777531}
+                longitude={-96.79547939}
                 offsetTop={-2}
-                captureScroll={true}
-                dynamicPosition={true}
               >
                 <img src={mapMarker} className="mapMarker" alt="marker" />
               </Marker> */}

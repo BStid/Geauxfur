@@ -29,7 +29,6 @@ const addLocation = (req, res) => {
 };
 
 const addImage = (req, res) => {
-  console.log(req.body);
   let db = req.app.get("db");
   const { imageUrl } = req.body;
   db.add_image([imageUrl, req.user.auth_id])
@@ -41,7 +40,6 @@ const addImage = (req, res) => {
 
 const addReview = (req, res) => {
   let db = req.app.get("db");
-  console.log(req);
   const { review, rating, driverId } = req.body;
   db.add_review([review, rating, driverId, req.user.id])
     .then(response => {
@@ -49,10 +47,18 @@ const addReview = (req, res) => {
     })
     .catch(err => res.status(500).send(err => console.log("Error", err)));
 };
+
+//DELETE
+const removeReview = (req, res) => {
+  let db = req.app.get("db");
+  db.remove_review(req.params.id)
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => res.status(500).send(err => console.log("Error", err)));
+};
 //PUT
 const updateProfile = (req, res) => {
-  console.log("req.user", req.user);
-  console.log("body", req.body);
   let db = req.app.get("db");
   const {
     dobInput,
@@ -83,5 +89,6 @@ module.exports = {
   updateProfile,
   getOrderHistory,
   addReview,
-  getReviews
+  getReviews,
+  removeReview
 };

@@ -4,6 +4,7 @@ import axios from "axios";
 const GET_USER = "GET_USER";
 const GET_ORDER_HISTORY = "GET_ORDER_HISTORY";
 const GET_REVIEWS = "GET_REVIEWS";
+const REMOVE_REVIEW = "REMOVE_REVIEW";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
 const ADD_REVIEW = "ADD_REVIEW";
@@ -98,6 +99,14 @@ export const updateProfile = (
       firstNameInput,
       lastNameInput
     })
+  };
+};
+
+//DELETE
+export const removeReview = reviewId => {
+  return {
+    type: REMOVE_REVIEW,
+    payload: axios.delete(`/api/review/${reviewId}`)
   };
 };
 //Reducer

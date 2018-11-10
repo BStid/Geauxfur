@@ -16,4 +16,5 @@ module.exports = app => {
   app.post("/api/image", userCtrl.addImage);
   app.post("/api/review", userCtrl.addReview);
   app.put("/api/profile", userCtrl.updateProfile);
+  app.delete("/api/review/:id", userCtrl.removeReview);
 };
