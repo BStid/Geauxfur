@@ -170,13 +170,14 @@
   .shortHistory {
     height: 42%;
   }
+  .profileBadge {
+    width: 8%;
+  }
 }
+
 @media (max-width: 1606px) {
   .profileOuter {
     width: 90vw;
-  }
-  .mainContentContainer {
-    width: 100vw;
   }
 }
 @media (max-width: 1500px) {
@@ -184,6 +185,69 @@
     width: 96vw;
   }
 }
-
-@media (max-width: 1380px) {
+@media (max-width: 1100px) {
+  .badgeContainer {
+    color: rgb(24, 24, 24);
+  }
+  .profileBadge {
+    width: 5%;
+    height: 43%;
+    margin-left: 1%;
+    position: relative;
+    left: -10%;
+  }
+  .displaySH,
+  .displayR {
+    height: 73%;
+    flex-wrap: wrap;
+  }
+  .shTitle {
+    margin-left: 23px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+  .reviewsContainer {
+    width: 19vw;
+  }
+  .logo {
+    margin: 0px 0px 0px 2px;
+    height: 66%;
+  }
+}
+@media (max-width: 950px) {
+  .profileCard {
+    width: 35%;
+  }
+  .reviewsContainer {
+    width: 25vw;
+  }
+  .profileBadge {
+    width: 6%;
+    height: 44%;
+  }
+}
+@media (max-width: 900px) {
+  .profileCard {
+    width: 40%;
+  }
+  .profileBadge {
+    width: 7%;
+  }
+}
+@media (max-width: 800px) {
+  .profileBadge {
+    width: 10%;
+  }
+  .profileCard {
+    width: 50%;
+  }
+  .reviewsContainer {
+    width: 38vw;
+  }
+}
+@media (max-width: 500px) {
+  .profileBadge {
+    width: 15%;
+  }
 }

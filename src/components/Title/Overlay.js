@@ -19,12 +19,10 @@ export default function Overlay() {
         className="gopherIcon"
         onClick={() => redirect()}
       />
-      {/* <Link to="/explore"> */}
       <div className="learnMoreContainer">
         <div className="lowerLearnMoreContainer" />
       </div>
       <p className="exploreText">Explore</p>
-      {/* </Link> */}
       <div className="dashboardLinkContainer">
         <div onClick={() => redirect()} className="dashLink" id="send">
           Send

@@ -6,6 +6,18 @@
   background-color: rgb(34, 34, 34);
   margin-right: 1px;
 }
+.sideContainer-hide {
+  transform: translate(0%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 30vw;
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(34, 34, 34);
+  margin-right: 1px;
+  transition: 0.5s;
+}
 
 /* TopNav */
 .topNavContainer {
@@ -16,7 +28,17 @@
   flex-direction: row;
   margin-bottom: 1px;
 }
-
+.menuDiv {
+  color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
+  font-size: 40px;
+  position: absolute;
+  left: 12px;
+  display: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 4%;
+}
 .iconContainer {
   height: 6.9vh;
   width: 10vw;
@@ -287,5 +309,86 @@
   .historyIcon,
   .safetyIcon {
     margin: 0px 5px;
+  }
+  .searchIcon {
+    left: 4.3%;
+  }
+}
+@media (max-width: 1100px) {
+  .searchBar {
+    width: 36%;
+  }
+  .filler {
+    width: 23vw;
+  }
+}
+@media (max-width: 950px) {
+  .userImage {
+    width: 14%;
+  }
+  .sideContainer {
+    width: 5vw;
+  }
+  .iconContainer {
+    width: 5vw;
+  }
+}
+@media (max-width: 800px) {
+  .searchIcon {
+    display: none;
+  }
+  .filler {
+    width: 20vw;
+  }
+  .moreContainer {
+    width: 7vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .sideContainer {
+    width: 6vw;
+  }
+  .iconContainer {
+    width: 6vw;
+  }
+  .userImage {
+    width: 17%;
+  }
+}
+
+@media (max-width: 650px) {
+  .iconContainer {
+    display: none;
+  }
+  .sideContainer {
+    width: 30vw;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-100%);
+    /* transition: 0.5s; */
+  }
+  .sideNav {
+    width: 30vw;
+  }
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    color: white;
+  }
+  .homeIcon,
+  .profileIcon,
+  .messagesIcon,
+  .paymentIcon,
+  .historyIcon,
+  .safetyIcon {
+    margin: 0px 25px 0px 0px;
+  }
+  .menuDiv {
+    display: block;
+    position: relative;
   }
 }

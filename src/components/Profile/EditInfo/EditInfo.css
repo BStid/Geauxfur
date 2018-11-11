@@ -84,3 +84,8 @@
   font-weight: 400;
   color: rgb(0, 0, 0);
 }
+@media (max-width: 700px) {
+  .categorySelector {
+    font-size: 18px;
+  }
+}

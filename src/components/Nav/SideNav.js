@@ -14,10 +14,10 @@ class SideNav extends Component {
     super();
     this.state = {};
   }
-  //TODO: Clean Up This Mess with a .map pulling from database
+  //TODO: Clean Up links with a .map pulling from database
   render() {
     return (
-      <div className="sideContainer">
+      <div className={this.props.sideNavClass}>
         <div className="sideNav">
           <Link to="/dashboard/content">
             <div className="homeButton">

@@ -7,15 +7,28 @@ import routes from "../../routes";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
-  componentDidMount() {}
+  constructor() {
+    super();
+    this.state = {
+      sideNavClass: "sideContainer"
+    };
+    this.toggleSideNav = this.toggleSideNav.bind(this);
+  }
 
+  toggleSideNav() {
+    if (this.state.sideNavClass === "sideContainer-hide") {
+      this.setState({ sideNavClass: "sideContainer" });
+    } else {
+      this.setState({ sideNavClass: "sideContainer-hide" });
+    }
+  }
   render() {
     return (
       <div className="dashboardOuter">
         <div className="mainContentContainer">
-          <TopNav />
+          <TopNav toggleSideNav={this.toggleSideNav} />
           <div className="mainContent">
-            <SideNav />
+            <SideNav sideNavClass={this.state.sideNavClass} />
             {routes}
           </div>
         </div>

@@ -9,8 +9,8 @@ import userDefaultIcon from "./pictures/userDefault.png";
 import logo from "../../pictures/gopherHeadSillo.png";
 
 class TopNav extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userInfo: []
     };
@@ -23,6 +23,9 @@ class TopNav extends Component {
 
     return (
       <div className="topNavContainer">
+        <div className="menuDiv" onClick={this.props.toggleSideNav}>
+          &#x2630;
+        </div>
         <Link to="/" className="">
           <div className="iconContainer">
             <img src={logo} alt="logo" className="logo" />
