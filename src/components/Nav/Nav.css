@@ -12,11 +12,13 @@
   flex-direction: column;
   height: 100vh;
   width: 30vw;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  top: 7%;
+  z-index: 2;
   background-color: rgb(34, 34, 34);
   margin-right: 1px;
   transition: 0.5s;
+  border-right: 1px solid rgb(38, 169, 108);
 }
 
 /* TopNav */
@@ -33,11 +35,11 @@
   background-color: rgb(34, 34, 34);
   font-size: 40px;
   position: absolute;
-  left: 12px;
+  left: 0px;
   display: none;
   cursor: pointer;
   overflow: hidden;
-  padding-right: 4%;
+  padding: 2% 4%;
 }
 .iconContainer {
   height: 6.9vh;
@@ -358,6 +360,12 @@
 }
 
 @media (max-width: 650px) {
+  .searchBar {
+    width: 43%;
+  }
+  .filler {
+    width: 12vw;
+  }
   .iconContainer {
     display: none;
   }
@@ -365,8 +373,7 @@
     width: 30vw;
     position: absolute;
     z-index: 1;
-    transform: translate(-100%);
-    /* transition: 0.5s; */
+    transform: translate(-110%);
   }
   .sideNav {
     width: 30vw;
@@ -390,5 +397,109 @@
   .menuDiv {
     display: block;
     position: relative;
+  }
+}
+@media (max-height: 400px) {
+  .topNavContainer {
+    height: 16vh;
+  }
+}
+@media (max-width: 550px) {
+  .searchBar {
+    display: none;
+  }
+  .filler {
+    width: 53vw;
+  }
+  .userImage {
+    width: 20%;
+  }
+  .userProfileCard {
+    width: 29vw;
+  }
+}
+@media (max-width: 450px) {
+  .filler {
+    width: 45vw;
+  }
+  .userProfileCard {
+    width: 35vw;
+  }
+  .moreIcon {
+    display: none;
+  }
+  .userImage {
+    margin-left: 11px;
+    width: 25%;
+  }
+  .menuDiv {
+    font-size: 32px;
+  }
+  .topNavContainer {
+    border-bottom: 1px solid rgb(38, 169, 108);
+    position: fixed;
+    z-index: 4;
+    top: 0;
+  }
+  .sideContainer {
+    transition: 0.5s;
+    position: fixed;
+    top: 7%;
+  }
+  .sideContainer-hide {
+    width: 45vw;
+  }
+  .sideNav {
+    width: 45vw;
+  }
+}
+@media (max-height: 1200px) {
+  .userImage {
+    margin-left: 11px;
+    width: 12%;
+  }
+}
+@media (max-height: 900px) {
+  .userImage {
+    height: 70%;
+  }
+}
+@media (max-height: 840px) {
+  .userImage {
+    width: 23%;
+    top: -3px;
+    height: 60%;
+  }
+  .userName {
+    top: 33%;
+    font-size: 19px;
+  }
+  .userProfileCard {
+    height: 100%;
+  }
+  .userEmail {
+    display: none;
+  }
+}
+@media (max-height: 720px) {
+  .userName {
+    font-size: 17px;
+    top: 30%;
+  }
+  .userImage {
+    width: 21%;
+    top: -2px;
+    height: 65%;
+  }
+  .menuDiv {
+    font-size: 28px;
+  }
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 17px;
   }
 }

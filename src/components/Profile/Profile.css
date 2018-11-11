@@ -42,6 +42,7 @@
   color: #ffffff;
   font-weight: bolder;
   letter-spacing: 6px;
+  overflow: hidden;
 }
 #imageUploader {
   position: absolute !important;
@@ -78,6 +79,7 @@
   flex-direction: column;
   align-items: center;
   margin-left: 5%;
+  overflow: hidden;
 }
 #helpUploadText {
   color: #8b8b8b;
@@ -93,6 +95,7 @@
   color: #259e66;
   font-weight: 700;
   cursor: pointer;
+  overflow: hidden;
 }
 .profileUserData {
   border: 1px rgba(139, 139, 139, 0.4) solid;
@@ -161,17 +164,23 @@
   /* border: 1px orange solid; */
 }
 .profileBadge {
-  width: 7%;
+  width: 6%;
   height: 75%;
   margin-left: 16%;
   font-weight: 600;
 }
+@media (max-width: 2100px) {
+  .profileBadge {
+    width: 7%;
+  }
+}
+
 @media (max-width: 1762px) {
   .shortHistory {
     height: 42%;
   }
   .profileBadge {
-    width: 8%;
+    width: 7%;
   }
 }
 
@@ -179,10 +188,23 @@
   .profileOuter {
     width: 90vw;
   }
+  .profileBadge {
+    width: 7%;
+  }
 }
 @media (max-width: 1500px) {
   .profileOuter {
     width: 96vw;
+  }
+}
+@media (max-width: 1370px) {
+  .profileBadge {
+    width: 7%;
+  }
+}
+@media (max-height: 1200px) {
+  .profileBadge {
+    width: 6%;
   }
 }
 @media (max-width: 1100px) {
@@ -246,8 +268,147 @@
     width: 38vw;
   }
 }
-@media (max-width: 500px) {
+@media (max-height: 1200px) {
   .profileBadge {
-    width: 15%;
+    width: 87;
+  }
+}
+
+@media (max-width: 650px) {
+  .profileCard {
+    width: 75%;
+  }
+  .profileBadge {
+    width: 13%;
+  }
+}
+
+@media (max-width: 550px) {
+  .profileBadge {
+    width: 16%;
+  }
+}
+@media (max-width: 450px) {
+  .profileCard {
+    width: 80%;
+    margin-top: 18%;
+  }
+  .profileOuter {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .profileCardText {
+    height: 18%;
+  }
+  .profileName {
+    font-size: 30px;
+  }
+  .badgeContainer {
+    height: 2%;
+    width: 94%;
+    margin-bottom: 15%;
+  }
+  .profileBadge {
+    width: 18%;
+    height: 100%;
+    left: 0;
+    margin: 0 2%;
+  }
+  #helpUploadText {
+    display: none;
+  }
+  .shortHistory {
+    height: 14%;
+    margin-bottom: 20%;
+  }
+  .displaySH {
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .displayR {
+    height: 55%;
+  }
+
+  .profileImage {
+    width: 90%;
+    position: relative;
+  }
+  .profileImageContainer {
+    height: 20vh;
+  }
+  .reviewsContainer {
+    width: 67vw;
+  }
+}
+@media (max-height: 1200px) {
+  .profileCardText {
+    height: 35%;
+  }
+
+  .profileImageContainer {
+    height: 32vh;
+  }
+  .badgeContainer {
+    height: 7%;
+  }
+  .shortHistory {
+    height: 40%;
+  }
+}
+@media (max-height: 900px) {
+  .profileImageContainer {
+    height: 44vh;
+  }
+  .profileCardText {
+    height: 32%;
+  }
+  .badgeContainer {
+    height: 6%;
+  }
+  .shTitle {
+    height: 55%;
+  }
+}
+@media (max-height: 840px) {
+  .profileImageContainer {
+    height: 53vh;
+  }
+  .userImage {
+    width: 25%;
+    top: 0;
+  }
+}
+@media (max-height: 720px) {
+  .displayR {
+    height: 50%;
+  }
+  .profileImageContainer {
+    height: 50vh;
+  }
+  .profileCard {
+    height: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .badgeContainer {
+    width: 115%;
+  }
+  .profileBadge {
+    left: -20%;
+  }
+}
+@media (max-height: 570px) {
+  .profileBadge {
+    left: -11%;
+    height: 100%;
+    left: -14%;
+  }
+  .badgeContainer {
+    height: 7%;
   }
 }

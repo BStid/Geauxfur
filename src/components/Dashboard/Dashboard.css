@@ -31,3 +31,10 @@
     width: 100vw;
   }
 }
+
+@media (max-width: 450px) {
+  .mainContent {
+    height: auto;
+    overflow: auto;
+  }
+}

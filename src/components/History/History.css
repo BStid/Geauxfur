@@ -62,3 +62,10 @@ h1:first-letter {
   margin: 5px 0px;
   overflow: hidden;
 }
+
+@media (max-width: 450px) {
+  .iconType {
+    height: 8vh;
+    width: 17vw;
+  }
+}

@@ -81,7 +81,7 @@
     font-size: 1.3em;
   }
   .phReviewButton {
-    height: 18%;
+    height: 15%;
     text-align: center;
   }
 }
@@ -115,5 +115,16 @@
 @media (max-width: 800px) {
   .phCard {
     width: 38vw;
+  }
+}
+@media (max-width: 450px) {
+  .phCard {
+    width: 67vw;
+    height: 38vh;
+  }
+}
+@media (max-height: 720px) {
+  .phCard {
+    margin-bottom: 17%;
   }
 }
