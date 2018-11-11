@@ -151,3 +151,8 @@
   position: relative;
   top: 0%;
 }
+@media (max-width: 1762px) {
+  .reviewText {
+    font-size: 14px;
+  }
+}

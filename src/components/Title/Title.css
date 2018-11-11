@@ -87,9 +87,10 @@
   right: 6%;
   height: 14%;
   width: 11%;
-  z-index: 3;
+  z-index: 7;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   /* border: 1px white solid; */
 }
 .dashLink {
@@ -99,10 +100,200 @@
   font-size: 20px;
   letter-spacing: 3px;
   cursor: pointer;
+  overflow: hidden;
 }
 #send {
   text-align: left;
 }
 #deliver {
   text-align: right;
+}
+@media (max-width: 1600px) {
+  .exploreText {
+    right: 20.7%;
+  }
+}
+@media (max-width: 1340px) {
+  .exploreText {
+    right: 20.3%;
+  }
+  .dashboardLinkContainer {
+    right: 13%;
+  }
+  .greenBlock {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+  }
+  .middlePicture {
+    width: 120%;
+  }
+  .whiteOverlay {
+    width: 120%;
+  }
+  #deliver {
+    text-align: left;
+  }
+}
+@media (max-width: 1200px) {
+  .whiteOverlay {
+    height: 85%;
+    top: 6%;
+  }
+  .middlePicture {
+    height: 85%;
+    top: 6%;
+  }
+}
+@media (max-width: 1000px) {
+  .exploreText {
+    right: 19.3%;
+  }
+  .whiteOverlay {
+    height: 70%;
+    top: 15%;
+  }
+  .middlePicture {
+    height: 70%;
+    top: 15%;
+  }
+  .dashLink {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .dashboardLinkContainer {
+    position: absolute;
+    top: 45%;
+  }
+}
+
+@media (max-width: 800px) {
+  .exploreText {
+    right: 17.3%;
+  }
+  .whiteOverlay {
+    height: 60%;
+    top: 20%;
+  }
+  .middlePicture {
+    height: 60%;
+    top: 20%;
+  }
+  .dashLink {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .dashboardLinkContainer {
+    right: 4%;
+    width: 20%;
+  }
+  .greenBlock {
+    height: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .exploreText {
+    right: 16.3%;
+  }
+  .whiteOverlay {
+    height: 50%;
+    top: 23%;
+  }
+  .middlePicture {
+    height: 50%;
+    top: 23%;
+  }
+}
+@media (max-width: 500px) {
+  .exploreText {
+    right: 13.3%;
+  }
+  .whiteOverlay {
+    display: none;
+  }
+  .middlePicture {
+    display: none;
+  }
+  .gopherIcon {
+    height: 50%;
+    bottom: 20%;
+    right: 32%;
+  }
+  .dashLink {
+    font-size: 13px;
+  }
+  #send {
+    text-align: right;
+  }
+  #deliver {
+    text-align: right;
+  }
+  .dashboardLinkContainer {
+    top: 10%;
+    width: 40%;
+    right: 25%;
+  }
+}
+
+@media (max-width: 350px) {
+  .gopherIcon {
+    height: 40%;
+    bottom: 25%;
+    right: 40%;
+  }
+  .exploreText {
+    right: 12.3%;
+  }
+}
+@media (max-width: 300px) {
+  .gopherIcon {
+    bottom: 25%;
+    right: 30%;
+  }
+  .exploreText {
+    right: 11.3%;
+  }
+}
+@media (max-height: 800px) {
+  .lowerLearnMoreContainer {
+    height: 9%;
+  }
+}
+@media (max-height: 700px) {
+  .lowerLearnMoreContainer {
+    height: 10%;
+  }
+}
+@media (max-height: 600px) {
+  .lowerLearnMoreContainer {
+    height: 11%;
+  }
+}
+@media (max-height: 550px) {
+  .lowerLearnMoreContainer {
+    height: 13%;
+  }
+  .dashboardLinkContainer {
+    height: 20%;
+  }
+  .dashLink {
+    font-size: 15px;
+  }
+}
+@media (max-height: 450px) {
+  .lowerLearnMoreContainer {
+    height: 16%;
+  }
+}
+@media (max-height: 350px) {
+  .lowerLearnMoreContainer {
+    height: 20%;
+  }
+  .dashboardLinkContainer {
+    height: 22%;
+  }
+}
+@media (max-height: 300px) {
+  .dashboardLinkContainer {
+    height: 31%;
+  }
 }

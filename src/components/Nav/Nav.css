@@ -143,6 +143,7 @@
   color: #aaaaaa;
   /* margin: 5px 40px; */
   padding: 5px 0px;
+  overflow: hidden;
 }
 
 .homeButton,
@@ -174,6 +175,7 @@
   position: relative;
   top: 4px;
   color: #aaaaaa;
+  overflow: hidden;
 }
 #noInvert {
   filter: invert(100%);
@@ -221,4 +223,69 @@
   font-size: 14px;
   color: #888888;
   font-weight: 500;
+}
+@media (max-width: 1606px) {
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 16px;
+  }
+  .logo {
+    height: 55%;
+  }
+  .logoText {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 1606px) {
+  .header {
+    width: 90vw;
+  }
+  .userProfileCard {
+    width: 24vw;
+  }
+}
+@media (max-width: 1500px) {
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 25px;
+    color: rgb(38, 38, 38);
+  }
+  .sideContainer {
+    width: 4vw;
+  }
+  .logoText {
+    display: none;
+  }
+  .iconContainer {
+    width: 4vw;
+  }
+  .logo {
+    height: 55%;
+    margin: 0px 0px 0px 10px;
+  }
+  .logoText {
+    font-size: 1.1rem;
+  }
+  .header {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 1152px) {
+  .homeIcon,
+  .profileIcon,
+  .messagesIcon,
+  .paymentIcon,
+  .historyIcon,
+  .safetyIcon {
+    margin: 0px 5px;
+  }
 }

@@ -5,3 +5,8 @@
 #totalPage {
   width: 12%;
 }
+@media (max-width: 1600px) {
+  .categoryIcon {
+    width: 70%;
+  }
+}

@@ -25,3 +25,9 @@
   flex-direction: row;
   border-top: 1px solid rgb(38, 169, 108, 0.4);
 }
+@media (max-width: 1606px) {
+  .mainContentContainer {
+    margin-left: 0px;
+    width: 100vw;
+  }
+}
