@@ -160,7 +160,7 @@
 .questionButton:hover {
   background-color: rgba(38, 169, 108, 0.2);
   color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(38, 169, 108, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 #finalButton {
   width: 20%;

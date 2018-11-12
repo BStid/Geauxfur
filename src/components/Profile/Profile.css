@@ -202,11 +202,7 @@
     width: 7%;
   }
 }
-@media (max-height: 1200px) {
-  .profileBadge {
-    width: 6%;
-  }
-}
+
 @media (max-width: 1100px) {
   .badgeContainer {
     color: rgb(24, 24, 24);
@@ -268,11 +264,6 @@
     width: 38vw;
   }
 }
-@media (max-height: 1200px) {
-  .profileBadge {
-    width: 87;
-  }
-}
 
 @media (max-width: 650px) {
   .profileCard {
@@ -292,6 +283,7 @@
   .profileCard {
     width: 80%;
     margin-top: 18%;
+    height: 27%;
   }
   .profileOuter {
     flex-direction: column;
@@ -300,7 +292,7 @@
     height: auto;
   }
   .profileCardText {
-    height: 18%;
+    height: 20%;
   }
   .profileName {
     font-size: 30px;
@@ -324,7 +316,7 @@
     margin-bottom: 20%;
   }
   .displaySH {
-    height: 100%;
+    height: 90%;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -345,41 +337,31 @@
   }
 }
 @media (max-height: 1200px) {
-  .profileCardText {
-    height: 35%;
+  .profileImageContainer {
+    height: 23vh;
   }
 
-  .profileImageContainer {
-    height: 32vh;
-  }
-  .badgeContainer {
-    height: 7%;
-  }
   .shortHistory {
     height: 40%;
   }
 }
 @media (max-height: 900px) {
   .profileImageContainer {
-    height: 44vh;
+    height: 23vh;
   }
   .profileCardText {
-    height: 32%;
+    height: 22%;
   }
-  .badgeContainer {
+  */ .shTitle {
     height: 6%;
-  }
-  .shTitle {
-    height: 55%;
   }
 }
 @media (max-height: 840px) {
   .profileImageContainer {
-    height: 53vh;
+    height: 25vh;
   }
-  .userImage {
-    width: 25%;
-    top: 0;
+  .profileCard {
+    height: 37%;
   }
 }
 @media (max-height: 720px) {
@@ -387,10 +369,10 @@
     height: 50%;
   }
   .profileImageContainer {
-    height: 50vh;
+    height: 26vh;
   }
   .profileCard {
-    height: 100%;
+    height: 30%;
   }
 }
 
@@ -409,6 +391,6 @@
     left: -14%;
   }
   .badgeContainer {
-    height: 7%;
+    height: 2%;
   }
 }

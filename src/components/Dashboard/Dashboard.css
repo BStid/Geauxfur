@@ -31,10 +31,27 @@
     width: 100vw;
   }
 }
-
-@media (max-width: 450px) {
+@media (max-width: 990px) {
   .mainContent {
     height: auto;
-    overflow: auto;
+  }
+}
+@media (max-width: 520px) {
+  .historyCard {
+    width: 63vw;
+    margin-bottom: 10%;
+  }
+}
+@media (max-width: 450px) {
+}
+@media (max-height: 720px) {
+  .historyCard {
+    width: 71vw;
+    height: 37vh;
+  }
+}
+@media (max-height: 590px) {
+  .historyCard {
+    height: 45vh;
   }
 }

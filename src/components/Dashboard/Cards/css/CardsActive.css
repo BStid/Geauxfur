@@ -102,7 +102,7 @@
   border-radius: 10%;
   box-shadow: 2px 0px 25px -10px rgba(255, 255, 255, 1);
   background-color: rgba(38, 38, 38, 0.9);
-  z-index:10;
+  z-index: 10;
   transition: ease-in-out 1.5s;
   transition-delay: 5s;
 }
@@ -126,19 +126,20 @@
   left: -39%;
 }
 .cancelButton {
-  height: 18%;
+  height: 9%;
   position: relative;
   top: 6%;
-  border: 1px solid rgba(201, 0, 22, 0.9);
-  width: 42%;
+  border: 1px solid rgba(201, 0, 22, 0.7);
+  width: 33%;
   letter-spacing: 1px;
-  background-color: rgba(38, 38, 38, 0.9);
+  background-color: rgba(201, 0, 22, 0.9);
   color: rgb(255, 255, 255);
   border-radius: 12%;
   font-size: 15px;
   font-weight: 500;
   outline: none;
   cursor: pointer;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   overflow: hidden;
 }

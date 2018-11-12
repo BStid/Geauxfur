@@ -63,6 +63,35 @@ h1:first-letter {
   overflow: hidden;
 }
 
+@media (max-width: 1606px) {
+  .historyOuter {
+    border: none;
+    width: 100vw;
+    border-top: 1px solid rgba(0, 128, 128, 0.6);
+  }
+  .historyTitle {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 1120px) {
+  .historyInfo {
+    font-size: 17px;
+  }
+  .historyCard {
+    width: 19vw;
+  }
+}
+@media (max-width: 990px) {
+  .historyCard {
+    width: 22vw;
+  }
+}
+@media (max-width: 850px) {
+  .historyCard {
+    width: 35vw;
+  }
+}
 @media (max-width: 450px) {
   .iconType {
     height: 8vh;

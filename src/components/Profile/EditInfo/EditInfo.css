@@ -98,13 +98,8 @@
     height: 20%;
   }
 }
-@media (max-width: 1200px) {
+@media (max-height: 1200px) {
   .noDisplay {
     height: 50vh;
-  }
-}
-@media (max-height: 900px) {
-  .noDisplay {
-    height: 100vh;
   }
 }

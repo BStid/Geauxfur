@@ -453,12 +453,7 @@
     width: 45vw;
   }
 }
-@media (max-height: 1200px) {
-  .userImage {
-    margin-left: 11px;
-    width: 12%;
-  }
-}
+
 @media (max-height: 900px) {
   .userImage {
     height: 70%;
@@ -501,5 +496,10 @@
   .historyButton,
   .safetyButton {
     height: 17px;
+  }
+}
+@media (max-height: 450px) {
+  .userImage {
+    width: 32px;
   }
 }
