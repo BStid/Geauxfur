@@ -227,3 +227,32 @@
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 970px) {
+  .cardsContainer {
+    width: 80%;
+    left: 8%;
+  }
+}
+@media (max-width: 700px) {
+  .cardsContainer {
+    width: 100%;
+    left: 0%;
+  }
+}
+@media (max-width: 530px) {
+  #firstQuestion {
+    right: 36%;
+    height: 12%;
+    width: 22%;
+    top: 48%;
+  }
+  .headerTitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .headerTitle {
+    font-size: 25px;
+  }
+}

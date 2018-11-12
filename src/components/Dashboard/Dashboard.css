@@ -30,6 +30,9 @@
     margin-left: 0px;
     width: 100vw;
   }
+  .dashContentContainer {
+    width: 90vw;
+  }
 }
 @media (max-width: 990px) {
   .mainContent {

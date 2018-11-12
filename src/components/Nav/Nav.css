@@ -326,7 +326,7 @@
 }
 @media (max-width: 950px) {
   .userImage {
-    width: 14%;
+    width: 17%;
   }
   .sideContainer {
     width: 5vw;
@@ -340,10 +340,16 @@
     display: none;
   }
   .filler {
-    width: 20vw;
+    width: 50vw;
   }
   .moreContainer {
     width: 7vw;
+  }
+  .userProfileCard {
+    width: 35vw;
+  }
+  .searchBar {
+    display: none;
   }
 }
 
@@ -364,7 +370,7 @@
     width: 43%;
   }
   .filler {
-    width: 12vw;
+    width: 41vw;
   }
   .iconContainer {
     display: none;
@@ -397,6 +403,17 @@
   .menuDiv {
     display: block;
     position: relative;
+    font-size: 33px;
+  }
+}
+@media (max-width: 510px) {
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 23px;
   }
 }
 @media (max-height: 400px) {
@@ -415,7 +432,10 @@
     width: 20%;
   }
   .userProfileCard {
-    width: 29vw;
+    width: 41vw;
+  }
+  .menuDiv {
+    font-size: 33px;
   }
 }
 @media (max-width: 450px) {
@@ -482,7 +502,7 @@
     top: 30%;
   }
   .userImage {
-    width: 21%;
+    width: 11%;
     top: -2px;
     height: 65%;
   }
