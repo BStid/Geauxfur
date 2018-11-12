@@ -50,6 +50,94 @@
     right: 33.2% !important;
   }
 }
+@media (max-height: 950px) {
+  .mapboxgl-ctrl-top-right {
+    top: 34.6% !important;
+  }
+}
+
+@media (max-height: 930px) {
+  .mapboxgl-ctrl-top-right {
+    top: 33.6% !important;
+  }
+}
+@media (max-height: 900px) {
+  .mapboxgl-ctrl-top-right {
+    top: 32.6% !important;
+  }
+}
+@media (max-height: 870px) {
+  .mapboxgl-ctrl-top-right {
+    top: 31.6% !important;
+  }
+}
+@media (max-height: 840px) {
+  .mapboxgl-ctrl-top-right {
+    top: 30.6% !important;
+  }
+}
+@media (max-height: 810px) {
+  .mapboxgl-ctrl-top-right {
+    top: 29.6% !important;
+  }
+}
+@media (max-height: 790px) {
+  .mapboxgl-ctrl-top-right {
+    top: 28.6% !important;
+  }
+}
+@media (max-height: 760px) {
+  .mapboxgl-ctrl-top-right {
+    top: 27.6% !important;
+  }
+}
+@media (max-height: 730px) {
+  .mapboxgl-ctrl-top-right {
+    top: 26.6% !important;
+  }
+}
+
+@media (max-height: 700px) {
+  .mapboxgl-ctrl-top-right {
+    top: 25.6% !important;
+  }
+}
+
+@media (max-height: 670px) {
+  .mapboxgl-ctrl-top-right {
+    top: 24.6% !important;
+  }
+}
+@media (max-height: 650px) {
+  .mapboxgl-ctrl-top-right {
+    top: 23.6% !important;
+  }
+}
+@media (max-height: 630px) {
+  .mapboxgl-ctrl-top-right {
+    top: 22.6% !important;
+  }
+}
+@media (max-height: 600px) {
+  .mapboxgl-ctrl-top-right {
+    top: 21.6% !important;
+  }
+}
+@media (max-height: 570px) {
+  .mapboxgl-ctrl-top-right {
+    top: 20.6% !important;
+  }
+}
+@media (max-height: 550px) {
+  .mapboxgl-ctrl-top-right {
+    top: 19.6% !important;
+  }
+}
+@media (max-height: 510px) {
+  .mapboxgl-ctrl-top-right {
+    top: 18.6% !important;
+  }
+}
 @media (max-width: 1800px) {
   .mapboxgl-ctrl-top-right {
     right: 36.2% !important;
@@ -87,20 +175,29 @@
     right: 39.2% !important;
     width: 27% !important;
   }
-  .dashContentContainer {
-    width: 95vw;
+}
+@media (max-width: 1380px) {
+  .mapboxgl-ctrl-top-right {
+    right: 42.2% !important;
+    width: 24% !important;
   }
 }
 @media (max-width: 1310px) {
   .mapboxgl-ctrl-top-right {
-    right: 41.2% !important;
-    width: 34% !important;
+    right: 43.2% !important;
+    width: 31% !important;
+  }
+}
+@media (max-width: 1280px) {
+  .mapboxgl-ctrl-top-right {
+    right: 45.2% !important;
+    width: 29% !important;
   }
 }
 @media (max-width: 1250px) {
   .mapboxgl-ctrl-top-right {
-    right: 44.2% !important;
-    width: 29% !important;
+    right: 46.2% !important;
+    width: 27% !important;
   }
 }
 @media (max-width: 1200px) {
@@ -110,68 +207,98 @@
     top: 35.2% !important;
   }
 }
+@media (max-width: 1150px) {
+  .mapboxgl-ctrl-top-right {
+    right: 51.2% !important;
+    width: 22% !important;
+  }
+}
 @media (max-width: 1100px) {
   .mapboxgl-ctrl-top-right {
-    right: 50.2% !important;
-    width: 28% !important;
+    right: 54.2% !important;
+    width: 22% !important;
     top: 35.3% !important;
   }
 }
 @media (max-width: 1060px) {
   .mapboxgl-ctrl-top-right {
-    right: 52.2% !important;
-    width: 23% !important;
+    right: 55.2% !important;
+    width: 22% !important;
+    top: 35% !important;
   }
 }
 @media (max-width: 1030px) {
   .mapboxgl-ctrl-top-right {
-    right: 54.2% !important;
-    width: 27% !important;
+    right: 55.2% !important;
+    width: 25% !important;
     top: 35% !important;
+  }
+}
+@media (max-width: 1000px) {
+  .mapboxgl-ctrl-top-right {
+    right: 56.2% !important;
+    width: 24% !important;
   }
 }
 @media (max-width: 970px) {
   .mapboxgl-ctrl-top-right {
-    right: 56.2% !important;
-    width: 30% !important;
-    top: 35.5% !important;
+    right: 58.2% !important;
+    width: 27% !important;
+    top: 35% !important;
+  }
+}
+@media (max-width: 930px) {
+  .mapboxgl-ctrl-top-right {
+    right: 60.2% !important;
+    width: 25% !important;
   }
 }
 @media (max-width: 900px) {
   .mapboxgl-ctrl-top-right {
-    right: 59.2% !important;
-    width: 26% !important;
+    right: 61.2% !important;
+    width: 23% !important;
   }
 }
 @media (max-width: 860px) {
   .mapboxgl-ctrl-top-right {
-    right: 62.2% !important;
+    right: 64.2% !important;
+    width: 22% !important;
     top: 35% !important;
   }
 }
 @media (max-width: 800px) {
   .mapboxgl-ctrl-top-right {
-    right: 62.2% !important;
-    width: 27% !important;
+    right: 65.2% !important;
+    width: 25% !important;
     top: 35% !important;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 770px) {
   .mapboxgl-ctrl-top-right {
     right: 67.2% !important;
     width: 21% !important;
     top: 34.9% !important;
   }
 }
-@media (max-width: 610px) {
+@media (max-width: 660px) {
   .mapboxgl-ctrl-top-right {
     right: 69.2% !important;
+  }
+}
+@media (max-width: 620px) {
+  .mapboxgl-ctrl-top-right {
+    right: 70.2% !important;
   }
 }
 @media (max-width: 580px) {
   .mapboxgl-ctrl-top-right {
     right: 71.2% !important;
     top: 34.8% !important;
+  }
+}
+@media (max-width: 565px) {
+  .mapboxgl-ctrl-top-right {
+    top: 36.8% !important;
   }
 }
 @media (max-width: 550px) {
@@ -185,6 +312,28 @@
     right: 71.2% !important;
     width: 23% !important;
     top: 36.8% !important;
+  }
+}
+@media (max-width: 475px) {
+  .mapboxgl-ctrl-top-right {
+    right: 73.2% !important;
+    width: 21% !important;
+  }
+}
+@media (max-width: 445px) {
+  .mapboxgl-ctrl-top-right {
+    right: 76.2% !important;
+    width: 19% !important;
+    height: 22.5% !important;
+  }
+}
+@media (max-height: 813px), screen and (orientation: portrait) {
+  .mapboxgl-ctrl-top-right {
+    right: 78.2% !important;
+    width: 17% !important;
+    height: 20.5% !important;
+    top: 29.8% !important;
+    z-index: 4;
   }
 }
 .mapboxgl-ctrl-geocoder ul > li > a:hover {

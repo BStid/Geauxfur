@@ -7,6 +7,7 @@ import {
   updateActivePanel
 } from "../../../redux/senderReducer";
 import Icons from "../../Icons/Icons";
+import Payment from "../../Payment/Payment";
 import "../../Icons/Icons.css";
 import "./css/Cards.css";
 
@@ -92,6 +93,7 @@ class Cards extends Component {
             </button>
           </div>
         </div>,
+        <Payment />,
         <div className="hidden" />
       ]
     };

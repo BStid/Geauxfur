@@ -14,7 +14,7 @@
   width: 30vw;
   position: fixed;
   top: 7%;
-  z-index: 2;
+  z-index: 20;
   background-color: rgb(34, 34, 34);
   margin-right: 1px;
   transition: 0.5s;
@@ -335,10 +335,12 @@
     width: 5vw;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .searchIcon {
     display: none;
   }
+}
+@media (max-width: 800px) {
   .filler {
     width: 50vw;
   }
@@ -481,7 +483,7 @@
 }
 @media (max-height: 840px) {
   .userImage {
-    width: 23%;
+    width: 14%;
     top: -3px;
     height: 60%;
   }
@@ -523,3 +525,9 @@
     width: 32px;
   }
 }
+
+/* @media (max-height: 813px), screen and (orientation: portrait) {
+  .userImage {
+    width: 31%;
+  }
+} */

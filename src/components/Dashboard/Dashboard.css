@@ -34,6 +34,12 @@
     width: 90vw;
   }
 }
+
+@media (max-width: 1445px) {
+  .dashContentContainer {
+    width: 95vw;
+  }
+}
 @media (max-width: 990px) {
   .mainContent {
     height: auto;
@@ -56,5 +62,11 @@
 @media (max-height: 590px) {
   .historyCard {
     height: 45vh;
+  }
+}
+
+@media (max-height: 813px), screen and (orientation: portrait) {
+  .dashContentContainer {
+    width: 100vw;
   }
 }

@@ -17,6 +17,8 @@ const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
 const AWS = require("aws-sdk");
 const configureRoutes = require("./services/stripe/stripe");
+const configureStripe = require("stripe");
+const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(json());
 app.use(cors());
@@ -30,8 +32,22 @@ app.use(
     }
   })
 );
+app.use(require("body-parser").text());
 
-configureRoutes(app);
+app.post("/charge", async (req, res) => {
+  try {
+    let { status } = await stripe.charges.create({
+      amount: 2000,
+      currency: "usd",
+      description: "An example charge",
+      source: req.body
+    });
+
+    res.json({ status });
+  } catch (err) {
+    res.status(500).end();
+  }
+});
 
 AWS.config.update({
   accessKeyId: AWS_ACCESS_KEY_ID,
@@ -49,15 +65,6 @@ app.use(
 
 massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
-  //     dbInstance
-  //       .alter_table()
-  //       .then(response => {
-  //         console.log(response);
-  //       })
-  //       .catch(e => console.log(e));
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
 });
 
 //Express.static to join the files to build ---- when ready, run "npm build"
@@ -67,5 +74,6 @@ app.use(express.static(`${__dirname}/../build`));
 
 authCtrl(app);
 masterRoutes(app);
+// configureRoutes(app);
 
 app.listen(port, () => console.log(`Server now running on port ${port}`));
