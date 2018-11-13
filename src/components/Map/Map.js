@@ -65,6 +65,7 @@ class Map extends Component {
     this.setState({ viewport });
 
     const map = this.reactMap.getMap();
+
     map.on("render", () => {
       map.addLayer({
         id: "route",

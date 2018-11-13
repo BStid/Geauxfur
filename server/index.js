@@ -17,8 +17,6 @@ const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
 const AWS = require("aws-sdk");
 const configureRoutes = require("./services/stripe/stripe");
-const configureStripe = require("stripe");
-const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(json());
 app.use(cors());
