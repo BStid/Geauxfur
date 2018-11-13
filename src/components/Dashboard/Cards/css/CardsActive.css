@@ -49,13 +49,11 @@
   top: 68%;
   left: 0;
   overflow: hidden;
-  /* border-left: 7px solid rgba(38, 169, 108, 0.5); */
   display: flex;
   flex-direction: column;
   position: absolute;
   z-index: 10;
   padding: 2px 0px;
-  /* background-color: rgba(38, 38, 38, 0.9); */
   -webkit-transition: 1s;
   -webkit-transition: ease-in-out 1.5s;
   transition: ease-in-out 1.5s;
@@ -201,4 +199,30 @@
   justify-content: center;
   height: 50%;
   width: 100%;
+}
+@media (max-width: 400px) {
+  .activeDriverContainer-left {
+    left: 23%;
+    width: 53%;
+    font-size: 22px;
+  }
+  .activeDriverContainer {
+    width: 53%;
+    left: 23%;
+    font-size: 22px;
+  }
+  .warningCard {
+    left: 2%;
+    z-index: 10;
+    width: 95%;
+    background-color: rgb(38, 38, 38);
+  }
+  .warningText {
+    font-size: 23px;
+    font-weight: 400;
+  }
+  .warningText p {
+    font-size: 13px;
+    font-weight: 100;
+  }
 }

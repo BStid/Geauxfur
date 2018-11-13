@@ -259,8 +259,56 @@
     font-size: 22px;
   }
 }
+@media (max-width: 400px) {
+  #finalButton {
+    width: 28%;
+    height: 30%;
+    top: 69%;
+    right: 19%;
+    position: absolute;
+    font-size: 17px;
+    font-weight: 800;
+  }
+  .totalCard {
+    height: 76%;
+    top: 16%;
+    position: absolute;
+    font-size: 25px;
+  }
+  .totalPrice {
+    font-size: 20px;
+  }
+  .distanceTotal {
+    font-size: 20px;
+  }
+  #totalPage {
+    width: 10%;
+  }
+  #firstQuestion {
+    height: 14%;
+    width: 30%;
+    top: 50%;
+    right: 32%;
+    font-size: 14px;
+  }
+  .headerTitle {
+    font-size: 20px;
+  }
+  .geauxfurText {
+    width: 30%;
+  }
+  .questionButton {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 1px 0px 0px inset rgba(38, 169, 108, 0.3);
+    background-color: rgba(38, 38, 38, 0.8);
+    font-size: 11px;
+  }
+  .heavyQuestion {
+    width: 100%;
+  }
+}
 
-@media (max-height: 813px), screen and (orientation: portrait) {
+/* @media (max-height: 813px) {
   .headerTitle {
     font-size: 19px;
   }
@@ -269,12 +317,7 @@
   }
   #firstQuestion {
     width: 20%;
-  }
-  #finalButton {
-    width: 15%;
-    height: 28%;
-    font-size: 9px;
-    font-weight: 800;
+    top: 51%;
   }
   .questionButton {
     font-size: 11px;
@@ -285,10 +328,9 @@
   .geauxfurText {
     width: 37%;
   }
-  .distanceTotal {
+  /* .distanceTotal {
     font-size: 25px;
-  }
-  .totalPrice {
+  } */
+/* .totalPrice {
     font-size: 25px;
-  }
-}
+  } */
