@@ -1,35 +1,35 @@
-import React, { Component } from "react";
-import { CardElement, injectStripe } from "react-stripe-elements";
+import React from "react";
+import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
+require("dotenv").config();
 
-class Checkout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { complete: false };
-    this.submit = this.submit.bind(this);
-  }
+const CURRENCY = "USD";
 
-  async submit(ev) {
-    let { token } = await this.props.stripe.createToken({ name: "Name" });
-    let response = await fetch("/charge", {
-      method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: token.id
+const fromDollarToCent = amount => amount * 100;
+
+const onToken = (amount, description) => token =>
+  axios
+    .post(`/createcharge`, {
+      description,
+      source: token.id,
+      currency: CURRENCY,
+      amount: fromDollarToCent(amount)
+    })
+    .catch(err => {
+      console.log(err);
     });
 
-    if (response.ok) {
-      this.setState({ complete: true });
-    }
-  }
+const Checkout = ({ name, description, amount }) => {
+  return (
+    <StripeCheckout
+      name={name}
+      description={description}
+      amount={fromDollarToCent(amount)}
+      token={onToken(amount, description)}
+      currency={CURRENCY}
+      stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}
+    />
+  );
+};
 
-  render() {
-    return (
-      <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
-        <CardElement />
-        <button onClick={this.submit}>Send</button>
-      </div>
-    );
-  }
-}
-
-export default injectStripe(Checkout);
+export default Checkout;

@@ -1,5 +1,5 @@
 .paymentOuter {
-  background-color: salmon;
-  height: 20vh;
+  background-color: rgba(38, 38, 38, 0.1);
+  height: 10vh;
   width: 20vw;
 }

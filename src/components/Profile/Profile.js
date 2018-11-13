@@ -110,7 +110,7 @@ class Profile extends Component {
     const displayBadges = badges.map((value, index) => {
       return <img src={value} alt="badge" className="profileBadge" />;
     });
-    //TODO: Fix "Profile.js" so that it will not push everything up when rendered
+
     return (
       <div className="profileOuter">
         <div className="profileCard">
@@ -122,7 +122,6 @@ class Profile extends Component {
             />
           </div>
           <div className="profileCardText">
-            {console.log(userInfo.first_name)}
             <p id="helpUploadText"> Click or Drag a Picture to Upload</p>
             <br />
             <StarRatings
@@ -153,7 +152,6 @@ class Profile extends Component {
             userInfo={userInfo}
             toggleClass={this.toggleClass}
           />
-          {/* <ProfileInfo infoClass={this.state.infoClass} userInfo={userInfo} /> */}
         </div>
 
         <div className="profileInfo">

@@ -93,7 +93,7 @@ class Cards extends Component {
             </button>
           </div>
         </div>,
-        <Payment />,
+        <Payment amount={1000} email={this.props.main.userInfo.email} />,
         <div className="hidden" />
       ]
     };
@@ -185,7 +185,7 @@ class Cards extends Component {
     const { weightInput, itemType } = this.props.main;
     const { cardsClass } = this.props.sender;
     const { latitude, longitude } = this.props;
-
+    console.log(this.props.main.userInfo.email);
     const displayQuestions = questions.map((value, index) => {
       if (count === index) {
         return value;

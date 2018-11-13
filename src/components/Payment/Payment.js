@@ -9,7 +9,12 @@ class Payment extends Component {
       <div className="paymentOuter">
         <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}>
           <Elements>
-            <Checkout />
+            <Checkout
+              name={"Geauxfur"}
+              description={""}
+              amount={this.props.amount}
+              email={this.props.email}
+            />
           </Elements>
         </StripeProvider>
       </div>

@@ -12,11 +12,9 @@ class S3Uploader extends Component {
     };
   }
   handleFinishedUpload = info => {
-    console.log("File uploaded with filename", info.filename);
-    console.log("Access it on s3 at", info.fileUrl);
+    // console.log("File uploaded with filename", info.filename);
+    // console.log("Access it on s3 at", info.fileUrl);
     this.props.updateImage(info.fileUrl);
-    // await console.log(this.props.main.image);
-    // await this.setState({ image: this.props.main.image });
   };
 
   render() {
@@ -25,7 +23,6 @@ class S3Uploader extends Component {
       signingUrlQueryParams: { uploadType: "avatar" }
     };
     const s3Url = `https://geauxfurupload.s3.amazonaws.com`;
-    console.log("rendering...");
     return (
       <DropzoneS3Uploader
         onFinish={this.handleFinishedUpload}
@@ -33,21 +30,7 @@ class S3Uploader extends Component {
         maxSize={1024 * 1024 * 5}
         upload={uploadOptions}
         id="imageUploader"
-      >
-        {/* {!this.props.image_url ? (
-          <img
-            src={userDefaultPicture}
-            alt="default image"
-            className="profileImageDefault"
-          />
-        ) : (
-          <img
-            src={this.props.image_url}
-            className="profileImage"
-            alt="user profile image"
-          />
-        )} */}
-      </DropzoneS3Uploader>
+      />
     );
   }
 }

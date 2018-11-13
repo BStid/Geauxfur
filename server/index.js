@@ -35,9 +35,11 @@ app.use(
 app.use(require("body-parser").text());
 
 app.post("/charge", async (req, res) => {
+  console.log(req.body);
+  console.log(req.params);
   try {
     let { status } = await stripe.charges.create({
-      amount: 2000,
+      amount: req.params,
       currency: "usd",
       description: "An example charge",
       source: req.body

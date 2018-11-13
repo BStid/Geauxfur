@@ -498,6 +498,11 @@
     display: none;
   }
 }
+@media (max-height: 813px), screen and (orientation: portrait) {
+  .userImage {
+    width: 31%;
+  }
+}
 @media (max-height: 720px) {
   .userName {
     font-size: 17px;
@@ -525,9 +530,3 @@
     width: 32px;
   }
 }
-
-/* @media (max-height: 813px), screen and (orientation: portrait) {
-  .userImage {
-    width: 31%;
-  }
-} */
