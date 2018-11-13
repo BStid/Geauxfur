@@ -23,7 +23,7 @@ class Cards extends Component {
           Where would you like to ship?
           <div className="fillerDiv">
             {
-              //Input is in the npm mapboxgl-geocode package. I am rendering their input for this question.
+              //Input is in the npm mapboxgl-geocode package.
             }
           </div>
           <button
@@ -93,10 +93,10 @@ class Cards extends Component {
             </button>
           </div>
         </div>,
-        <Payment amount={1000} email={this.props.main.userInfo.email} />,
         <div className="hidden" />
       ]
     };
+    this.callGeauxfur = this.callGeauxfur.bind(this);
   }
   async parseAddress() {
     const { searchAddressInput } = this.props;
@@ -185,7 +185,7 @@ class Cards extends Component {
     const { weightInput, itemType } = this.props.main;
     const { cardsClass } = this.props.sender;
     const { latitude, longitude } = this.props;
-    console.log(this.props.main.userInfo.email);
+
     const displayQuestions = questions.map((value, index) => {
       if (count === index) {
         return value;
@@ -216,6 +216,11 @@ class Cards extends Component {
           <div className="totalPrice">
             <p>Price</p>${price}
           </div>
+          <Payment
+            amount={price}
+            email={this.props.main.userInfo.email}
+            callGeauxfur={this.callGeauxfur}
+          />
           <button
             className="questionButton"
             id="finalButton"
@@ -223,13 +228,13 @@ class Cards extends Component {
           >
             Restart
           </button>
-          <button
+          {/* <button
             id="finalButton"
             className="questionButton"
             onClick={() => this.callGeauxfur()}
           >
             Call a Geauxfur
-          </button>
+          </button> */}
         </div>
       </div>
     );

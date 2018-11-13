@@ -340,6 +340,7 @@
     display: none;
   }
 }
+
 @media (max-width: 800px) {
   .filler {
     width: 50vw;
@@ -481,6 +482,7 @@
     height: 70%;
   }
 }
+
 @media (max-height: 840px) {
   .userImage {
     width: 14%;
@@ -498,11 +500,12 @@
     display: none;
   }
 }
-@media (max-height: 813px), screen and (orientation: portrait) {
+@media (max-height: 813px) {
   .userImage {
     width: 31%;
   }
 }
+
 @media (max-height: 720px) {
   .userName {
     font-size: 17px;

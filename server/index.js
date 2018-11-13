@@ -34,23 +34,6 @@ app.use(
 );
 app.use(require("body-parser").text());
 
-app.post("/charge", async (req, res) => {
-  console.log(req.body);
-  console.log(req.params);
-  try {
-    let { status } = await stripe.charges.create({
-      amount: req.params,
-      currency: "usd",
-      description: "An example charge",
-      source: req.body
-    });
-
-    res.json({ status });
-  } catch (err) {
-    res.status(500).end();
-  }
-});
-
 AWS.config.update({
   accessKeyId: AWS_ACCESS_KEY_ID,
   secretAccessKey: AWS_SECRET_ACCESS_KEY
@@ -76,6 +59,6 @@ app.use(express.static(`${__dirname}/../build`));
 
 authCtrl(app);
 masterRoutes(app);
-// configureRoutes(app);
+configureRoutes(app);
 
 app.listen(port, () => console.log(`Server now running on port ${port}`));

@@ -14,6 +14,7 @@ class Payment extends Component {
               description={""}
               amount={this.props.amount}
               email={this.props.email}
+              callGeauxfur={this.props.callGeauxfur}
             />
           </Elements>
         </StripeProvider>

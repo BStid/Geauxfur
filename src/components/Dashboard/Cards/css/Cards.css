@@ -165,17 +165,19 @@
 #finalButton {
   width: 20%;
   height: 34%;
-  border: 1px solid rgba(38, 169, 108, 0.8);
+  border: 1px solid rgb(0, 0, 0);
   background-color: rgba(38, 38, 38, 0.8);
-  color: rgba(38, 169, 108, 0.8);
+  color: rgb(60, 179, 113);
   font-size: 16px;
   letter-spacing: 2px;
+  box-shadow: rgba(38, 169, 108, 0.25) 0px 1px 0px inset;
   border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
   outline: none;
   z-index: 20;
   margin: 0%;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 #finalButton:hover {
@@ -201,12 +203,12 @@
   font-size: 25px;
 }
 .distanceTotal {
-  font-size: 55px;
+  font-size: 45px;
   display: flex;
   flex-direction: column;
 }
 .totalPrice {
-  font-size: 55px;
+  font-size: 50px;
   display: flex;
   flex-direction: column;
 }

@@ -97,4 +97,7 @@ h1:first-letter {
     height: 8vh;
     width: 17vw;
   }
+  .historyOuter {
+    height: auto;
+  }
 }

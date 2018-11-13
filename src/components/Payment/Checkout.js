@@ -7,25 +7,30 @@ const CURRENCY = "USD";
 
 const fromDollarToCent = amount => amount * 100;
 
-const onToken = (amount, description) => token =>
+const onToken = (amount, description, email, callGeauxfur) => token =>
   axios
     .post(`/createcharge`, {
       description,
       source: token.id,
       currency: CURRENCY,
+      receipt_email: email,
       amount: fromDollarToCent(amount)
     })
+    .then(() => {
+      callGeauxfur();
+    })
     .catch(err => {
-      console.log(err);
+      console.log("Error on payment, calling Geauxfur anyway.", err);
+      callGeauxfur();
     });
 
-const Checkout = ({ name, description, amount }) => {
+const Checkout = ({ name, description, email, amount, callGeauxfur }) => {
   return (
     <StripeCheckout
       name={name}
       description={description}
       amount={fromDollarToCent(amount)}
-      token={onToken(amount, description)}
+      token={onToken(amount, description, email, callGeauxfur)}
       currency={CURRENCY}
       stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}
     />
