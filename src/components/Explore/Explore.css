@@ -1,7 +1,105 @@
 .exploreContainer {
   height: 100vh;
   width: 100vw;
-  border: 1px solid white;
-  background-color: green;
+  background: linear-gradient(45deg, rgb(200, 219, 129), rgb(22, 117, 36));
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.exploreSubOne {
+  height: 60vh;
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(38, 38, 38, 0.3);
+  box-shadow: 0px 0px 5px 2px inset rgba(38, 38, 38, 0.2);
+}
+.exploreContainerTwo {
+  height: 150vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  z-index: 0;
+}
+
+.zero {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 0px 0px 0px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.twenty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px -100px 99px 48px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.forty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px -160px 99px 112px inset black;
+  z-index: 3;
+  transition: 1s;
+}
+.sixty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 77px 135px 140px inset black;
+  z-index: 23;
+  transition: 0.2s;
+}
+
+.eighty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 14px 135px 113px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+.floaterContainer {
+  height: 150vh;
+  width: 100vw;
+  background: rgb(0, 0, 0);
+}
+.floaterContainer p {
+  position: fixed;
+  top: 50%;
+  right: 40%;
+  z-index: 1;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  width: 40%;
+  font-family: "Scada", sans-serif;
+}
+.floaterOne {
+  height: 20vh;
+  width: 20vw;
+  position: relative;
+  top: 40%;
+  right: -50%;
+  background: linear-gradient(60deg, rgb(200, 219, 129), rgb(22, 117, 36));
+  z-index: 1;
+}
+.floaterTwo {
+  left: 55%;
+  height: 20vh;
+  width: 20vw;
+  position: relative;
+  top: 19%;
+  background: linear-gradient(60deg, rgb(200, 219, 129), rgb(22, 117, 36));
+  z-index: 4;
+  box-shadow: 0px 0px 41px;
 }

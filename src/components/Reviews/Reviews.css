@@ -156,3 +156,17 @@
     font-size: 14px;
   }
 }
+@media (max-width: 425px) {
+  .addReviewContainer {
+    width: 85vw;
+    position: absolute;
+    top: 21%;
+    margin: 2% 1%;
+  }
+  .addReviewOuter {
+    width: 95vw;
+  }
+  .reviewInput {
+    font-size: 13px;
+  }
+}

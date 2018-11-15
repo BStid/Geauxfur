@@ -259,7 +259,7 @@
     font-size: 22px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   #finalButton {
     width: 28%;
     height: 30%;
@@ -298,7 +298,7 @@
     width: 30%;
   }
   .questionButton {
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(38, 169, 108, 0.1);
     box-shadow: 0px 1px 0px 0px inset rgba(38, 169, 108, 0.3);
     background-color: rgba(38, 38, 38, 0.8);
     font-size: 11px;

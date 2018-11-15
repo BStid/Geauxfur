@@ -332,6 +332,7 @@
   }
   .reviewsContainer {
     width: 67vw;
+    height: 33vh;
   }
 }
 @media (max-height: 1200px) {

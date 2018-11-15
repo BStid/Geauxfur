@@ -51,8 +51,12 @@
     margin-bottom: 10%;
   }
 }
-@media (max-width: 450px) {
-}
+
+/* @media (max-width: 400px) {
+  .mainContent {
+    height: 100vh;
+  }
+} */
 @media (max-height: 720px) {
   .historyCard {
     width: 71vw;

@@ -62,7 +62,7 @@
   margin-right: 35%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .activeListing {
     display: none;
   }

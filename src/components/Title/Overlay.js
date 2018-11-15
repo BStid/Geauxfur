@@ -3,7 +3,7 @@ import "./Title.css";
 import CoverImg from "../../pictures/Z.png";
 import logo from "../../pictures/gophersillo.png";
 import Sunset from "../../pictures/drivergreen.png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Overlay() {
   const redirect = () => {
@@ -19,10 +19,12 @@ export default function Overlay() {
         className="gopherIcon"
         onClick={() => redirect()}
       />
-      <div className="learnMoreContainer">
-        <div className="lowerLearnMoreContainer" />
-      </div>
-      <p className="exploreText">Explore</p>
+      <Link to="/explore">
+        <div className="learnMoreContainer">
+          <div className="lowerLearnMoreContainer" />
+        </div>
+        <p className="exploreText">Explore</p>
+      </Link>
       <div className="dashboardLinkContainer">
         <div onClick={() => redirect()} className="dashLink" id="send">
           Send

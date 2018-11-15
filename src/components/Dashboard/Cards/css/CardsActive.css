@@ -200,7 +200,7 @@
   height: 50%;
   width: 100%;
 }
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .activeDriverContainer-left {
     left: 23%;
     width: 53%;
@@ -224,5 +224,8 @@
   .warningText p {
     font-size: 13px;
     font-weight: 100;
+  }
+  .activeRoute {
+    height: 30%;
   }
 }

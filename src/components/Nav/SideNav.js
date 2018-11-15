@@ -67,7 +67,7 @@ class SideNav extends Component {
               History
             </div>
           </Link>
-          <Link to="/dashboard/safety">
+          <Link to="/explore">
             <div className="safetyButton">
               <img src={safetyIcon} alt="safety icon" className="safetyIcon" />
               Safety

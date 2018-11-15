@@ -476,8 +476,44 @@
     width: 45vw;
   }
 }
+@media (max-width: 425px) {
+  .userImage {
+    width: 25%;
+    top: -2px;
+    height: 65%;
+  }
+  .menuDiv {
+    font-size: 25px;
+  }
+  .userEmail {
+    display: none;
+  }
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 20px;
+  }
+}
+@media (max-width: 415px) {
+  .userImage {
+    width: 21%;
+  }
+}
 
-@media (max-height: 900px) {
+@media (max-width: 320px) {
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    height: 14px;
+  }
+}
+/* @media (max-height: 900px) {
   .userImage {
     height: 70%;
   }
@@ -495,9 +531,6 @@
   }
   .userProfileCard {
     height: 100%;
-  }
-  .userEmail {
-    display: none;
   }
 }
 @media (max-height: 813px) {
@@ -532,4 +565,4 @@
   .userImage {
     width: 32px;
   }
-}
+} */

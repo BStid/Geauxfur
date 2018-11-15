@@ -69,6 +69,7 @@ class Profile extends Component {
           alt="default image"
           className="profileImageDefault"
         />
+        
       ) : !this.state.image ? (
         <img
           src={userInfo.image_url}

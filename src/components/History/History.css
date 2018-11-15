@@ -99,5 +99,7 @@ h1:first-letter {
   }
   .historyOuter {
     height: auto;
+    position: absolute;
+    top: 7%;
   }
 }

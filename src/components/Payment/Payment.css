@@ -28,7 +28,7 @@
   letter-spacing: 2px !important;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .paymentOuter {
     position: absolute;
     top: 68%;
