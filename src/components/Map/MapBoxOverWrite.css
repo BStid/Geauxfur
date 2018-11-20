@@ -198,8 +198,23 @@
 }
 @media (max-width: 1280px) {
   .mapboxgl-ctrl-top-right {
-    right: 45.2% !important;
+    right: 33.2% !important;
     width: 29% !important;
+  }
+  .sideNav {
+    height: 40vh;
+  }
+  .homeIcon,
+  .profileIcon,
+  .messagesIcon,
+  .paymentIcon,
+  .historyIcon,
+  .safetyIcon {
+    margin: 0px 7px;
+  }
+  .logo {
+    height: 80%;
+    margin: 0px 0px 0px 4px;
   }
 }
 @media (max-width: 1250px) {

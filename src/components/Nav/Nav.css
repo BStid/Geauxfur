@@ -282,6 +282,14 @@
     height: 25px;
     color: rgb(38, 38, 38);
   }
+  .homeButton:hover,
+  .profileButton:hover,
+  .messagesButton:hover,
+  .paymentButton:hover,
+  .historyButton:hover,
+  .safetyButton:hover {
+    color: rgb(38, 38, 38);
+  }
   .sideContainer {
     width: 4vw;
   }
@@ -302,7 +310,15 @@
     width: 100vw;
   }
 }
-
+@media (max-width: 1280px) {
+  .searchIcon {
+    left: 3.7%;
+    top: 40%;
+  }
+  .userImage {
+    width: 8%;
+  }
+}
 @media (max-width: 1152px) {
   .homeIcon,
   .profileIcon,

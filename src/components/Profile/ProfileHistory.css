@@ -85,6 +85,20 @@
     text-align: center;
   }
 }
+@media (max-width: 1280px) {
+  .phCard {
+    height: 30vh;
+    margin-bottom: 0px;
+  }
+  .phInfo {
+    font-size: 13px;
+  }
+  .phReviewButton {
+    height: 12%;
+    width: 45%;
+    font-size: 14px;
+  }
+}
 @media (max-width: 1252px) {
   .phTitle {
     font-size: 1.2em;
@@ -121,10 +135,5 @@
   .phCard {
     width: 67vw;
     height: 38vh;
-  }
-}
-@media (max-height: 720px) {
-  .phCard {
-    margin-bottom: 17%;
   }
 }

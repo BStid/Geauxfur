@@ -118,7 +118,6 @@
   align-items: flex-start;
   color: #ffffff;
   font-size: 20px;
-  box-shadow: 6px -2px 35px -13px rgba(0, 0, 128, 1);
   /* border: 1px blue solid; */
 }
 .shTitle {
@@ -200,7 +199,20 @@
     width: 7%;
   }
 }
-
+@media (max-width: 1280px) {
+  .shortHistory {
+    height: 70%;
+  }
+  .shortReviews {
+    height: 65%;
+  }
+  .profileBadge {
+    width: 5%;
+  }
+  .profileCard {
+    height: 108%;
+  }
+}
 @media (max-width: 1100px) {
   .badgeContainer {
     color: rgb(24, 24, 24);
@@ -333,45 +345,6 @@
   .reviewsContainer {
     width: 67vw;
     height: 33vh;
-  }
-}
-@media (max-height: 1200px) {
-  .profileImageContainer {
-    height: 23vh;
-  }
-
-  .shortHistory {
-    height: 40%;
-  }
-}
-@media (max-height: 900px) {
-  .profileImageContainer {
-    height: 23vh;
-  }
-  .profileCardText {
-    height: 22%;
-  }
-  */ .shTitle {
-    height: 6%;
-  }
-}
-@media (max-height: 840px) {
-  .profileImageContainer {
-    height: 25vh;
-  }
-  .profileCard {
-    height: 37%;
-  }
-}
-@media (max-height: 720px) {
-  .displayR {
-    height: 50%;
-  }
-  .profileImageContainer {
-    height: 26vh;
-  }
-  .profileCard {
-    height: 30%;
   }
 }
 

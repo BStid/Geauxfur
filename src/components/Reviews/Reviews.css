@@ -156,6 +156,11 @@
     font-size: 14px;
   }
 }
+@media (max-width: 1280px) {
+  .reviewsTimeStamp {
+    overflow: hidden;
+  }
+}
 @media (max-width: 425px) {
   .addReviewContainer {
     width: 85vw;
