@@ -208,6 +208,7 @@
   }
   .profileBadge {
     width: 5%;
+    height: 100%;
   }
   .profileCard {
     height: 108%;
