@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateProfile, updateInput } from "../../../redux/mainReducer";
+import SFNotification from "../../SFNotificaiton/SFNotification";
 import "./EditInfo.css";
 
 class EditInfo extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isSuccessful: false,
+      showNotification: false
+    };
   }
 
+  toggleSuccess() {
+    const { updateSuccessful } = this.props.main;
+    updateSuccessful
+      ? this.setState({ isSuccessful: true, showNotification: true })
+      : this.setState({ showNotification: true });
+  }
   render() {
     const {
       userInfo,
@@ -20,6 +30,7 @@ class EditInfo extends Component {
       lastNameInput
     } = this.props.main;
     const { updateInput, updateProfile } = this.props;
+    const { isSuccessful, showNotification } = this.state;
     return (
       <div className={this.props.editClass}>
         <div className="sectionContainer">
@@ -99,12 +110,18 @@ class EditInfo extends Component {
               genderInput,
               firstNameInput,
               lastNameInput
-            ).then(this.props.toggleClass())
+            )
+              .then(this.props.toggleClass())
+              .then(this.toggleSuccess())
           }
         >
           {" "}
           Submit{" "}
         </button>
+        <SFNotification
+          isSuccessful={isSuccessful}
+          showNotification={showNotification}
+        />
       </div>
     );
   }

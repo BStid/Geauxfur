@@ -24,6 +24,7 @@ const initialState = {
   userCurrentLat: 0,
   userCurrentLong: 0,
   userInfo: [],
+  updateSuccesful: false,
   reviews: [],
   image: "",
   imageError: "",
@@ -176,15 +177,6 @@ export default function mainReducer(state = initialState, action) {
         ...state,
         isLoading: false
       };
-    case `${UPDATE_PROFILE}_FULFILLED`:
-      return {
-        ...state,
-        updatedInfo: action.payload.data
-      };
-    case `${UPDATE_PROFILE}_REJECTED`:
-      return {
-        ...state
-      };
     case `${GET_ORDER_HISTORY}_PENDING`:
       return {
         ...state,
@@ -216,6 +208,17 @@ export default function mainReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false
+      };
+    case `${UPDATE_PROFILE}_FULFILLED`:
+      return {
+        ...state,
+        updatedInfo: action.payload.data,
+        updateSuccesful: true
+      };
+    case `${UPDATE_PROFILE}_REJECTED`:
+      return {
+        ...state,
+        updateSuccesful: false
       };
     default:
       return state;
