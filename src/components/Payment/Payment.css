@@ -27,7 +27,12 @@
   height: 72px !important;
   letter-spacing: 2px !important;
 }
-
+@media (max-width: 1280px) {
+  .StripeCheckout span {
+    font-size: 14px !important;
+    height: 50px !important;
+  }
+}
 @media (max-width: 425px) {
   .paymentOuter {
     position: absolute;

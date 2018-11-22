@@ -200,6 +200,12 @@
   height: 50%;
   width: 100%;
 }
+@media (max-width: 1280px) {
+  .activeRoute {
+    height: 32%;
+    top: 60%;
+  }
+}
 @media (max-width: 425px) {
   .activeDriverContainer-left {
     left: 23%;

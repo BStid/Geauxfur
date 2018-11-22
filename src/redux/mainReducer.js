@@ -24,7 +24,7 @@ const initialState = {
   userCurrentLat: 0,
   userCurrentLong: 0,
   userInfo: [],
-  updateSuccesful: false,
+  updateSuccessful: false,
   reviews: [],
   image: "",
   imageError: "",
@@ -213,12 +213,12 @@ export default function mainReducer(state = initialState, action) {
       return {
         ...state,
         updatedInfo: action.payload.data,
-        updateSuccesful: true
+        updateSuccessful: true
       };
     case `${UPDATE_PROFILE}_REJECTED`:
       return {
         ...state,
-        updateSuccesful: false
+        updateSuccessful: false
       };
     default:
       return state;

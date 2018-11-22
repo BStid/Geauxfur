@@ -15,6 +15,7 @@ class EditInfo extends Component {
 
   toggleSuccess() {
     const { updateSuccessful } = this.props.main;
+    console.log(updateSuccessful);
     updateSuccessful
       ? this.setState({ isSuccessful: true, showNotification: true })
       : this.setState({ showNotification: true });
@@ -29,7 +30,7 @@ class EditInfo extends Component {
       firstNameInput,
       lastNameInput
     } = this.props.main;
-    const { updateInput, updateProfile } = this.props;
+    const { updateInput, updateProfile, toggleClass } = this.props;
     const { isSuccessful, showNotification } = this.state;
     return (
       <div className={this.props.editClass}>
@@ -111,8 +112,8 @@ class EditInfo extends Component {
               firstNameInput,
               lastNameInput
             )
-              .then(this.props.toggleClass())
-              .then(this.toggleSuccess())
+              .then(setTimeout(() => this.toggleSuccess(), 400))
+              .then(setTimeout(() => toggleClass(), 1000))
           }
         >
           {" "}
