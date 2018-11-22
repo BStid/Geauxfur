@@ -113,7 +113,13 @@ class EditInfo extends Component {
               lastNameInput
             )
               .then(setTimeout(() => this.toggleSuccess(), 400))
-              .then(setTimeout(() => toggleClass(), 1000))
+              .then(setTimeout(() => toggleClass(), 3000))
+              .then(
+                setTimeout(
+                  () => this.setState({ showNotification: false }),
+                  5000
+                )
+              )
           }
         >
           {" "}

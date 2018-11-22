@@ -9,7 +9,11 @@ export default function SFNotification(props) {
     <div
       className={showNotification ? "notificationOuter" : "hideNotification"}
     >
-      <div className={isSuccessful ? "success" : "failure"} />
+      <div className={isSuccessful ? "success" : "failure"}>
+        {isSuccessful
+          ? "Update Successful!"
+          : "Error. Please refresh and try again."}
+      </div>
     </div>
   );
 }
