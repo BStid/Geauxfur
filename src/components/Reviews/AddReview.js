@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getDriverPicture } from "../../redux/senderReducer";
 import { updateInput, addReview } from "../../redux/mainReducer";
+import { withRouter } from "react-router-dom";
+import Arrow from "./pictures/arrow.png";
 import defaultPicture from "../Nav/pictures/userDefault.png";
 import StarRatings from "react-star-ratings";
 import "./Reviews.css";
@@ -31,6 +33,10 @@ class AddReview extends Component {
     const { rating } = this.state;
     return (
       <div className="addReviewOuter">
+        <button className="backButton" onClick={this.props.history.goBack}>
+          <img src={Arrow} alt="Arrow" className="backArrow" />
+          Back
+        </button>
         <div className="addReviewContainer">
           Your Driver
           {!driverPicture ? (
@@ -88,4 +94,4 @@ const mapStateToProps = state => state;
 export default connect(
   mapStateToProps,
   { getDriverPicture, updateInput, addReview }
-)(AddReview);
+)(withRouter(AddReview));

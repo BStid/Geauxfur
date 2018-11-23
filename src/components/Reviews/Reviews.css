@@ -1,3 +1,31 @@
+.backButton {
+  width: 9%;
+  height: 7%;
+  border: 1px solid rgb(0, 128, 128);
+  background-color: rgb(38, 38, 38);
+  color: rgb(0, 128, 128);
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 6%;
+  left: 14%;
+  outline: none;
+}
+.backArrow {
+  height: auto;
+  width: 8%;
+  margin-right: 8%;
+  transform: rotate(180deg);
+  filter: hue-rotate(180deg) invert(100%);
+}
+
 .addReviewOuter {
   height: 100%;
   width: 85%;
@@ -159,6 +187,9 @@
 @media (max-width: 1280px) {
   .reviewsTimeStamp {
     overflow: hidden;
+  }
+  .addReviewContainer {
+    margin: 93px 0px;
   }
 }
 @media (max-width: 425px) {

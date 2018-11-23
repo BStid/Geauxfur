@@ -5,12 +5,12 @@
   width: 15vw;
   color: white;
   position: absolute;
-  transition: 0.5s;
   text-shadow: 2px 2px 10px black;
   letter-spacing: 1px;
   font-weight: 700;
   border: 1px solid black;
   border-radius: 7%;
+  transition: 0.3s;
 }
 .hideNotification {
   transform: translateY(50%);
@@ -19,13 +19,13 @@
   width: 0vw;
   color: rgba(0, 0, 0, 0.01);
   position: absolute;
-  transition: 0.5s;
   border: 1px solid rgba(0, 0, 0, 0.01);
   background-color: rgba(0, 0, 0, 0.01);
   color: rgba(0, 0, 0, 0.01);
   box-shadow: 0px 1px 14px 0px inset rgba(0, 0, 0, 0.01);
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.01);
   letter-spacing: 1px;
+  transition: 0.3s;
 }
 .success {
   height: 100%;
