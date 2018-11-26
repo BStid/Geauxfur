@@ -15,7 +15,7 @@
   justify-content: center;
   position: absolute;
   top: 6%;
-  left: 14%;
+  left: 21%;
   outline: none;
 }
 .backArrow {
@@ -190,6 +190,9 @@
   }
   .addReviewContainer {
     margin: 93px 0px;
+  }
+  .backButton {
+    left: 14%;
   }
 }
 @media (max-width: 425px) {

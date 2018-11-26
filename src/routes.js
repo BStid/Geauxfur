@@ -6,11 +6,13 @@ import History from "./components/History/History";
 import AddReview from "./components/Reviews/AddReview";
 import Payment from "./components/Payment/Payment";
 import Reviews from "./components/Reviews/Reviews";
+import Messages from "./components/Messages/Messages";
 
 export default (
   <Switch>
     <Route path="/dashboard/content" exact component={DashboardContent} />
     <Route path="/dashboard/profile" component={Profile} />
+    <Route path="/dashboard/messages" component={Messages} />
     <Route path="/dashboard/payment" component={Payment} />
     <Route path="/dashboard/reviews" component={Reviews} />
     <Route path="/dashboard/history" component={History} />

@@ -15,6 +15,7 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
+const sockets = require("./services/sockets/sockets_server");
 const AWS = require("aws-sdk");
 const configureRoutes = require("./services/stripe/stripe");
 
@@ -55,6 +56,7 @@ massive(CONNECTION_STRING).then(dbInstance => {
 app.use(express.static(`${__dirname}/../build`));
 */
 
+sockets(app);
 authCtrl(app);
 masterRoutes(app);
 configureRoutes(app);
