@@ -252,8 +252,8 @@
 }
 @media (max-width: 1030px) {
   .mapboxgl-ctrl-top-right {
-    right: 55.2% !important;
-    width: 25% !important;
+    right: 32.2% !important;
+    width: 36% !important;
     top: 35% !important;
   }
 }

@@ -244,6 +244,11 @@
     height: 66%;
   }
 }
+@media (max-width: 1030px) {
+  .profileBadge {
+    height: 90%;
+  }
+}
 @media (max-width: 950px) {
   .profileCard {
     width: 35%;

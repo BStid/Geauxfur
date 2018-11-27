@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GeauxfurText from "../Dashboard/Cards/pictures/GeauxfurText.png";
 import "./Explore.css";
 
 class Explore extends Component {
@@ -36,15 +37,17 @@ class Explore extends Component {
       <div className="exploreOuter" id="outer">
         <div className={this.state.sideBarClass} />
         <div className="exploreContainer">
-          <div className="exploreSubOne" />
+          <div className="exploreSubOne">
+            {/* <img src={GeauxfurText} alt="Geauxfur" id="geauxfurTextLogo" /> */}
+          </div>
         </div>
         <div className="floaterContainer">
           <div className="floaterOne" />
           <p>
-            Here is some fill text so that I can check out how it looks on the
-            page. That was the first sentence, this is the second one. I hope
-            this is long enough! Here is some extra text to fill up some
-            space...
+            Geauxfur aims to keep you and your belongs as safe as possible. From
+            the moment you Geauxfur your item, all parties involved in the
+            shipment process are tracked and monitored until the item has
+            reached its destination...
           </p>
           <div className="floaterTwo" />
         </div>

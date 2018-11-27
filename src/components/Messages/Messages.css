@@ -37,3 +37,8 @@
   margin: 0% 2%;
   overflow: hidden;
 }
+@media (max-width: 1060px) {
+  .messagesDisplay {
+    height: 90%;
+  }
+}

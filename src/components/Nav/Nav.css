@@ -340,6 +340,16 @@
     width: 23vw;
   }
 }
+@media (max-width: 1030px) {
+  .homeButton,
+  .profileButton,
+  .messagesButton,
+  .paymentButton,
+  .historyButton,
+  .safetyButton {
+    padding: 10px 0px;
+  }
+}
 @media (max-width: 950px) {
   .userImage {
     width: 17%;

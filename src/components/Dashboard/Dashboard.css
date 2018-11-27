@@ -42,7 +42,12 @@
 }
 @media (max-width: 1280px) {
   .mainContent {
-    height: auto;
+    height: 100vh;
+  }
+}
+@media (max-width: 1060px) {
+  .mainContent {
+    height: 100vh;
   }
 }
 @media (max-width: 990px) {
@@ -57,11 +62,6 @@
   }
 }
 
-/* @media (max-width: 400px) {
-  .mainContent {
-    height: 100vh;
-  }
-} */
 @media (max-height: 720px) {
   .historyCard {
     width: 71vw;

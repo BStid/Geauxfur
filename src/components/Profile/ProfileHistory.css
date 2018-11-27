@@ -119,7 +119,11 @@
     width: 19vw;
   }
 }
-
+@media (max-width: 1060px) {
+  .phCard {
+    height: 31vw;
+  }
+}
 @media (max-width: 950px) {
   .phCard {
     width: 25vw;
