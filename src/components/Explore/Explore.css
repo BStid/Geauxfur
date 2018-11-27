@@ -20,6 +20,7 @@
   background-image: url("https://s3.us-east-2.amazonaws.com/gopherz/geauxfurHeadGreen.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position-x: center;
 }
 #geauxfurTextLogo {
   height: 15%;
