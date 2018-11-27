@@ -1,12 +1,4 @@
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  height: 100%;
-}
-input,
+/* input,
 textarea {
   font-family: Arial;
 }
@@ -410,4 +402,4 @@ textarea {
 .message-input .message-form .send:disabled {
   opacity: 0.2;
   background: #5d5d8a;
-}
+} */

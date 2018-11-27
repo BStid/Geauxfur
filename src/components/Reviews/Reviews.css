@@ -13,9 +13,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 6%;
-  left: 21%;
+  position: relative;
+  top: -21%;
+  left: 12%;
   outline: none;
 }
 .backArrow {
@@ -192,6 +192,8 @@
     margin: 93px 0px;
   }
   .backButton {
+    position: absolute;
+    top: 6%;
     left: 14%;
   }
 }
@@ -207,5 +209,20 @@
   }
   .reviewInput {
     font-size: 13px;
+  }
+  .backButton {
+    position: absolute;
+    top: 23%;
+    left: 9%;
+    z-index: 3;
+    width: 15%;
+    height: 7%;
+    border: 1px solid rgb(34, 34, 34);
+    background-color: rgb(34, 34, 34);
+    color: rgb(34, 34, 34);
+  }
+  .backArrow {
+    position: absolute;
+    width: 24%;
   }
 }

@@ -7,32 +7,55 @@ class Messages extends Component {
     super(props);
     this.state = {
       socket: null,
-      user: null
+      user: null,
+      messages: []
     };
   }
 
   initSocket = () => {
-    const socket = io(socketUrl);
-    socket.on("connect", () => {
-      console.log("Socket Connected");
+    this.socket = io(socketUrl);
+    this.socket.on("message", message => {
+      this.setState({ messages: [message, ...this.state.messages] });
     });
-    this.setState({ socket });
   };
-  setUser = user => {
-    const socket = this.state;
-    // socket.emit(USER_CONNECTED, user);
-    this.setState({ user });
+
+  handleSubmit = e => {
+    const body = e.target.value;
+    if (e.keyCode == 13 && body) {
+      const message = {
+        body,
+        from: "Me"
+      };
+      this.setState({ messages: [message, ...this.state.messages] });
+      this.socket.emit("message", body);
+      e.target.value = "";
+    }
   };
-  logout = () => {
-    const { socket } = this.state;
-    // socket.emit(LOGOUT);
-    this.setState({ user: null });
-  };
+
   componentDidMount() {
     this.initSocket();
   }
   render() {
-    return <div className="messagesContainer" />;
+    const { messages } = this.state;
+    const displayMessages = messages.map((message, index) => {
+      return (
+        <li key={index}>
+          <b>{message.from}</b> {message.body}
+        </li>
+      );
+    });
+    return (
+      <div className="messagesContainer">
+        <input
+          className="messageInput"
+          type="text"
+          placeholder="Enter a message..."
+          onKeyUp={this.handleSubmit}
+        />
+        <button onClick={this.initSocket}>Click Me</button>
+        {displayMessages}
+      </div>
+    );
   }
 }
 

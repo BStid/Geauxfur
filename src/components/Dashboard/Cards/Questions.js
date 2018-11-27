@@ -117,7 +117,11 @@ class Cards extends Component {
     this.nextQuestion();
 
     let inputBar = document.querySelector(".mapboxgl-ctrl-geocoder");
-    inputBar.classList.add("mapboxgl-ctrl-geocoder-hide");
+    if (!inputBar) {
+      return null;
+    } else {
+      inputBar.classList.add("mapboxgl-ctrl-geocoder-hide");
+    }
   }
   nextQuestion() {
     this.setState({ count: this.state.count + 1 });
