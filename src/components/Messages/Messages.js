@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateInput } from "../../redux/mainReducer";
+import { updateInput, addMessage } from "../../redux/mainReducer";
 import io from "socket.io-client";
 import "./Messages.css";
 const socketUrl = "http://localhost:3100";
@@ -26,7 +26,6 @@ class Messages extends Component {
     const body = e.target.value;
     const { userInfo } = this.props.main;
     if (e.keyCode == 13 && body) {
-      console.log(userInfo);
       const message = {
         body,
         from: userInfo.image_url
@@ -68,5 +67,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { updateInput }
+  { updateInput, addMessage }
 )(Messages);

@@ -8,6 +8,7 @@ const REMOVE_REVIEW = "REMOVE_REVIEW";
 const ADD_LOCATION = "ADD_LOCATION";
 const ADD_IMAGE = "ADD_IMAGE";
 const ADD_REVIEW = "ADD_REVIEW";
+const ADD_MESSAGE = "ADD_MESSAGE";
 const UPDATE_INPUT = "UPDATE_INPUT";
 const UPDATE_PROFILE = "UPDATE_PROFILE";
 
@@ -31,7 +32,8 @@ const initialState = {
   review: "",
   reviewError: "",
   orderHistory: [],
-  isLoading: true
+  isLoading: true,
+  messages: []
 };
 
 //Action Creators
@@ -81,6 +83,12 @@ export const addReview = (review, rating, driverId) => {
     payload: axios.post("/api/review", { review, rating, driverId })
   };
 };
+export const addMessage = message => {
+  return {
+    type: ADD_MESSAGE,
+    payload: message
+  };
+};
 //PUT
 export const updateProfile = (
   dobInput,
@@ -110,6 +118,7 @@ export const removeReview = reviewId => {
     payload: axios.delete(`/api/review/${reviewId}`)
   };
 };
+
 //Reducer
 export default function mainReducer(state = initialState, action) {
   switch (action.type) {
@@ -122,6 +131,11 @@ export default function mainReducer(state = initialState, action) {
       return {
         ...state,
         [action.payload.target.name]: action.payload.target.value
+      };
+    case ADD_MESSAGE:
+      return {
+        ...state,
+        messages: action.payload[0].body
       };
     case ADD_LOCATION:
       return {
