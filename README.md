@@ -6,7 +6,7 @@ Courier App designed to ship items with ease.
 
 # Walkthrough
 
-View a tour of the website. _Live site no long in service_
+View a tour of the website. _Live site no longer in service_
 
 ## Step 1
 
